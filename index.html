@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>画像合成ツール</title>
+<title>カラー診断合成ツール</title>
 
 <style>
 body{
@@ -143,6 +143,10 @@ function createImage(canvas, overlay){
     const ctx = canvas.getContext("2d");
 
     ctx.clearRect(0,0,900,1200);
+
+    // 背景を白で塗る
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0,0,900,1200);
 
     const positions = [
         [0,0],
