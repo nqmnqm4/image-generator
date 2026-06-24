@@ -45,46 +45,11 @@ a{
 const CANVAS_W = 900;
 const CANVAS_H = 1200;
 
-const SLOTS = [
-  {x:12,y:303,w:431,h:291},
-  {x:456,y:303,w:431,h:291},
-  {x:12,y:897,w:431,h:291},
-  {x:456,y:897,w:431,h:291}
-];
-
-function drawCover(ctx,img,x,y,w,h){
-
-  const scale = Math.max(
-    w / img.width,
-    h / img.height
-  );
-
-  const sw = w / scale;
-  const sh = h / scale;
-
-  const sx = (img.width - sw) / 2;
-  const sy = (img.height - sh) / 2;
-
-  ctx.drawImage(
-    img,
-    sx,
-    sy,
-    sw,
-    sh,
-    x,
-    y,
-    w,
-    h
-  );
-}
-
 function loadImage(src){
   return new Promise((resolve,reject)=>{
     const img = new Image();
-
     img.onload = ()=>resolve(img);
     img.onerror = reject;
-
     img.src = src;
   });
 }
@@ -131,7 +96,7 @@ async function generate(){
   }catch(e){
 
     console.error(e);
-    alert("エラーが発生しました。F12→Consoleを確認してください。");
+    alert("エラーが発生しました");
 
   }
 }
@@ -141,37 +106,21 @@ async function createImage(userImg,frame){
   const canvas =
     document.createElement("canvas");
 
-  canvas.width = CANVAS_W;
-  canvas.height = CANVAS_H;
+  canvas.width = 900;
+  canvas.height = 1200;
 
   const ctx =
     canvas.getContext("2d");
 
-  SLOTS.forEach(slot=>{
-
-    drawCover(
-      ctx,
-      userImg,
-      slot.x,
-      slot.y,
-      slot.w,
-      slot.h
-    );
-
-  });
-
   ctx.drawImage(
-    frame,
+    userImg,
     0,
     0,
-    CANVAS_W,
-    CANVAS_H
+    900,
+    1200
   );
 
   return canvas.toDataURL("image/png");
 }
 
 </script>
-
-</body>
-</html>
