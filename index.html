@@ -2,125 +2,267 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>4分割画像生成</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>画像合成ツール</title>
 
 <style>
 body{
-  font-family:sans-serif;
-  text-align:center;
-  padding:20px;
+    font-family:sans-serif;
+    text-align:center;
+    padding:20px;
+}
+
+.controls{
+    max-width:500px;
+    margin:20px auto;
+    text-align:left;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+}
+
+input[type=range]{
+    width:100%;
+}
+
+canvas{
+    max-width:100%;
+    border:1px solid #ccc;
+    margin-top:15px;
 }
 
 button{
-  padding:12px 20px;
-  font-size:16px;
-  margin-top:10px;
-}
-
-.result{
-  margin-top:20px;
-}
-
-a{
-  display:block;
-  margin:10px 0;
-  font-size:18px;
+    padding:12px 24px;
+    margin:10px;
+    font-size:16px;
+    cursor:pointer;
 }
 </style>
 </head>
+
 <body>
 
-<h2>4分割画像生成2</h2>
+<h2>人物画像を選択</h2>
 
-<input type="file" id="photo" accept="image/*">
+<input type="file" id="upload" accept="image/*">
 
+<div class="controls">
+
+<label>拡大・縮小</label>
+<input type="range" id="scale" min="0.5" max="3" step="0.01" value="1">
+
+<label>左右位置</label>
+<input type="range" id="offsetX" min="-500" max="500" step="1" value="0">
+
+<label>上下位置</label>
+<input type="range" id="offsetY" min="-500" max="500" step="1" value="0">
+
+</div>
+
+<h3>完成①</h3>
+<canvas id="canvas1" width="900" height="1200"></canvas>
 <br>
+<button onclick="downloadCanvas('canvas1','complete_01.png')">
+完成①をダウンロード
+</button>
 
-<button onclick="generate()">生成</button>
+<h3>完成②</h3>
+<canvas id="canvas2" width="900" height="1200"></canvas>
+<br>
+<button onclick="downloadCanvas('canvas2','complete_02.png')">
+完成②をダウンロード
+</button>
 
-<div class="result" id="result"></div>
 <script>
 
-const CANVAS_W = 900;
-const CANVAS_H = 1200;
+let personImg = null;
+let overlay1 = null;
+let overlay2 = null;
+
+const upload = document.getElementById("upload");
+const scaleInput = document.getElementById("scale");
+const offsetXInput = document.getElementById("offsetX");
+const offsetYInput = document.getElementById("offsetY");
+
+upload.addEventListener("change", async function(e){
+
+    const file = e.target.files[0];
+
+    if(!file) return;
+
+    personImg = await loadImage(URL.createObjectURL(file));
+    overlay1 = await loadImage("A01.png");
+    overlay2 = await loadImage("A02.png");
+
+    renderAll();
+
+});
+
+scaleInput.addEventListener("input", renderAll);
+offsetXInput.addEventListener("input", renderAll);
+offsetYInput.addEventListener("input", renderAll);
 
 function loadImage(src){
-  return new Promise((resolve,reject)=>{
-    const img = new Image();
-    img.onload = ()=>resolve(img);
-    img.onerror = reject;
-    img.src = src;
-  });
+
+    return new Promise((resolve,reject)=>{
+
+        const img = new Image();
+
+        img.onload = ()=>resolve(img);
+
+        img.onerror = ()=>reject("画像読み込み失敗");
+
+        img.src = src;
+
+    });
+
 }
 
-async function generate(){
+function renderAll(){
 
-  const file =
-    document.getElementById("photo").files[0];
+    if(!personImg || !overlay1 || !overlay2){
+        return;
+    }
 
-  if(!file){
-    alert("画像を選択してください");
-    return;
-  }
+    createImage(
+        document.getElementById("canvas1"),
+        overlay1
+    );
 
-  try{
+    createImage(
+        document.getElementById("canvas2"),
+        overlay2
+    );
 
-    const userImg =
-      await loadImage(
-        URL.createObjectURL(file)
-      );
-
-    const frame1 =
-      await loadImage("A01.png");
-
-    const frame2 =
-      await loadImage("A02.png");
-
-    const out1 =
-      await createImage(userImg,frame1);
-
-    const out2 =
-      await createImage(userImg,frame2);
-
-    document.getElementById("result").innerHTML = `
-      <a download="result_A01.png" href="${out1}">
-        画像①を保存
-      </a>
-
-      <a download="result_A02.png" href="${out2}">
-        画像②を保存
-      </a>
-    `;
-
-  }catch(e){
-
-    console.error(e);
-    alert("エラーが発生しました");
-
-  }
 }
 
-async function createImage(userImg,frame){
+function createImage(canvas, overlay){
 
-  const canvas =
-    document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
 
-  canvas.width = 900;
-  canvas.height = 1200;
+    ctx.clearRect(0,0,900,1200);
 
-  const ctx =
-    canvas.getContext("2d");
+    const positions = [
+        [0,0],
+        [450,0],
+        [0,600],
+        [450,600]
+    ];
 
-  ctx.drawImage(
-    userImg,
-    0,
-    0,
-    900,
-    1200
-  );
+    positions.forEach(pos=>{
 
-  return canvas.toDataURL("image/png");
+        drawCover(
+            ctx,
+            personImg,
+            pos[0],
+            pos[1],
+            450,
+            600
+        );
+
+    });
+
+    ctx.drawImage(
+        overlay,
+        0,
+        0,
+        900,
+        1200
+    );
+
+}
+
+function drawCover(ctx,img,x,y,w,h){
+
+    const scale = Number(scaleInput.value);
+    const offsetX = Number(offsetXInput.value);
+    const offsetY = Number(offsetYInput.value);
+
+    const imgRatio = img.width / img.height;
+    const boxRatio = w / h;
+
+    let baseW;
+    let baseH;
+
+    if(imgRatio > boxRatio){
+
+        baseH = h;
+        baseW = h * imgRatio;
+
+    }else{
+
+        baseW = w;
+        baseH = w / imgRatio;
+
+    }
+
+    const drawW = baseW * scale;
+    const drawH = baseH * scale;
+
+    const drawX =
+        x +
+        ((w - drawW) / 2) +
+        offsetX;
+
+    const drawY =
+        y +
+        ((h - drawH) / 2) +
+        offsetY;
+
+    ctx.save();
+
+    ctx.beginPath();
+    ctx.rect(x,y,w,h);
+    ctx.clip();
+
+    ctx.drawImage(
+        img,
+        drawX,
+        drawY,
+        drawW,
+        drawH
+    );
+
+    ctx.restore();
+
+}
+
+function downloadCanvas(canvasId, filename){
+
+    const canvas =
+        document.getElementById(canvasId);
+
+    canvas.toBlob(function(blob){
+
+        if(!blob){
+            alert("画像生成に失敗しました");
+            return;
+        }
+
+        const url =
+            URL.createObjectURL(blob);
+
+        const a =
+            document.createElement("a");
+
+        a.href = url;
+        a.download = filename;
+
+        document.body.appendChild(a);
+
+        a.click();
+
+        document.body.removeChild(a);
+
+        URL.revokeObjectURL(url);
+
+    },"image/png");
+
 }
 
 </script>
+
+</body>
+</html>
