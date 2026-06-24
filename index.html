@@ -40,29 +40,16 @@ a{
 <button onclick="generate()">生成</button>
 
 <div class="result" id="result"></div>
-
 <script>
 
 const CANVAS_W = 900;
 const CANVAS_H = 1200;
 
-/*
-ここだけ調整可能
-
-x
-y
-w
-h
-*/
-
 const SLOTS = [
-
   {x:12,y:303,w:431,h:291},
   {x:456,y:303,w:431,h:291},
-
   {x:12,y:897,w:431,h:291},
   {x:456,y:897,w:431,h:291}
-
 ];
 
 function drawCover(ctx,img,x,y,w,h){
@@ -92,41 +79,17 @@ function drawCover(ctx,img,x,y,w,h){
 }
 
 function loadImage(src){
-  return new Promise((resolve)=>{
+  return new Promise((resolve,reject)=>{
     const img = new Image();
+
     img.onload = ()=>resolve(img);
+    img.onerror = reject;
+
     img.src = src;
   });
 }
 
 async function generate(){
-
-console.log("start");
-
-const userImg =
-  await loadImage(
-    URL.createObjectURL(file)
-  );
-
-console.log("userImg", userImg.width, userImg.height);
-
-const frame1 =
-  await loadImage("A01.png");
-
-console.log("frame1", frame1.width, frame1.height);
-
-const frame2 =
-  await loadImage("A02.png");
-
-console.log("frame2", frame2.width, frame2.height);
-
-
-
-
-
-
-
-
 
   const file =
     document.getElementById("photo").files[0];
@@ -136,32 +99,41 @@ console.log("frame2", frame2.width, frame2.height);
     return;
   }
 
-  const userImg =
-    await loadImage(
-      URL.createObjectURL(file)
-    );
+  try{
 
-  const frame1 =
-    await loadImage("A01.png");
+    const userImg =
+      await loadImage(
+        URL.createObjectURL(file)
+      );
 
-  const frame2 =
-    await loadImage("A02.png");
+    const frame1 =
+      await loadImage("A01.png");
 
-  const out1 =
-    await createImage(userImg,frame1);
+    const frame2 =
+      await loadImage("A02.png");
 
-  const out2 =
-    await createImage(userImg,frame2);
+    const out1 =
+      await createImage(userImg,frame1);
 
-  document.getElementById("result").innerHTML = `
-    <a download="result_A01.png" href="${out1}">
-      画像①を保存
-    </a>
+    const out2 =
+      await createImage(userImg,frame2);
 
-    <a download="result_A02.png" href="${out2}">
-      画像②を保存
-    </a>
-  `;
+    document.getElementById("result").innerHTML = `
+      <a download="result_A01.png" href="${out1}">
+        画像①を保存
+      </a>
+
+      <a download="result_A02.png" href="${out2}">
+        画像②を保存
+      </a>
+    `;
+
+  }catch(e){
+
+    console.error(e);
+    alert("エラーが発生しました。F12→Consoleを確認してください。");
+
+  }
 }
 
 async function createImage(userImg,frame){
@@ -187,7 +159,6 @@ async function createImage(userImg,frame){
     );
 
   });
-
 
   ctx.drawImage(
     frame,
