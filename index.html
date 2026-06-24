@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4分割画像生成</title>
+
+<style>
+body{
+  font-family:sans-serif;
+  text-align:center;
+  padding:20px;
+}
+
+button{
+  padding:12px 20px;
+  font-size:16px;
+  margin-top:10px;
+}
+
+.result{
+  margin-top:20px;
+}
+
+a{
+  display:block;
+  margin:10px 0;
+  font-size:18px;
+}
+</style>
+</head>
+<body>
+
+<h2>4分割画像生成</h2>
+
+<input type="file" id="photo" accept="image/*">
+
+<br>
+
+<button onclick="generate()">生成</button>
+
+<div class="result" id="result"></div>
+
+<script>
+
+const CANVAS_W = 900;
+const CANVAS_H = 1200;
+
+/*
+ここだけ調整可能
+
+x
+y
+w
+h
+*/
+
+const SLOTS = [
+
+  {x:12,y:303,w:431,h:291},
+  {x:456,y:303,w:431,h:291},
+
+  {x:12,y:897,w:431,h:291},
+  {x:456,y:897,w:431,h:291}
+
+];
+
+function drawCover(ctx,img,x,y,w,h){
+
+  const scale = Math.max(
+    w / img.width,
+    h / img.height
+  );
+
+  const sw = w / scale;
+  const sh = h / scale;
+
+  const sx = (img.width - sw) / 2;
+  const sy = (img.height - sh) / 2;
+
+  ctx.drawImage(
+    img,
+    sx,
+    sy,
+    sw,
+    sh,
+    x,
+    y,
+    w,
+    h
+  );
+}
+
+function loadImage(src){
+  return new Promise((resolve)=>{
+    const img = new Image();
+    img.onload = ()=>resolve(img);
+    img.src = src;
+  });
+}
+
+async function generate(){
+
+  const file =
+    document.getElementById("photo").files[0];
+
+  if(!file){
+    alert("画像を選択してください");
+    return;
+  }
+
+  const userImg =
+    await loadImage(
+      URL.createObjectURL(file)
+    );
+
+  const frame1 =
+    await loadImage("A01.png");
+
+  const frame2 =
+    await loadImage("A02.png");
+
+  const out1 =
+    await createImage(userImg,frame1);
+
+  const out2 =
+    await createImage(userImg,frame2);
+
+  document.getElementById("result").innerHTML = `
+    <a download="result_A01.png" href="${out1}">
+      画像①を保存
+    </a>
+
+    <a download="result_A02.png" href="${out2}">
+      画像②を保存
+    </a>
+  `;
+}
+
+async function createImage(userImg,frame){
+
+  const canvas =
+    document.createElement("canvas");
+
+  canvas.width = CANVAS_W;
+  canvas.height = CANVAS_H;
+
+  const ctx =
+    canvas.getContext("2d");
+
+  SLOTS.forEach(slot=>{
+
+    drawCover(
+      ctx,
+      userImg,
+      slot.x,
+      slot.y,
+      slot.w,
+      slot.h
+    );
+
+  });
+
+  ctx.drawImage(
+    frame,
+    0,
+    0,
+    CANVAS_W,
+    CANVAS_H
+  );
+
+  return canvas.toDataURL("image/png");
+}
+
+</script>
+
+</body>
+</html>
