@@ -101,6 +101,33 @@ function loadImage(src){
 
 async function generate(){
 
+console.log("start");
+
+const userImg =
+  await loadImage(
+    URL.createObjectURL(file)
+  );
+
+console.log("userImg", userImg.width, userImg.height);
+
+const frame1 =
+  await loadImage("A01.png");
+
+console.log("frame1", frame1.width, frame1.height);
+
+const frame2 =
+  await loadImage("A02.png");
+
+console.log("frame2", frame2.width, frame2.height);
+
+
+
+
+
+
+
+
+
   const file =
     document.getElementById("photo").files[0];
 
@@ -161,8 +188,6 @@ async function createImage(userImg,frame){
 
   });
 
-ctx.fillStyle = "red";
-ctx.fillRect(0,0,900,1200);
 
   ctx.drawImage(
     frame,
