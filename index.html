@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>カラー診断合成ツール</title>
+<title>画像合成ツール</title>
 
 <style>
 body{
@@ -61,18 +61,25 @@ button{
 
 </div>
 
-<h3>完成①</h3>
+<h3>完成① A01</h3>
 <canvas id="canvas1" width="900" height="1200"></canvas>
 <br>
 <button onclick="downloadCanvas('canvas1','complete_01.png')">
 完成①をダウンロード
 </button>
 
-<h3>完成②</h3>
+<h3>完成② A02</h3>
 <canvas id="canvas2" width="900" height="1200"></canvas>
 <br>
 <button onclick="downloadCanvas('canvas2','complete_02.png')">
 完成②をダウンロード
+</button>
+
+<h3>完成③ A03</h3>
+<canvas id="canvas3" width="900" height="2400"></canvas>
+<br>
+<button onclick="downloadCanvas('canvas3','complete_03.png')">
+完成③をダウンロード
 </button>
 
 <script>
@@ -80,6 +87,7 @@ button{
 let personImg = null;
 let overlay1 = null;
 let overlay2 = null;
+let overlay3 = null;
 
 const upload = document.getElementById("upload");
 const scaleInput = document.getElementById("scale");
@@ -93,8 +101,10 @@ upload.addEventListener("change", async function(e){
     if(!file) return;
 
     personImg = await loadImage(URL.createObjectURL(file));
+
     overlay1 = await loadImage("A01.png");
     overlay2 = await loadImage("A02.png");
+    overlay3 = await loadImage("A03.png");
 
     renderAll();
 
@@ -112,7 +122,10 @@ function loadImage(src){
 
         img.onload = ()=>resolve(img);
 
-        img.onerror = ()=>reject("画像読み込み失敗");
+        img.onerror = ()=>{
+            alert("画像を読み込めません：" + src);
+            reject();
+        };
 
         img.src = src;
 
@@ -122,29 +135,33 @@ function loadImage(src){
 
 function renderAll(){
 
-    if(!personImg || !overlay1 || !overlay2){
+    if(!personImg || !overlay1 || !overlay2 || !overlay3){
         return;
     }
 
-    createImage(
+    createImage1200(
         document.getElementById("canvas1"),
         overlay1
     );
 
-    createImage(
+    createImage1200(
         document.getElementById("canvas2"),
         overlay2
     );
 
+    createImage2400(
+        document.getElementById("canvas3"),
+        overlay3
+    );
+
 }
 
-function createImage(canvas, overlay){
+function createImage1200(canvas, overlay){
 
     const ctx = canvas.getContext("2d");
 
     ctx.clearRect(0,0,900,1200);
 
-    // 背景を白で塗る
     ctx.fillStyle = "#ffffff";
     ctx.fillRect(0,0,900,1200);
 
@@ -174,6 +191,52 @@ function createImage(canvas, overlay){
         0,
         900,
         1200
+    );
+
+}
+
+function createImage2400(canvas, overlay){
+
+    const ctx = canvas.getContext("2d");
+
+    ctx.clearRect(0,0,900,2400);
+
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0,0,900,2400);
+
+    const positions = [
+        [0,0],
+        [450,0],
+
+        [0,600],
+        [450,600],
+
+        [0,1200],
+        [450,1200],
+
+        [0,1800],
+        [450,1800]
+    ];
+
+    positions.forEach(pos=>{
+
+        drawCover(
+            ctx,
+            personImg,
+            pos[0],
+            pos[1],
+            450,
+            600
+        );
+
+    });
+
+    ctx.drawImage(
+        overlay,
+        0,
+        0,
+        900,
+        2400
     );
 
 }
