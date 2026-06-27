@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>画像合成ツール</title>
+<title>パーソナルカラー診断　合成画像生成ツール</title>
 
 <style>
 body{
@@ -27,17 +27,35 @@ input[type=range]{
     width:100%;
 }
 
-canvas{
-    max-width:100%;
-    border:1px solid #ccc;
-    margin-top:15px;
+.buttons{
+    margin:20px 0;
 }
 
 button{
-    padding:12px 24px;
-    margin:10px;
+    padding:14px 24px;
+    margin:8px;
     font-size:16px;
     cursor:pointer;
+}
+
+.preview-area{
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+    margin-top:30px;
+}
+
+.preview{
+    width:900px;
+    max-width:100%;
+    margin:auto;
+}
+
+canvas{
+    width:900px;
+    max-width:100%;
+    height:auto;
+    border:1px solid #ccc;
 }
 </style>
 </head>
@@ -49,63 +67,69 @@ button{
 <input type="file" id="upload" accept="image/*">
 
 <div class="controls">
+    <label>拡大・縮小</label>
+    <input type="range" id="scale" min="0.5" max="3" step="0.01" value="1">
 
-<label>拡大・縮小</label>
-<input type="range" id="scale" min="0.5" max="3" step="0.01" value="1">
+    <label>左右位置</label>
+    <input type="range" id="offsetX" min="-500" max="500" step="1" value="0">
 
-<label>左右位置</label>
-<input type="range" id="offsetX" min="-500" max="500" step="1" value="0">
-
-<label>上下位置</label>
-<input type="range" id="offsetY" min="-500" max="500" step="1" value="0">
-
+    <label>上下位置</label>
+    <input type="range" id="offsetY" min="-500" max="500" step="1" value="0">
 </div>
 
-<h3>完成① A01</h3>
-<canvas id="canvas1" width="900" height="1200"></canvas>
-<br>
-<button onclick="downloadCanvas('canvas1','complete_01.png')">
-完成①をダウンロード
-</button>
+<div class="buttons">
+    <button onclick="downloadAll()">11枚すべてダウンロード</button>
+    <button onclick="downloadMawashi()">回し4枚ダウンロード</button>
+</div>
 
-<h3>完成② A02</h3>
-<canvas id="canvas2" width="900" height="1200"></canvas>
-<br>
-<button onclick="downloadCanvas('canvas2','complete_02.png')">
-完成②をダウンロード
-</button>
-
-<h3>完成③ A03</h3>
-<canvas id="canvas3" width="900" height="2400"></canvas>
-<br>
-<button onclick="downloadCanvas('canvas3','complete_03.png')">
-完成③をダウンロード
-</button>
+<div id="previewArea" class="preview-area"></div>
 
 <script>
 
+const templates = [
+    "基本1",
+    "基本2",
+    "基本3-1",
+    "基本3-2",
+    "基本4",
+    "基本5",
+    "基本6",
+    "イエベ回し3枚バージョン",
+    "ブルベ回し3枚バージョン",
+    "イエベ回し4枚バージョン",
+    "ブルベ回し4枚バージョン"
+];
+
+const mawashiTemplates = [
+    "イエベ回し3枚バージョン",
+    "ブルベ回し3枚バージョン",
+    "イエベ回し4枚バージョン",
+    "ブルベ回し4枚バージョン"
+];
+
 let personImg = null;
-let overlay1 = null;
-let overlay2 = null;
-let overlay3 = null;
+let overlayImages = {};
 
 const upload = document.getElementById("upload");
 const scaleInput = document.getElementById("scale");
 const offsetXInput = document.getElementById("offsetX");
 const offsetYInput = document.getElementById("offsetY");
+const previewArea = document.getElementById("previewArea");
 
 upload.addEventListener("change", async function(e){
 
     const file = e.target.files[0];
-
     if(!file) return;
 
     personImg = await loadImage(URL.createObjectURL(file));
 
-    overlay1 = await loadImage("A01.png");
-    overlay2 = await loadImage("A02.png");
-    overlay3 = await loadImage("A03.png");
+    overlayImages = {};
 
+    for(const name of templates){
+        overlayImages[name] = await loadImage(name + ".png");
+    }
+
+    createCanvases();
     renderAll();
 
 });
@@ -133,30 +157,50 @@ function loadImage(src){
 
 }
 
-function renderAll(){
+function createCanvases(){
 
-    if(!personImg || !overlay1 || !overlay2 || !overlay3){
-        return;
-    }
+    previewArea.innerHTML = "";
 
-    createImage1200(
-        document.getElementById("canvas1"),
-        overlay1
-    );
+    templates.forEach((name, index)=>{
 
-    createImage1200(
-        document.getElementById("canvas2"),
-        overlay2
-    );
+        const div = document.createElement("div");
+        div.className = "preview";
 
-    createImage2400(
-        document.getElementById("canvas3"),
-        overlay3
-    );
+        const title = document.createElement("h3");
+        title.textContent = name;
+
+        const canvas = document.createElement("canvas");
+        canvas.width = 900;
+        canvas.height = 1200;
+        canvas.id = "canvas_" + index;
+
+        div.appendChild(title);
+        div.appendChild(canvas);
+
+        previewArea.appendChild(div);
+
+    });
 
 }
 
-function createImage1200(canvas, overlay){
+function renderAll(){
+
+    if(!personImg) return;
+
+    templates.forEach((name, index)=>{
+
+        const canvas = document.getElementById("canvas_" + index);
+        const overlay = overlayImages[name];
+
+        if(canvas && overlay){
+            createImage(canvas, overlay);
+        }
+
+    });
+
+}
+
+function createImage(canvas, overlay){
 
     const ctx = canvas.getContext("2d");
 
@@ -195,52 +239,6 @@ function createImage1200(canvas, overlay){
 
 }
 
-function createImage2400(canvas, overlay){
-
-    const ctx = canvas.getContext("2d");
-
-    ctx.clearRect(0,0,900,2400);
-
-    ctx.fillStyle = "#ffffff";
-    ctx.fillRect(0,0,900,2400);
-
-    const positions = [
-        [0,0],
-        [450,0],
-
-        [0,600],
-        [450,600],
-
-        [0,1200],
-        [450,1200],
-
-        [0,1800],
-        [450,1800]
-    ];
-
-    positions.forEach(pos=>{
-
-        drawCover(
-            ctx,
-            personImg,
-            pos[0],
-            pos[1],
-            450,
-            600
-        );
-
-    });
-
-    ctx.drawImage(
-        overlay,
-        0,
-        0,
-        900,
-        2400
-    );
-
-}
-
 function drawCover(ctx,img,x,y,w,h){
 
     const scale = Number(scaleInput.value);
@@ -254,15 +252,11 @@ function drawCover(ctx,img,x,y,w,h){
     let baseH;
 
     if(imgRatio > boxRatio){
-
         baseH = h;
         baseW = h * imgRatio;
-
     }else{
-
         baseW = w;
         baseH = w / imgRatio;
-
     }
 
     const drawW = baseW * scale;
@@ -296,37 +290,70 @@ function drawCover(ctx,img,x,y,w,h){
 
 }
 
-function downloadCanvas(canvasId, filename){
+async function downloadAll(){
+    await downloadMultiple(templates);
+}
 
-    const canvas =
-        document.getElementById(canvasId);
+async function downloadMawashi(){
+    await downloadMultiple(mawashiTemplates);
+}
 
-    canvas.toBlob(function(blob){
+async function downloadMultiple(targetTemplates){
 
-        if(!blob){
-            alert("画像生成に失敗しました");
-            return;
-        }
+    if(!personImg){
+        alert("先に人物画像を選択してください");
+        return;
+    }
 
-        const url =
-            URL.createObjectURL(blob);
+    for(const name of targetTemplates){
 
-        const a =
-            document.createElement("a");
+        const index = templates.indexOf(name);
+        const canvas = document.getElementById("canvas_" + index);
 
-        a.href = url;
-        a.download = filename;
+        if(!canvas) continue;
 
-        document.body.appendChild(a);
+        await downloadCanvas(canvas, name + ".png");
 
-        a.click();
+        await wait(700);
+    }
 
-        document.body.removeChild(a);
+}
 
-        URL.revokeObjectURL(url);
+function downloadCanvas(canvas, filename){
 
-    },"image/png");
+    return new Promise((resolve,reject)=>{
 
+        canvas.toBlob(function(blob){
+
+            if(!blob){
+                alert("画像生成に失敗しました");
+                reject();
+                return;
+            }
+
+            const url = URL.createObjectURL(blob);
+
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = filename;
+
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+
+            setTimeout(()=>{
+                URL.revokeObjectURL(url);
+                resolve();
+            },300);
+
+        },"image/png");
+
+    });
+
+}
+
+function wait(ms){
+    return new Promise(resolve=>setTimeout(resolve, ms));
 }
 
 </script>
