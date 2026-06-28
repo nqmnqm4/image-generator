@@ -27,17 +27,6 @@ input[type=range]{
     width:100%;
 }
 
-.buttons{
-    margin:20px 0;
-}
-
-button{
-    padding:14px 24px;
-    margin:8px;
-    font-size:16px;
-    cursor:pointer;
-}
-
 .preview-area{
     display:flex;
     flex-direction:column;
@@ -49,6 +38,21 @@ button{
     width:900px;
     max-width:100%;
     margin:auto;
+    border:1px solid #ddd;
+    padding:16px;
+    box-sizing:border-box;
+}
+
+.preview h3{
+    margin:0 0 10px;
+    font-size:20px;
+}
+
+button{
+    padding:12px 24px;
+    margin:10px 0 16px;
+    font-size:16px;
+    cursor:pointer;
 }
 
 canvas{
@@ -57,12 +61,21 @@ canvas{
     height:auto;
     border:1px solid #ccc;
 }
+.footer{
+    margin-top:60px;
+    padding:30px 0;
+    font-size:12px;
+    color:#888;
+    line-height:1.8;
+}
 </style>
 </head>
 
 <body>
 
-<h2>人物画像を選択</h2>
+<h1>パーソナルカラー診断<BR>合成画像生成ツール</h1>
+<BR>
+<h2>画像を選択してください</h2>
 
 <input type="file" id="upload" accept="image/*">
 
@@ -75,11 +88,6 @@ canvas{
 
     <label>上下位置</label>
     <input type="range" id="offsetY" min="-500" max="500" step="1" value="0">
-</div>
-
-<div class="buttons">
-    <button onclick="downloadAll()">11枚すべてダウンロード</button>
-    <button onclick="downloadMawashi()">回し4枚ダウンロード</button>
 </div>
 
 <div id="previewArea" class="preview-area"></div>
@@ -100,15 +108,9 @@ const templates = [
     "ブルベ回し4枚バージョン"
 ];
 
-const mawashiTemplates = [
-    "イエベ回し3枚バージョン",
-    "ブルベ回し3枚バージョン",
-    "イエベ回し4枚バージョン",
-    "ブルベ回し4枚バージョン"
-];
-
 let personImg = null;
 let overlayImages = {};
+let setId = "";
 
 const upload = document.getElementById("upload");
 const scaleInput = document.getElementById("scale");
@@ -120,6 +122,8 @@ upload.addEventListener("change", async function(e){
 
     const file = e.target.files[0];
     if(!file) return;
+
+    setId = createSetId();
 
     personImg = await loadImage(URL.createObjectURL(file));
 
@@ -137,6 +141,21 @@ upload.addEventListener("change", async function(e){
 scaleInput.addEventListener("input", renderAll);
 offsetXInput.addEventListener("input", renderAll);
 offsetYInput.addEventListener("input", renderAll);
+
+function createSetId(){
+
+    const now = new Date();
+
+    const y = now.getFullYear();
+    const m = String(now.getMonth() + 1).padStart(2, "0");
+    const d = String(now.getDate()).padStart(2, "0");
+    const h = String(now.getHours()).padStart(2, "0");
+    const min = String(now.getMinutes()).padStart(2, "0");
+    const s = String(now.getSeconds()).padStart(2, "0");
+
+    return y + m + d + "_" + h + min + s;
+
+}
 
 function loadImage(src){
 
@@ -169,12 +188,19 @@ function createCanvases(){
         const title = document.createElement("h3");
         title.textContent = name;
 
+        const button = document.createElement("button");
+        button.textContent = "この画像を保存";
+        button.onclick = function(){
+            downloadOne(index);
+        };
+
         const canvas = document.createElement("canvas");
         canvas.width = 900;
         canvas.height = 1200;
         canvas.id = "canvas_" + index;
 
         div.appendChild(title);
+        div.appendChild(button);
         div.appendChild(canvas);
 
         previewArea.appendChild(div);
@@ -290,73 +316,53 @@ function drawCover(ctx,img,x,y,w,h){
 
 }
 
-async function downloadAll(){
-    await downloadMultiple(templates);
-}
-
-async function downloadMawashi(){
-    await downloadMultiple(mawashiTemplates);
-}
-
-async function downloadMultiple(targetTemplates){
+function downloadOne(index){
 
     if(!personImg){
         alert("先に人物画像を選択してください");
         return;
     }
 
-    for(const name of targetTemplates){
+    const name = templates[index];
+    const canvas = document.getElementById("canvas_" + index);
 
-        const index = templates.indexOf(name);
-        const canvas = document.getElementById("canvas_" + index);
+    const filename = setId + "_" + name + ".png";
 
-        if(!canvas) continue;
-
-        await downloadCanvas(canvas, name + ".png");
-
-        await wait(700);
-    }
+    downloadCanvas(canvas, filename);
 
 }
 
 function downloadCanvas(canvas, filename){
 
-    return new Promise((resolve,reject)=>{
+    canvas.toBlob(function(blob){
 
-        canvas.toBlob(function(blob){
+        if(!blob){
+            alert("画像生成に失敗しました");
+            return;
+        }
 
-            if(!blob){
-                alert("画像生成に失敗しました");
-                reject();
-                return;
-            }
+        const url = URL.createObjectURL(blob);
 
-            const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = filename;
 
-            const a = document.createElement("a");
-            a.href = url;
-            a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
 
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
+        setTimeout(()=>{
+            URL.revokeObjectURL(url);
+        },300);
 
-            setTimeout(()=>{
-                URL.revokeObjectURL(url);
-                resolve();
-            },300);
+    },"image/png");
 
-        },"image/png");
-
-    });
-
-}
-
-function wait(ms){
-    return new Promise(resolve=>setTimeout(resolve, ms));
 }
 
 </script>
-
+<footer class="footer">
+    © 2026 一般社団法人オーラ美人コーディネーター協会<br>
+    本ツールは協会およびスクール生向けに制作しています。
+</footer>
 </body>
 </html>
