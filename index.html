@@ -270,22 +270,14 @@ canvas{
     </div>
 
     <div id="iosMessage" class="ios-message">
-        <div class="ios-title">📱 iPhone / iPadの方へ</div>
-
-        <div>
-iPhone/iPadでは<br>
-保存ボタンを押すと<br>
-共有画面が開く場合があります。
-        </div>
-
-        <div class="ios-block">
-共有画面から<br>
-<strong>「画像を保存」</strong>を選ぶと<br>
-写真アプリに保存できます。
-        </div>
+    <div class="ios-title">📱 iPhone / iPadの方へ</div>
+    <button type="button" id="iosGuideToggle" class="save-button" style="display:block;margin:8px auto 0;">保存方法はこちら ▼</button>
+    <div id="iosGuide" style="display:none;margin-top:16px;text-align:center;">
+        <img src="iphone.png" alt="iPhone保存方法" style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:10px;">
     </div>
+</div>
 
-    <div class="controls">
+<div class="controls">
         <div class="controls-title">位置調整</div>
 
         <label>拡大・縮小</label>
@@ -639,6 +631,16 @@ iPhone/iPadでは<br>
         },2000);
     }
 
+
+const iosGuideToggle=document.getElementById("iosGuideToggle");
+const iosGuide=document.getElementById("iosGuide");
+if(iosGuideToggle){
+iosGuideToggle.addEventListener("click",function(){
+const open=iosGuide.style.display==="block";
+iosGuide.style.display=open?"none":"block";
+iosGuideToggle.textContent=open?"保存方法はこちら ▼":"保存方法を閉じる ▲";
+});
+}
 })();
 </script>
 
