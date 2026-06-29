@@ -178,12 +178,33 @@ canvas{
     line-height:1.8;
 }
 
+.ios-message{
+    display:none;
+    max-width:720px;
+    margin:24px auto;
+    padding:14px 16px;
+    background:#eef7ff;
+    border:1px solid #b8d7ef;
+    border-radius:10px;
+    color:#24445c;
+    font-size:14px;
+    line-height:1.8;
+}
+
+.ios-message.show{
+    display:block;
+}
+
 .footer{
     margin-top:60px;
     padding:30px 0;
     font-size:12px;
     color:#888;
     line-height:1.8;
+}
+
+.app-content.hidden{
+    display:none;
 }
 
 .hidden{
@@ -193,8 +214,6 @@ canvas{
 </head>
 
 <body>
-
-
 
 <div id="appBrowserWarning" class="app-browser-warning">
     <div class="app-browser-warning-title">スマホの方へ</div>
@@ -209,6 +228,7 @@ canvas{
     </ol>
 </div>
 
+<main id="appContent" class="app-content">
 
 <div class="description">
     人物画像を選択し、位置を調整してください。
@@ -231,12 +251,14 @@ canvas{
     <input type="range" id="offsetY" min="-500" max="500" step="1" value="0">
 </div>
 
-<div id="iosMessage" style="display:none;">
+<div id="iosMessage" class="ios-message">
     iPhone/iPadでは保存ボタンを押すと共有画面が開く場合があります。<br>
     その場合は、共有画面から「画像を保存」を選ぶと写真アプリに保存できます。
 </div>
 
 <div id="previewArea" class="preview-area"></div>
+
+</main>
 
 <footer class="footer">
     © 2026 一般社団法人オーラ美人コーディネーター協会<br>
@@ -244,6 +266,7 @@ canvas{
 </footer>
 
 <script>
+"use strict";
 
 const templates = [
     "基本1",
@@ -259,64 +282,141 @@ const templates = [
     "ブルベ回し4枚バージョン"
 ];
 
-let personImg = null;
-let overlayImages = {};
-let setId = "";
+const state = {
+    personImg: null,
+    overlayImages: {},
+    setId: "",
+    env: detectEnvironment()
+};
 
-const upload = document.getElementById("upload");
-const scaleInput = document.getElementById("scale");
-const offsetXInput = document.getElementById("offsetX");
-const offsetYInput = document.getElementById("offsetY");
-const previewArea = document.getElementById("previewArea");
-const appBrowserWarning = document.getElementById("appBrowserWarning");
+const elements = {
+    upload: document.getElementById("upload"),
+    scaleInput: document.getElementById("scale"),
+    offsetXInput: document.getElementById("offsetX"),
+    offsetYInput: document.getElementById("offsetY"),
+    previewArea: document.getElementById("previewArea"),
+    appBrowserWarning: document.getElementById("appBrowserWarning"),
+    iosMessage: document.getElementById("iosMessage"),
+    appContent: document.getElementById("appContent")
+};
 
-showAppBrowserWarningIfNeeded();
+init();
 
+function init(){
 
-function showAppBrowserWarningIfNeeded(){
+    showEnvironmentMessages();
 
-    if(isAppBrowser()){
-        appBrowserWarning.classList.add("show");
+    // Facebook・Instagram・LINEなどのアプリ内ブラウザでは、
+    // 保存が不安定になるためツール本体は使わせず、案内だけ表示する。
+    if(state.env.isAppBrowser){
+        return;
+    }
+
+    bindEvents();
+
+}
+
+function bindEvents(){
+
+    elements.upload.addEventListener("change", handleImageSelect);
+    elements.scaleInput.addEventListener("input", renderAll);
+    elements.offsetXInput.addEventListener("input", renderAll);
+    elements.offsetYInput.addEventListener("input", renderAll);
+
+}
+
+function detectEnvironment(){
+
+    const ua = navigator.userAgent || "";
+    const platform = navigator.platform || "";
+
+    const isIOS =
+        /iPad|iPhone|iPod/i.test(ua) ||
+        (platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+    const isAndroid = /Android/i.test(ua);
+
+    const isLine = /Line\//i.test(ua) || /LINE/i.test(ua);
+    const isInstagram = /Instagram/i.test(ua);
+    const isFacebook = /FBAN|FBAV|FB_IAB|FB4A|FBIOS/i.test(ua);
+    const isMessenger = /Messenger/i.test(ua);
+    const isX = /Twitter/i.test(ua);
+    const isTikTok = /TikTok/i.test(ua);
+    const isWeChat = /MicroMessenger/i.test(ua);
+
+    const isAppBrowser =
+        isLine ||
+        isInstagram ||
+        isFacebook ||
+        isMessenger ||
+        isX ||
+        isTikTok ||
+        isWeChat;
+
+    return {
+        ua,
+        isIOS,
+        isAndroid,
+        isLine,
+        isInstagram,
+        isFacebook,
+        isMessenger,
+        isAppBrowser
+    };
+
+}
+
+function showEnvironmentMessages(){
+
+    if(state.env.isAppBrowser){
+        if(elements.appBrowserWarning){
+            elements.appBrowserWarning.classList.add("show");
+        }
+        if(elements.appContent){
+            elements.appContent.classList.add("hidden");
+        }
+        return;
+    }
+
+    if(elements.iosMessage && state.env.isIOS){
+        elements.iosMessage.classList.add("show");
     }
 
 }
 
-function isAppBrowser(){
-
-    const ua = navigator.userAgent || "";
-
-    return /FBAN|FBAV|FB_IAB|Instagram|Line|MicroMessenger|Messenger|Twitter|TikTok/i.test(ua);
-
-}
-
-upload.addEventListener("change", async function(e){
+async function handleImageSelect(e){
 
     const file = e.target.files[0];
     if(!file) return;
 
-    setId = createSetId();
+    state.setId = createSetId();
+    state.personImg = null;
+    state.overlayImages = {};
+    elements.previewArea.innerHTML = "";
 
     try{
-        personImg = await loadImage(URL.createObjectURL(file));
 
-        overlayImages = {};
-
-        for(const name of templates){
-            overlayImages[name] = await loadImage(name + ".png");
-        }
+        state.personImg = await loadImageFromFile(file);
 
         createCanvases();
+
+        await loadAllTemplates();
+
         renderAll();
 
     }catch(error){
-        alert("画像の読み込みに失敗しました。ファイル名が正しいか確認してください。");
+
+        console.error(error);
+
+        if(error && error.message){
+            alert(error.message);
+        }else{
+            alert("画像の読み込みに失敗しました。ファイル名が正しいか確認してください。");
+        }
+
     }
 
-});
-
-scaleInput.addEventListener("input", renderAll);
-offsetXInput.addEventListener("input", renderAll);
-offsetYInput.addEventListener("input", renderAll);
+}
 
 function createSetId(){
 
@@ -333,6 +433,29 @@ function createSetId(){
 
 }
 
+function loadImageFromFile(file){
+
+    return new Promise((resolve,reject)=>{
+
+        const url = URL.createObjectURL(file);
+        const img = new Image();
+
+        img.onload = ()=>{
+            URL.revokeObjectURL(url);
+            resolve(img);
+        };
+
+        img.onerror = ()=>{
+            URL.revokeObjectURL(url);
+            reject(new Error("人物画像を読み込めませんでした。別の画像でお試しください。"));
+        };
+
+        img.src = url;
+
+    });
+
+}
+
 function loadImage(src){
 
     return new Promise((resolve,reject)=>{
@@ -342,21 +465,28 @@ function loadImage(src){
         img.onload = ()=>resolve(img);
 
         img.onerror = ()=>{
-            console.error("画像を読み込めません：", src);
-            reject(src);
+            reject(new Error("テンプレート画像を読み込めません：" + src));
         };
 
-        img.src = src;
+        img.src = encodeURI(src);
 
     });
 
 }
 
+async function loadAllTemplates(){
+
+    for(const name of templates){
+        state.overlayImages[name] = await loadImage(name + ".png");
+    }
+
+}
+
 function createCanvases(){
 
-    previewArea.innerHTML = "";
+    elements.previewArea.innerHTML = "";
 
-    templates.forEach((name, index)=>{
+    templates.forEach((name,index)=>{
 
         const div = document.createElement("div");
         div.className = "preview";
@@ -380,7 +510,7 @@ function createCanvases(){
         div.appendChild(button);
         div.appendChild(canvas);
 
-        previewArea.appendChild(div);
+        elements.previewArea.appendChild(div);
 
     });
 
@@ -388,12 +518,12 @@ function createCanvases(){
 
 function renderAll(){
 
-    if(!personImg) return;
+    if(!state.personImg) return;
 
-    templates.forEach((name, index)=>{
+    templates.forEach((name,index)=>{
 
         const canvas = document.getElementById("canvas_" + index);
-        const overlay = overlayImages[name];
+        const overlay = state.overlayImages[name];
 
         if(canvas && overlay){
             createImage(canvas, overlay);
@@ -423,7 +553,7 @@ function createImage(canvas, overlay){
 
         drawCover(
             ctx,
-            personImg,
+            state.personImg,
             pos[0],
             pos[1],
             450,
@@ -444,9 +574,9 @@ function createImage(canvas, overlay){
 
 function drawCover(ctx,img,x,y,w,h){
 
-    const scale = Number(scaleInput.value);
-    const offsetX = Number(offsetXInput.value);
-    const offsetY = Number(offsetYInput.value);
+    const scale = Number(elements.scaleInput.value);
+    const offsetX = Number(elements.offsetXInput.value);
+    const offsetY = Number(elements.offsetYInput.value);
 
     const imgRatio = img.width / img.height;
     const boxRatio = w / h;
@@ -495,74 +625,72 @@ function drawCover(ctx,img,x,y,w,h){
 
 async function saveOne(index){
 
-    if(!personImg){
+    if(!state.personImg){
         alert("先に人物画像を選択してください");
         return;
     }
 
     const name = templates[index];
     const canvas = document.getElementById("canvas_" + index);
-    const filename = setId + "_" + name + ".png";
+
+    if(!canvas){
+        alert("保存する画像が見つかりません");
+        return;
+    }
+
+    const filename = state.setId + "_" + name + ".png";
 
     try{
 
         const blob = await canvasToBlob(canvas);
-        const file = new File([blob], filename, { type:"image/png" });
 
-        if(canUseShareFile(file)){
-
-            try{
-                await navigator.share({
-                    files:[file],
-                    title:filename,
-                    text:"画像を保存してください"
-                });
-                return;
-            }catch(shareError){
-                // ユーザーが共有をキャンセルした場合もここに来るため、
-                // iPhoneでは画像表示へ逃がす。
-                if(isIOS()){
-                    openImageForIOS(blob);
-                    return;
-                }
-                return;
-            }
-
-        }
-
-        if(isIOS()){
-            openImageForIOS(blob);
+        if(state.env.isIOS){
+            await saveForIOS(blob, filename);
             return;
         }
 
         downloadBlob(blob, filename);
 
     }catch(error){
+
+        console.error(error);
         alert("画像の保存に失敗しました");
+
     }
 
 }
 
-function canUseShareFile(file){
+async function saveForIOS(blob, filename){
 
-    // Androidは共有画面だと「写真として保存」しづらいため、
-    // 共有機能はiPhone / iPadだけで使う。
-    if(!isIOS()){
-        return false;
+    const file = new File([blob], filename, { type:"image/png" });
+
+    if(canShareFile(file)){
+
+        try{
+            await navigator.share({
+                files:[file],
+                title:filename
+            });
+            return;
+        }catch(shareError){
+            console.warn("共有がキャンセルまたは失敗しました", shareError);
+            openImageForManualSave(blob);
+            return;
+        }
+
     }
+
+    openImageForManualSave(blob);
+
+}
+
+function canShareFile(file){
 
     return !!(
         navigator.share &&
         navigator.canShare &&
         navigator.canShare({ files:[file] })
     );
-
-}
-
-function isIOS(){
-
-    return /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-        (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
 }
 
@@ -575,7 +703,7 @@ function canvasToBlob(canvas){
             if(blob){
                 resolve(blob);
             }else{
-                reject("画像生成に失敗しました");
+                reject(new Error("画像生成に失敗しました"));
             }
 
         },"image/png");
@@ -602,7 +730,7 @@ function downloadBlob(blob, filename){
 
 }
 
-function openImageForIOS(blob){
+function openImageForManualSave(blob){
 
     const url = URL.createObjectURL(blob);
     const newWindow = window.open(url, "_blank");
@@ -618,17 +746,6 @@ function openImageForIOS(blob){
     },60000);
 
 }
-
-
-const isIOS =
-    /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-
-if (isIOS) {
-    document.getElementById("iosMessage").style.display = "block";
-}
-
-
 </script>
 
 </body>
