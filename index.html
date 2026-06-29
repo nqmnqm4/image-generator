@@ -180,19 +180,32 @@ canvas{
 
 .ios-message{
     display:none;
-    max-width:720px;
+    max-width:560px;
     margin:24px auto;
-    padding:14px 16px;
+    padding:16px 18px;
     background:#fff8e8;
     border:1px solid #f0dca8;
     border-radius:10px;
-    color:#5a4a25;
-    font-size:14px;
+    text-align:left;
     line-height:1.8;
+    font-size:15px;
+    color:#5a4a25;
+    box-sizing:border-box;
 }
 
 .ios-message.show{
     display:block;
+}
+
+.ios-title{
+    text-align:center;
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+.ios-block{
+    margin-top:12px;
 }
 
 .footer{
@@ -256,6 +269,22 @@ canvas{
         <input type="file" id="upload" accept="image/*">
     </div>
 
+<div id="iosMessage" class="ios-message">
+    <div class="ios-title">📱 iPhone / iPadの方へ</div>
+
+    <div>
+iPhone/iPadでは<br>
+保存ボタンを押すと<br>
+共有画面が開く場合があります。
+    </div>
+
+    <div class="ios-block">
+共有画面から<br>
+<strong>「画像を保存」</strong>を選ぶと<br>
+写真アプリに保存できます。
+    </div>
+</div>
+
     <div class="controls">
         <div class="controls-title">位置調整</div>
 
@@ -269,14 +298,9 @@ canvas{
         <input type="range" id="offsetY" min="-500" max="500" step="1" value="0">
     </div>
 
-    <div id="iosMessage" class="ios-message">
-        iPhone/iPadでは
-　　　　「この画像を保存」を押して、
-　　　　『画像を保存』を選ぶと写真アプリへ保存できます。<br>
-　　　　※保存できない場合はスクリーンショットをしてください。
-    </div>
+    
 
-    <div id="previewArea" class="preview-area"></div>
+    <div id="previewArea class="preview-area"></div>
 </div>
 
 <footer class="footer">
