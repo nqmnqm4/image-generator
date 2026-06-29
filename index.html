@@ -181,7 +181,7 @@ canvas{
 .ios-message{
     display:none;
     max-width:560px;
-    margin:24px auto;
+    margin:0 auto 24px;
     padding:16px 18px;
     background:#fff8e8;
     border:1px solid #f0dca8;
@@ -269,21 +269,21 @@ canvas{
         <input type="file" id="upload" accept="image/*">
     </div>
 
-<div id="iosMessage" class="ios-message">
-    <div class="ios-title">📱 iPhone / iPadの方へ</div>
+    <div id="iosMessage" class="ios-message">
+        <div class="ios-title">📱 iPhone / iPadの方へ</div>
 
-    <div>
+        <div>
 iPhone/iPadでは<br>
 保存ボタンを押すと<br>
 共有画面が開く場合があります。
-    </div>
+        </div>
 
-    <div class="ios-block">
+        <div class="ios-block">
 共有画面から<br>
 <strong>「画像を保存」</strong>を選ぶと<br>
 写真アプリに保存できます。
+        </div>
     </div>
-</div>
 
     <div class="controls">
         <div class="controls-title">位置調整</div>
@@ -298,9 +298,7 @@ iPhone/iPadでは<br>
         <input type="range" id="offsetY" min="-500" max="500" step="1" value="0">
     </div>
 
-    
-
-    <div id="previewArea class="preview-area"></div>
+    <div id="previewArea" class="preview-area"></div>
 </div>
 
 <footer class="footer">
