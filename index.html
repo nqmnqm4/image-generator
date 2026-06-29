@@ -195,6 +195,7 @@ canvas{
 <body>
 
 
+
 <div id="appBrowserWarning" class="app-browser-warning">
     <div class="app-browser-warning-title">スマホの方へ</div>
     Facebook・Instagram・LINEなどのアプリ内で開いている場合、画像の保存がうまくできないことがあります。
@@ -203,14 +204,15 @@ canvas{
 
     <ol>
         <li>画面右上または右下の「…」を押す</li>
-        <li>iPhoneの方は「Safariで開く」を選ぶ</li>
-        <li>Androidの方は「Chromeで開く」を選ぶ</li>
+        <li>iPhoneの方は「Safariで開く（デフォルトのブラウザで開く）」を選ぶ</li>
+        <li>Androidの方は「Chromeで開く（デフォルトのブラウザで開く）」を選ぶ</li>
     </ol>
 </div>
 
 
 <div class="description">
-    人物画像を選択し、位置を調整してください。</div>
+    人物画像を選択し、位置を調整してください。
+</div>
 
 <div class="upload-box">
     <input type="file" id="upload" accept="image/*">
@@ -229,9 +231,9 @@ canvas{
     <input type="range" id="offsetY" min="-500" max="500" step="1" value="0">
 </div>
 
-<div class="notice">
-    スマートフォンでは保存ボタンを押すと共有画面が開く場合があります。<br>
-    iPhoneの場合は、共有画面から「画像を保存」を選ぶと写真アプリに保存できます。<BR><BR>※保存できない場合は、スクリーンショットをご使用ください。
+<div id="iosMessage" style="display:none;">
+    iPhone/iPadでは保存ボタンを押すと共有画面が開く場合があります。<br>
+    その場合は、共有画面から「画像を保存」を選ぶと写真アプリに保存できます。
 </div>
 
 <div id="previewArea" class="preview-area"></div>
@@ -543,6 +545,12 @@ async function saveOne(index){
 
 function canUseShareFile(file){
 
+    // Androidは共有画面だと「写真として保存」しづらいため、
+    // 共有機能はiPhone / iPadだけで使う。
+    if(!isIOS()){
+        return false;
+    }
+
     return !!(
         navigator.share &&
         navigator.canShare &&
@@ -610,6 +618,16 @@ function openImageForIOS(blob){
     },60000);
 
 }
+
+
+const isIOS =
+    /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+if (isIOS) {
+    document.getElementById("iosMessage").style.display = "block";
+}
+
 
 </script>
 
