@@ -10,28 +10,73 @@ body{
     font-family:sans-serif;
     text-align:center;
     padding:20px;
+    margin:0;
+    background:#ffffff;
+    color:#333;
+}
+
+h2{
+    margin-top:20px;
+    font-size:24px;
+}
+
+.description{
+    max-width:720px;
+    margin:10px auto 24px;
+    font-size:15px;
+    line-height:1.8;
+    color:#555;
+}
+
+.upload-box{
+    margin:20px auto;
+    padding:20px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    max-width:560px;
+    background:#fafafa;
+}
+
+input[type="file"]{
+    font-size:16px;
+    max-width:100%;
 }
 
 .controls{
-    max-width:500px;
-    margin:20px auto;
+    max-width:560px;
+    margin:24px auto;
     text-align:left;
+    padding:20px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    background:#fafafa;
+    box-sizing:border-box;
+}
+
+.controls-title{
+    text-align:center;
+    font-weight:bold;
+    margin-bottom:14px;
+    font-size:17px;
 }
 
 label{
     display:block;
-    margin-top:15px;
+    margin-top:16px;
+    font-size:15px;
+    font-weight:bold;
 }
 
-input[type=range]{
+input[type="range"]{
     width:100%;
+    margin-top:8px;
 }
 
 .preview-area{
     display:flex;
     flex-direction:column;
-    gap:40px;
-    margin-top:30px;
+    gap:42px;
+    margin-top:36px;
 }
 
 .preview{
@@ -41,18 +86,29 @@ input[type=range]{
     border:1px solid #ddd;
     padding:16px;
     box-sizing:border-box;
+    border-radius:12px;
+    background:#ffffff;
 }
 
 .preview h3{
     margin:0 0 10px;
-    font-size:20px;
+    font-size:21px;
+    line-height:1.4;
 }
 
-button{
-    padding:12px 24px;
-    margin:10px 0 16px;
-    font-size:16px;
+.save-button{
+    padding:13px 28px;
+    margin:8px 0 16px;
+    font-size:17px;
     cursor:pointer;
+    border:none;
+    border-radius:999px;
+    background:#222;
+    color:#fff;
+}
+
+.save-button:active{
+    opacity:0.75;
 }
 
 canvas{
@@ -60,7 +116,68 @@ canvas{
     max-width:100%;
     height:auto;
     border:1px solid #ccc;
+    display:block;
+    margin:0 auto;
 }
+
+.app-browser-warning{
+    display:none;
+    max-width:760px;
+    margin:18px auto 24px;
+    padding:18px 18px;
+    background:#fff3cd;
+    border:2px solid #f0c36d;
+    border-radius:14px;
+    color:#4a3a13;
+    text-align:left;
+    font-size:15px;
+    line-height:1.8;
+    box-sizing:border-box;
+}
+
+.app-browser-warning.show{
+    display:block;
+}
+
+.app-browser-warning-title{
+    font-size:18px;
+    font-weight:bold;
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.app-browser-warning-strong{
+    display:block;
+    margin:12px 0;
+    padding:10px 12px;
+    background:#ffffff;
+    border-radius:10px;
+    font-weight:bold;
+    text-align:center;
+    color:#222;
+}
+
+.app-browser-warning ol{
+    margin:8px 0 0 22px;
+    padding:0;
+}
+
+.app-browser-warning li{
+    margin:4px 0;
+}
+
+.notice{
+    max-width:720px;
+    margin:24px auto;
+    padding:14px 16px;
+    background:#fff8e8;
+    border:1px solid #f0dca8;
+    border-radius:10px;
+    color:#5a4a25;
+    font-size:14px;
+    line-height:1.8;
+}
+
 .footer{
     margin-top:60px;
     padding:30px 0;
@@ -68,18 +185,40 @@ canvas{
     color:#888;
     line-height:1.8;
 }
+
+.hidden{
+    display:none;
+}
 </style>
 </head>
 
 <body>
 
-<h1>パーソナルカラー診断<BR>合成画像生成ツール</h1>
-<BR>
-<h2>画像を選択してください</h2>
 
-<input type="file" id="upload" accept="image/*">
+<div id="appBrowserWarning" class="app-browser-warning">
+    <div class="app-browser-warning-title">スマホの方へ</div>
+    Facebook・Instagram・LINEなどのアプリ内で開いている場合、画像の保存がうまくできないことがあります。
+
+    <span class="app-browser-warning-strong">Safari または Chrome で開いてください</span>
+
+    <ol>
+        <li>画面右上または右下の「…」を押す</li>
+        <li>iPhoneの方は「Safariで開く」を選ぶ</li>
+        <li>Androidの方は「Chromeで開く」を選ぶ</li>
+    </ol>
+</div>
+
+
+<div class="description">
+    人物画像を選択し、位置を調整してください。</div>
+
+<div class="upload-box">
+    <input type="file" id="upload" accept="image/*">
+</div>
 
 <div class="controls">
+    <div class="controls-title">位置調整</div>
+
     <label>拡大・縮小</label>
     <input type="range" id="scale" min="0.5" max="3" step="0.01" value="1">
 
@@ -90,7 +229,17 @@ canvas{
     <input type="range" id="offsetY" min="-500" max="500" step="1" value="0">
 </div>
 
+<div class="notice">
+    スマートフォンでは保存ボタンを押すと共有画面が開く場合があります。<br>
+    iPhoneの場合は、共有画面から「画像を保存」を選ぶと写真アプリに保存できます。<BR><BR>※保存できない場合は、スクリーンショットをご使用ください。
+</div>
+
 <div id="previewArea" class="preview-area"></div>
+
+<footer class="footer">
+    © 2026 一般社団法人オーラ美人コーディネーター協会<br>
+    本ツールは協会およびスクール生向けに制作しています。
+</footer>
 
 <script>
 
@@ -117,6 +266,26 @@ const scaleInput = document.getElementById("scale");
 const offsetXInput = document.getElementById("offsetX");
 const offsetYInput = document.getElementById("offsetY");
 const previewArea = document.getElementById("previewArea");
+const appBrowserWarning = document.getElementById("appBrowserWarning");
+
+showAppBrowserWarningIfNeeded();
+
+
+function showAppBrowserWarningIfNeeded(){
+
+    if(isAppBrowser()){
+        appBrowserWarning.classList.add("show");
+    }
+
+}
+
+function isAppBrowser(){
+
+    const ua = navigator.userAgent || "";
+
+    return /FBAN|FBAV|FB_IAB|Instagram|Line|MicroMessenger|Messenger|Twitter|TikTok/i.test(ua);
+
+}
 
 upload.addEventListener("change", async function(e){
 
@@ -125,16 +294,21 @@ upload.addEventListener("change", async function(e){
 
     setId = createSetId();
 
-    personImg = await loadImage(URL.createObjectURL(file));
+    try{
+        personImg = await loadImage(URL.createObjectURL(file));
 
-    overlayImages = {};
+        overlayImages = {};
 
-    for(const name of templates){
-        overlayImages[name] = await loadImage(name + ".png");
+        for(const name of templates){
+            overlayImages[name] = await loadImage(name + ".png");
+        }
+
+        createCanvases();
+        renderAll();
+
+    }catch(error){
+        alert("画像の読み込みに失敗しました。ファイル名が正しいか確認してください。");
     }
-
-    createCanvases();
-    renderAll();
 
 });
 
@@ -166,8 +340,8 @@ function loadImage(src){
         img.onload = ()=>resolve(img);
 
         img.onerror = ()=>{
-            alert("画像を読み込めません：" + src);
-            reject();
+            console.error("画像を読み込めません：", src);
+            reject(src);
         };
 
         img.src = src;
@@ -189,9 +363,10 @@ function createCanvases(){
         title.textContent = name;
 
         const button = document.createElement("button");
+        button.className = "save-button";
         button.textContent = "この画像を保存";
         button.onclick = function(){
-            downloadOne(index);
+            saveOne(index);
         };
 
         const canvas = document.createElement("canvas");
@@ -316,7 +491,7 @@ function drawCover(ctx,img,x,y,w,h){
 
 }
 
-function downloadOne(index){
+async function saveOne(index){
 
     if(!personImg){
         alert("先に人物画像を選択してください");
@@ -325,44 +500,118 @@ function downloadOne(index){
 
     const name = templates[index];
     const canvas = document.getElementById("canvas_" + index);
-
     const filename = setId + "_" + name + ".png";
 
-    downloadCanvas(canvas, filename);
+    try{
 
-}
+        const blob = await canvasToBlob(canvas);
+        const file = new File([blob], filename, { type:"image/png" });
 
-function downloadCanvas(canvas, filename){
+        if(canUseShareFile(file)){
 
-    canvas.toBlob(function(blob){
+            try{
+                await navigator.share({
+                    files:[file],
+                    title:filename,
+                    text:"画像を保存してください"
+                });
+                return;
+            }catch(shareError){
+                // ユーザーが共有をキャンセルした場合もここに来るため、
+                // iPhoneでは画像表示へ逃がす。
+                if(isIOS()){
+                    openImageForIOS(blob);
+                    return;
+                }
+                return;
+            }
 
-        if(!blob){
-            alert("画像生成に失敗しました");
+        }
+
+        if(isIOS()){
+            openImageForIOS(blob);
             return;
         }
 
-        const url = URL.createObjectURL(blob);
+        downloadBlob(blob, filename);
 
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = filename;
+    }catch(error){
+        alert("画像の保存に失敗しました");
+    }
 
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
+}
 
-        setTimeout(()=>{
-            URL.revokeObjectURL(url);
-        },300);
+function canUseShareFile(file){
 
-    },"image/png");
+    return !!(
+        navigator.share &&
+        navigator.canShare &&
+        navigator.canShare({ files:[file] })
+    );
+
+}
+
+function isIOS(){
+
+    return /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+        (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+}
+
+function canvasToBlob(canvas){
+
+    return new Promise((resolve,reject)=>{
+
+        canvas.toBlob(function(blob){
+
+            if(blob){
+                resolve(blob);
+            }else{
+                reject("画像生成に失敗しました");
+            }
+
+        },"image/png");
+
+    });
+
+}
+
+function downloadBlob(blob, filename){
+
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    setTimeout(()=>{
+        URL.revokeObjectURL(url);
+    },500);
+
+}
+
+function openImageForIOS(blob){
+
+    const url = URL.createObjectURL(blob);
+    const newWindow = window.open(url, "_blank");
+
+    if(!newWindow){
+        alert("画像が開けませんでした。ポップアップを許可してから、もう一度お試しください。");
+        URL.revokeObjectURL(url);
+        return;
+    }
+
+    setTimeout(()=>{
+        URL.revokeObjectURL(url);
+    },60000);
 
 }
 
 </script>
-<footer class="footer">
-    © 2026 一般社団法人オーラ美人コーディネーター協会<br>
-    本ツールは協会およびスクール生向けに制作しています。
-</footer>
+
 </body>
 </html>
