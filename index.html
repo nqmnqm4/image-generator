@@ -183,10 +183,10 @@ canvas{
     max-width:720px;
     margin:24px auto;
     padding:14px 16px;
-    background:#eef7ff;
-    border:1px solid #b8d7ef;
+    background:#fff8e8;
+    border:1px solid #f0dca8;
     border-radius:10px;
-    color:#24445c;
+    color:#5a4a25;
     font-size:14px;
     line-height:1.8;
 }
@@ -203,12 +203,31 @@ canvas{
     line-height:1.8;
 }
 
-.app-content.hidden{
+.tool-area.hidden{
     display:none;
 }
 
-.hidden{
-    display:none;
+.toast{
+    position:fixed;
+    left:50%;
+    bottom:28px;
+    transform:translateX(-50%) translateY(20px);
+    background:rgba(0,0,0,0.86);
+    color:#fff;
+    padding:12px 20px;
+    border-radius:999px;
+    font-size:16px;
+    line-height:1.4;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 0.25s ease, transform 0.25s ease;
+    z-index:9999;
+    box-shadow:0 4px 18px rgba(0,0,0,0.25);
+}
+
+.toast.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
 }
 </style>
 </head>
@@ -228,524 +247,375 @@ canvas{
     </ol>
 </div>
 
-<main id="appContent" class="app-content">
+<div id="toolArea" class="tool-area">
+    <div class="description">
+        人物画像を選択し、位置を調整してください。
+    </div>
 
-<div class="description">
-    人物画像を選択し、位置を調整してください。
+    <div class="upload-box">
+        <input type="file" id="upload" accept="image/*">
+    </div>
+
+    <div class="controls">
+        <div class="controls-title">位置調整</div>
+
+        <label>拡大・縮小</label>
+        <input type="range" id="scale" min="0.5" max="3" step="0.01" value="1">
+
+        <label>左右位置</label>
+        <input type="range" id="offsetX" min="-500" max="500" step="1" value="0">
+
+        <label>上下位置</label>
+        <input type="range" id="offsetY" min="-500" max="500" step="1" value="0">
+    </div>
+
+    <div id="iosMessage" class="ios-message">
+        iPhone/iPadでは保存ボタンを押すと共有画面が開く場合があります。<br>
+        その場合は、共有画面から「画像を保存」を選ぶと写真アプリに保存できます。
+    </div>
+
+    <div id="previewArea" class="preview-area"></div>
 </div>
-
-<div class="upload-box">
-    <input type="file" id="upload" accept="image/*">
-</div>
-
-<div class="controls">
-    <div class="controls-title">位置調整</div>
-
-    <label>拡大・縮小</label>
-    <input type="range" id="scale" min="0.5" max="3" step="0.01" value="1">
-
-    <label>左右位置</label>
-    <input type="range" id="offsetX" min="-500" max="500" step="1" value="0">
-
-    <label>上下位置</label>
-    <input type="range" id="offsetY" min="-500" max="500" step="1" value="0">
-</div>
-
-<div id="iosMessage" class="ios-message">
-    iPhone/iPadでは保存ボタンを押すと共有画面が開く場合があります。<br>
-    その場合は、共有画面から「画像を保存」を選ぶと写真アプリに保存できます。
-</div>
-
-<div id="previewArea" class="preview-area"></div>
-
-</main>
 
 <footer class="footer">
     © 2026 一般社団法人オーラ美人コーディネーター協会<br>
     本ツールは協会およびスクール生向けに制作しています。
 </footer>
 
+<div id="toast" class="toast">✓ 保存しました</div>
+
 <script>
-"use strict";
-
-const templates = [
-    "基本1",
-    "基本2",
-    "基本3-1",
-    "基本3-2",
-    "基本4",
-    "基本5",
-    "基本6",
-    "イエベ回し3枚バージョン",
-    "ブルベ回し3枚バージョン",
-    "イエベ回し4枚バージョン",
-    "ブルベ回し4枚バージョン"
-];
-
-const state = {
-    personImg: null,
-    overlayImages: {},
-    setId: "",
-    env: detectEnvironment()
-};
-
-const elements = {
-    upload: document.getElementById("upload"),
-    scaleInput: document.getElementById("scale"),
-    offsetXInput: document.getElementById("offsetX"),
-    offsetYInput: document.getElementById("offsetY"),
-    previewArea: document.getElementById("previewArea"),
-    appBrowserWarning: document.getElementById("appBrowserWarning"),
-    iosMessage: document.getElementById("iosMessage"),
-    appContent: document.getElementById("appContent")
-};
-
-init();
-
-function init(){
-
-    showEnvironmentMessages();
-
-    // Facebook・Instagram・LINEなどのアプリ内ブラウザでは、
-    // 保存が不安定になるためツール本体は使わせず、案内だけ表示する。
-    if(state.env.isAppBrowser){
-        return;
-    }
-
-    bindEvents();
-
-}
-
-function bindEvents(){
-
-    elements.upload.addEventListener("change", handleImageSelect);
-    elements.scaleInput.addEventListener("input", renderAll);
-    elements.offsetXInput.addEventListener("input", renderAll);
-    elements.offsetYInput.addEventListener("input", renderAll);
-
-}
-
-function detectEnvironment(){
-
-    const ua = navigator.userAgent || "";
-    const platform = navigator.platform || "";
-
-    const isIOS =
-        /iPad|iPhone|iPod/i.test(ua) ||
-        (platform === "MacIntel" && navigator.maxTouchPoints > 1);
-
-    const isAndroid = /Android/i.test(ua);
-
-    const isLine = /Line\//i.test(ua) || /LINE/i.test(ua);
-    const isInstagram = /Instagram/i.test(ua);
-    const isFacebook = /FBAN|FBAV|FB_IAB|FB4A|FBIOS/i.test(ua);
-    const isMessenger = /Messenger/i.test(ua);
-    const isX = /Twitter/i.test(ua);
-    const isTikTok = /TikTok/i.test(ua);
-    const isWeChat = /MicroMessenger/i.test(ua);
-
-    const isAppBrowser =
-        isLine ||
-        isInstagram ||
-        isFacebook ||
-        isMessenger ||
-        isX ||
-        isTikTok ||
-        isWeChat;
-
-    return {
-        ua,
-        isIOS,
-        isAndroid,
-        isLine,
-        isInstagram,
-        isFacebook,
-        isMessenger,
-        isAppBrowser
-    };
-
-}
-
-function showEnvironmentMessages(){
-
-    if(state.env.isAppBrowser){
-        if(elements.appBrowserWarning){
-            elements.appBrowserWarning.classList.add("show");
-        }
-        if(elements.appContent){
-            elements.appContent.classList.add("hidden");
-        }
-        return;
-    }
-
-    if(elements.iosMessage && state.env.isIOS){
-        elements.iosMessage.classList.add("show");
-    }
-
-}
-
-async function handleImageSelect(e){
-
-    const file = e.target.files[0];
-    if(!file) return;
-
-    state.setId = createSetId();
-    state.personImg = null;
-    state.overlayImages = {};
-    elements.previewArea.innerHTML = "";
-
-    try{
-
-        state.personImg = await loadImageFromFile(file);
-
-        createCanvases();
-
-        await loadAllTemplates();
-
-        renderAll();
-
-    }catch(error){
-
-        console.error(error);
-
-        if(error && error.message){
-            alert(error.message);
-        }else{
-            alert("画像の読み込みに失敗しました。ファイル名が正しいか確認してください。");
-        }
-
-    }
-
-}
-
-function createSetId(){
-
-    const now = new Date();
-
-    const y = now.getFullYear();
-    const m = String(now.getMonth() + 1).padStart(2, "0");
-    const d = String(now.getDate()).padStart(2, "0");
-    const h = String(now.getHours()).padStart(2, "0");
-    const min = String(now.getMinutes()).padStart(2, "0");
-    const s = String(now.getSeconds()).padStart(2, "0");
-
-    return y + m + d + "_" + h + min + s;
-
-}
-
-function loadImageFromFile(file){
-
-    return new Promise((resolve,reject)=>{
-
-        const url = URL.createObjectURL(file);
-        const img = new Image();
-
-        img.onload = ()=>{
-            URL.revokeObjectURL(url);
-            resolve(img);
-        };
-
-        img.onerror = ()=>{
-            URL.revokeObjectURL(url);
-            reject(new Error("人物画像を読み込めませんでした。別の画像でお試しください。"));
-        };
-
-        img.src = url;
-
-    });
-
-}
-
-function loadImage(src){
-
-    return new Promise((resolve,reject)=>{
-
-        const img = new Image();
-
-        img.onload = ()=>resolve(img);
-
-        img.onerror = ()=>{
-            reject(new Error("テンプレート画像を読み込めません：" + src));
-        };
-
-        img.src = encodeURI(src);
-
-    });
-
-}
-
-async function loadAllTemplates(){
-
-    for(const name of templates){
-        state.overlayImages[name] = await loadImage(name + ".png");
-    }
-
-}
-
-function createCanvases(){
-
-    elements.previewArea.innerHTML = "";
-
-    templates.forEach((name,index)=>{
-
-        const div = document.createElement("div");
-        div.className = "preview";
-
-        const title = document.createElement("h3");
-        title.textContent = name;
-
-        const button = document.createElement("button");
-        button.className = "save-button";
-        button.textContent = "この画像を保存";
-        button.onclick = function(){
-            saveOne(index);
-        };
-
-        const canvas = document.createElement("canvas");
-        canvas.width = 900;
-        canvas.height = 1200;
-        canvas.id = "canvas_" + index;
-
-        div.appendChild(title);
-        div.appendChild(button);
-        div.appendChild(canvas);
-
-        elements.previewArea.appendChild(div);
-
-    });
-
-}
-
-function renderAll(){
-
-    if(!state.personImg) return;
-
-    templates.forEach((name,index)=>{
-
-        const canvas = document.getElementById("canvas_" + index);
-        const overlay = state.overlayImages[name];
-
-        if(canvas && overlay){
-            createImage(canvas, overlay);
-        }
-
-    });
-
-}
-
-function createImage(canvas, overlay){
-
-    const ctx = canvas.getContext("2d");
-
-    ctx.clearRect(0,0,900,1200);
-
-    ctx.fillStyle = "#ffffff";
-    ctx.fillRect(0,0,900,1200);
-
-    const positions = [
-        [0,0],
-        [450,0],
-        [0,600],
-        [450,600]
+(function(){
+
+    const templates = [
+        "基本1",
+        "基本2",
+        "基本3-1",
+        "基本3-2",
+        "基本4",
+        "基本5",
+        "基本6",
+        "イエベ回し3枚バージョン",
+        "ブルベ回し3枚バージョン",
+        "イエベ回し4枚バージョン",
+        "ブルベ回し4枚バージョン"
     ];
 
-    positions.forEach(pos=>{
+    const state = {
+        personImg:null,
+        overlayImages:{},
+        setId:"",
+        toastTimer:null
+    };
 
-        drawCover(
-            ctx,
-            state.personImg,
-            pos[0],
-            pos[1],
-            450,
-            600
-        );
+    const env = detectEnvironment();
 
-    });
+    const elements = {
+        upload:document.getElementById("upload"),
+        scaleInput:document.getElementById("scale"),
+        offsetXInput:document.getElementById("offsetX"),
+        offsetYInput:document.getElementById("offsetY"),
+        previewArea:document.getElementById("previewArea"),
+        appBrowserWarning:document.getElementById("appBrowserWarning"),
+        iosMessage:document.getElementById("iosMessage"),
+        toolArea:document.getElementById("toolArea"),
+        toast:document.getElementById("toast")
+    };
 
-    ctx.drawImage(
-        overlay,
-        0,
-        0,
-        900,
-        1200
-    );
+    init();
 
-}
-
-function drawCover(ctx,img,x,y,w,h){
-
-    const scale = Number(elements.scaleInput.value);
-    const offsetX = Number(elements.offsetXInput.value);
-    const offsetY = Number(elements.offsetYInput.value);
-
-    const imgRatio = img.width / img.height;
-    const boxRatio = w / h;
-
-    let baseW;
-    let baseH;
-
-    if(imgRatio > boxRatio){
-        baseH = h;
-        baseW = h * imgRatio;
-    }else{
-        baseW = w;
-        baseH = w / imgRatio;
-    }
-
-    const drawW = baseW * scale;
-    const drawH = baseH * scale;
-
-    const drawX =
-        x +
-        ((w - drawW) / 2) +
-        offsetX;
-
-    const drawY =
-        y +
-        ((h - drawH) / 2) +
-        offsetY;
-
-    ctx.save();
-
-    ctx.beginPath();
-    ctx.rect(x,y,w,h);
-    ctx.clip();
-
-    ctx.drawImage(
-        img,
-        drawX,
-        drawY,
-        drawW,
-        drawH
-    );
-
-    ctx.restore();
-
-}
-
-async function saveOne(index){
-
-    if(!state.personImg){
-        alert("先に人物画像を選択してください");
-        return;
-    }
-
-    const name = templates[index];
-    const canvas = document.getElementById("canvas_" + index);
-
-    if(!canvas){
-        alert("保存する画像が見つかりません");
-        return;
-    }
-
-    const filename = state.setId + "_" + name + ".png";
-
-    try{
-
-        const blob = await canvasToBlob(canvas);
-
-        if(state.env.isIOS){
-            await saveForIOS(blob, filename);
+    function init(){
+        if(env.isAppBrowser){
+            elements.appBrowserWarning.classList.add("show");
+            elements.toolArea.classList.add("hidden");
             return;
         }
 
-        downloadBlob(blob, filename);
+        if(env.isIOS){
+            elements.iosMessage.classList.add("show");
+        }
 
-    }catch(error){
-
-        console.error(error);
-        alert("画像の保存に失敗しました");
-
+        elements.upload.addEventListener("change", handleUploadChange);
+        elements.scaleInput.addEventListener("input", renderAll);
+        elements.offsetXInput.addEventListener("input", renderAll);
+        elements.offsetYInput.addEventListener("input", renderAll);
     }
 
-}
+    function detectEnvironment(){
+        const ua = navigator.userAgent || "";
+        const platform = navigator.platform || "";
 
-async function saveForIOS(blob, filename){
+        const isIOS = /iPad|iPhone|iPod/i.test(ua) ||
+            (platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
-    const file = new File([blob], filename, { type:"image/png" });
+        const isAndroid = /Android/i.test(ua);
 
-    if(canShareFile(file)){
+        const isAppBrowser = /FBAN|FBAV|FB_IAB|Instagram|Line|MicroMessenger|Messenger|Twitter|TikTok/i.test(ua);
+
+        return {
+            ua,
+            isIOS,
+            isAndroid,
+            isAppBrowser
+        };
+    }
+
+    async function handleUploadChange(e){
+        const file = e.target.files[0];
+        if(!file) return;
+
+        state.setId = createSetId();
 
         try{
-            await navigator.share({
-                files:[file],
-                title:filename
-            });
-            return;
-        }catch(shareError){
-            console.warn("共有がキャンセルまたは失敗しました", shareError);
-            openImageForManualSave(blob);
+            state.personImg = await loadImage(URL.createObjectURL(file));
+            state.overlayImages = {};
+
+            for(const name of templates){
+                state.overlayImages[name] = await loadImage(name + ".png");
+            }
+
+            createCanvases();
+            renderAll();
+
+        }catch(error){
+            alert("画像の読み込みに失敗しました。テンプレート画像のファイル名が正しいか確認してください。");
+        }
+    }
+
+    function createSetId(){
+        const now = new Date();
+        const y = now.getFullYear();
+        const m = String(now.getMonth() + 1).padStart(2, "0");
+        const d = String(now.getDate()).padStart(2, "0");
+        const h = String(now.getHours()).padStart(2, "0");
+        const min = String(now.getMinutes()).padStart(2, "0");
+        const s = String(now.getSeconds()).padStart(2, "0");
+
+        return y + m + d + "_" + h + min + s;
+    }
+
+    function loadImage(src){
+        return new Promise((resolve,reject)=>{
+            const img = new Image();
+
+            img.onload = ()=>resolve(img);
+
+            img.onerror = ()=>{
+                console.error("画像を読み込めません：", src);
+                reject(src);
+            };
+
+            img.src = src;
+        });
+    }
+
+    function createCanvases(){
+        elements.previewArea.innerHTML = "";
+
+        templates.forEach((name,index)=>{
+            const div = document.createElement("div");
+            div.className = "preview";
+
+            const title = document.createElement("h3");
+            title.textContent = name;
+
+            const button = document.createElement("button");
+            button.className = "save-button";
+            button.textContent = "この画像を保存";
+            button.addEventListener("click",()=>saveOne(index));
+
+            const canvas = document.createElement("canvas");
+            canvas.width = 900;
+            canvas.height = 1200;
+            canvas.id = "canvas_" + index;
+
+            div.appendChild(title);
+            div.appendChild(button);
+            div.appendChild(canvas);
+
+            elements.previewArea.appendChild(div);
+        });
+    }
+
+    function renderAll(){
+        if(!state.personImg) return;
+
+        templates.forEach((name,index)=>{
+            const canvas = document.getElementById("canvas_" + index);
+            const overlay = state.overlayImages[name];
+
+            if(canvas && overlay){
+                createImage(canvas, overlay);
+            }
+        });
+    }
+
+    function createImage(canvas, overlay){
+        const ctx = canvas.getContext("2d");
+
+        ctx.clearRect(0,0,900,1200);
+
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0,0,900,1200);
+
+        const positions = [
+            [0,0],
+            [450,0],
+            [0,600],
+            [450,600]
+        ];
+
+        positions.forEach(pos=>{
+            drawCover(ctx, state.personImg, pos[0], pos[1], 450, 600);
+        });
+
+        ctx.drawImage(overlay, 0, 0, 900, 1200);
+    }
+
+    function drawCover(ctx,img,x,y,w,h){
+        const scale = Number(elements.scaleInput.value);
+        const offsetX = Number(elements.offsetXInput.value);
+        const offsetY = Number(elements.offsetYInput.value);
+
+        const imgRatio = img.width / img.height;
+        const boxRatio = w / h;
+
+        let baseW;
+        let baseH;
+
+        if(imgRatio > boxRatio){
+            baseH = h;
+            baseW = h * imgRatio;
+        }else{
+            baseW = w;
+            baseH = w / imgRatio;
+        }
+
+        const drawW = baseW * scale;
+        const drawH = baseH * scale;
+
+        const drawX = x + ((w - drawW) / 2) + offsetX;
+        const drawY = y + ((h - drawH) / 2) + offsetY;
+
+        ctx.save();
+        ctx.beginPath();
+        ctx.rect(x,y,w,h);
+        ctx.clip();
+        ctx.drawImage(img, drawX, drawY, drawW, drawH);
+        ctx.restore();
+    }
+
+    async function saveOne(index){
+        if(!state.personImg){
+            alert("先に人物画像を選択してください");
             return;
         }
 
-    }
+        const name = templates[index];
+        const canvas = document.getElementById("canvas_" + index);
+        const filename = state.setId + "_" + name + ".png";
 
-    openImageForManualSave(blob);
+        try{
+            const blob = await canvasToBlob(canvas);
+            const file = new File([blob], filename, { type:"image/png" });
 
-}
-
-function canShareFile(file){
-
-    return !!(
-        navigator.share &&
-        navigator.canShare &&
-        navigator.canShare({ files:[file] })
-    );
-
-}
-
-function canvasToBlob(canvas){
-
-    return new Promise((resolve,reject)=>{
-
-        canvas.toBlob(function(blob){
-
-            if(blob){
-                resolve(blob);
-            }else{
-                reject(new Error("画像生成に失敗しました"));
+            if(canUseIOSShare(file)){
+                try{
+                    await navigator.share({
+                        files:[file],
+                        title:filename,
+                        text:"画像を保存してください"
+                    });
+                    return;
+                }catch(shareError){
+                    openImageForIOS(blob);
+                    return;
+                }
             }
 
-        },"image/png");
+            if(env.isIOS){
+                openImageForIOS(blob);
+                return;
+            }
 
-    });
+            downloadBlob(blob, filename);
 
-}
+            if(env.isAndroid){
+                showToast("✓ 保存しました");
+            }
 
-function downloadBlob(blob, filename){
-
-    const url = URL.createObjectURL(blob);
-
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = filename;
-
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-
-    setTimeout(()=>{
-        URL.revokeObjectURL(url);
-    },500);
-
-}
-
-function openImageForManualSave(blob){
-
-    const url = URL.createObjectURL(blob);
-    const newWindow = window.open(url, "_blank");
-
-    if(!newWindow){
-        alert("画像が開けませんでした。ポップアップを許可してから、もう一度お試しください。");
-        URL.revokeObjectURL(url);
-        return;
+        }catch(error){
+            alert("画像の保存に失敗しました");
+        }
     }
 
-    setTimeout(()=>{
-        URL.revokeObjectURL(url);
-    },60000);
+    function canUseIOSShare(file){
+        if(!env.isIOS) return false;
 
-}
+        return !!(
+            navigator.share &&
+            navigator.canShare &&
+            navigator.canShare({ files:[file] })
+        );
+    }
+
+    function canvasToBlob(canvas){
+        return new Promise((resolve,reject)=>{
+            canvas.toBlob(function(blob){
+                if(blob){
+                    resolve(blob);
+                }else{
+                    reject("画像生成に失敗しました");
+                }
+            },"image/png");
+        });
+    }
+
+    function downloadBlob(blob, filename){
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = filename;
+
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+
+        setTimeout(()=>{
+            URL.revokeObjectURL(url);
+        },500);
+    }
+
+    function openImageForIOS(blob){
+        const url = URL.createObjectURL(blob);
+        const newWindow = window.open(url, "_blank");
+
+        if(!newWindow){
+            alert("画像が開けませんでした。ポップアップを許可してから、もう一度お試しください。");
+            URL.revokeObjectURL(url);
+            return;
+        }
+
+        setTimeout(()=>{
+            URL.revokeObjectURL(url);
+        },60000);
+    }
+
+    function showToast(message){
+        elements.toast.textContent = message;
+        elements.toast.classList.add("show");
+
+        if(state.toastTimer){
+            clearTimeout(state.toastTimer);
+        }
+
+        state.toastTimer = setTimeout(()=>{
+            elements.toast.classList.remove("show");
+        },2000);
+    }
+
+})();
 </script>
 
 </body>
