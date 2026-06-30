@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>パーソナルカラー診断　合成画像生成ツール</title>
+
+<style>
+body{
+    font-family:sans-serif;
+    text-align:center;
+    padding:20px;
+    margin:0;
+    background:#ffffff;
+    color:#333;
+}
+
+h2{
+    margin-top:20px;
+    font-size:24px;
+}
+
+.description{
+    max-width:720px;
+    margin:10px auto 24px;
+    font-size:15px;
+    line-height:1.8;
+    color:#555;
+}
+
+.upload-box{
+    margin:20px auto;
+    padding:20px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    max-width:560px;
+    background:#fafafa;
+}
+
+input[type="file"]{
+    font-size:16px;
+    max-width:100%;
+}
+
+.controls{
+    max-width:560px;
+    margin:24px auto;
+    text-align:left;
+    padding:20px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    background:#fafafa;
+    box-sizing:border-box;
+}
+
+.controls-title{
+    text-align:center;
+    font-weight:bold;
+    margin-bottom:14px;
+    font-size:17px;
+}
+
+label{
+    display:block;
+    margin-top:16px;
+    font-size:15px;
+    font-weight:bold;
+}
+
+input[type="range"]{
+    width:100%;
+    margin-top:8px;
+}
+
+.preview-area{
+    display:flex;
+    flex-direction:column;
+    gap:42px;
+    margin-top:36px;
+}
+
+.preview{
+    width:900px;
+    max-width:100%;
+    margin:auto;
+    border:1px solid #ddd;
+    padding:16px;
+    box-sizing:border-box;
+    border-radius:12px;
+    background:#ffffff;
+}
+
+.preview h3{
+    margin:0 0 10px;
+    font-size:21px;
+    line-height:1.4;
+}
+
+.save-button{
+    padding:13px 28px;
+    margin:8px 0 16px;
+    font-size:17px;
+    cursor:pointer;
+    border:none;
+    border-radius:999px;
+    background:#222;
+    color:#fff;
+}
+
+.save-button:active{
+    opacity:0.75;
+}
+
+canvas{
+    width:900px;
+    max-width:100%;
+    height:auto;
+    border:1px solid #ccc;
+    display:block;
+    margin:0 auto;
+}
+
+.app-browser-warning{
+    display:none;
+    max-width:760px;
+    margin:18px auto 24px;
+    padding:18px 18px;
+    background:#fff3cd;
+    border:2px solid #f0c36d;
+    border-radius:14px;
+    color:#4a3a13;
+    text-align:left;
+    font-size:15px;
+    line-height:1.8;
+    box-sizing:border-box;
+}
+
+.app-browser-warning.show{
+    display:block;
+}
+
+.app-browser-warning-title{
+    font-size:18px;
+    font-weight:bold;
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.app-browser-warning-strong{
+    display:block;
+    margin:12px 0;
+    padding:10px 12px;
+    background:#ffffff;
+    border-radius:10px;
+    font-weight:bold;
+    text-align:center;
+    color:#222;
+}
+
+.app-browser-warning ol{
+    margin:8px 0 0 22px;
+    padding:0;
+}
+
+.app-browser-warning li{
+    margin:4px 0;
+}
+
+.notice{
+    max-width:720px;
+    margin:24px auto;
+    padding:14px 16px;
+    background:#fff8e8;
+    border:1px solid #f0dca8;
+    border-radius:10px;
+    color:#5a4a25;
+    font-size:14px;
+    line-height:1.8;
+}
+
+.ios-message{
+    display:none;
+    max-width:560px;
+    margin:0 auto 24px;
+    padding:16px 18px;
+    background:#fff8e8;
+    border:1px solid #f0dca8;
+    border-radius:10px;
+    text-align:left;
+    line-height:1.8;
+    font-size:15px;
+    color:#5a4a25;
+    box-sizing:border-box;
+}
+
+.ios-message.show{
+    display:block;
+}
+
+.ios-title{
+    text-align:center;
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+.ios-block{
+    margin-top:12px;
+}
+
+.footer{
+    margin-top:60px;
+    padding:30px 0;
+    font-size:12px;
+    color:#888;
+    line-height:1.8;
+}
+
+.tool-area.hidden{
+    display:none;
+}
+
+.toast{
+    position:fixed;
+    left:50%;
+    bottom:28px;
+    transform:translateX(-50%) translateY(20px);
+    background:rgba(0,0,0,0.86);
+    color:#fff;
+    padding:12px 20px;
+    border-radius:999px;
+    font-size:16px;
+    line-height:1.4;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 0.25s ease, transform 0.25s ease;
+    z-index:9999;
+    box-shadow:0 4px 18px rgba(0,0,0,0.25);
+}
+
+.toast.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<div id="appBrowserWarning" class="app-browser-warning">
+    <div class="app-browser-warning-title">スマホの方へ</div>
+    Facebook・Instagram・LINEなどのアプリ内で開いている場合、画像の保存がうまくできないことがあります。
+
+    <span class="app-browser-warning-strong">Safari または Chrome で開いてください</span>
+
+    <ol>
+        <li>画面右上または右下の「…」を押す</li>
+        <li>iPhoneの方は「Safariで開く（デフォルトのブラウザで開く）」を選ぶ</li>
+        <li>Androidの方は「Chromeで開く（デフォルトのブラウザで開く）」を選ぶ</li>
+    </ol>
+</div>
+
+<div id="toolArea" class="tool-area">
+    <div class="description">
+        人物画像を選択し、位置を調整してください。
+    </div>
+
+    <div class="upload-box">
+        <input type="file" id="upload" accept="image/*">
+    </div>
+
+    <div id="iosMessage" class="ios-message">
+    <div class="ios-title">📱 iPhone / iPadの方へ</div>
+    <button type="button" id="iosGuideToggle" class="save-button" style="display:block;margin:8px auto 0;">保存方法はこちら ▼</button>
+    <div id="iosGuide" style="display:none;margin-top:16px;text-align:center;">
+        <img src="iphone.png" alt="iPhone保存方法" style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:10px;">
+    </div>
+</div>
+
+<div class="controls">
+        <div class="controls-title">位置調整</div>
+
+        <label>拡大・縮小</label>
+        <input type="range" id="scale" min="0.5" max="3" step="0.01" value="1">
+
+        <label>左右位置</label>
+        <input type="range" id="offsetX" min="-500" max="500" step="1" value="0">
+
+        <label>上下位置</label>
+        <input type="range" id="offsetY" min="-500" max="500" step="1" value="0">
+    </div>
+
+    <div id="previewArea" class="preview-area"></div>
+</div>
+
+<footer class="footer">
+    © 2026 一般社団法人オーラ美人コーディネーター協会<br>
+    本ツールは協会およびスクール生向けに制作しています。
+</footer>
+
+<div id="toast" class="toast">✓ 保存しました</div>
+
+<script>
+(function(){
+
+    const templates = [
+        "基本1",
+        "基本2",
+        "基本3-1",
+        "基本3-2",
+        "基本4",
+        "基本5",
+        "基本6",
+        "イエベ回し3枚バージョン",
+        "ブルベ回し3枚バージョン",
+        "イエベ回し4枚バージョン",
+        "ブルベ回し4枚バージョン"
+    ];
+
+    const state = {
+        personImg:null,
+        overlayImages:{},
+        setId:"",
+        toastTimer:null
+    };
+
+    const env = detectEnvironment();
+
+    const elements = {
+        upload:document.getElementById("upload"),
+        scaleInput:document.getElementById("scale"),
+        offsetXInput:document.getElementById("offsetX"),
+        offsetYInput:document.getElementById("offsetY"),
+        previewArea:document.getElementById("previewArea"),
+        appBrowserWarning:document.getElementById("appBrowserWarning"),
+        iosMessage:document.getElementById("iosMessage"),
+        toolArea:document.getElementById("toolArea"),
+        toast:document.getElementById("toast")
+    };
+
+    init();
+
+    function init(){
+        if(env.isAppBrowser){
+            elements.appBrowserWarning.classList.add("show");
+            elements.toolArea.classList.add("hidden");
+            return;
+        }
+
+        if(env.isIOS){
+elements.iosMessage.classList.add("show");
+        }
+
+        elements.upload.addEventListener("change", handleUploadChange);
+        elements.scaleInput.addEventListener("input", renderAll);
+        elements.offsetXInput.addEventListener("input", renderAll);
+        elements.offsetYInput.addEventListener("input", renderAll);
+    }
+
+    function detectEnvironment(){
+        const ua = navigator.userAgent || "";
+        const platform = navigator.platform || "";
+
+        const isIOS = /iPad|iPhone|iPod/i.test(ua) ||
+            (platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+        const isAndroid = /Android/i.test(ua);
+
+        const isAppBrowser = /FBAN|FBAV|FB_IAB|Instagram|Line|MicroMessenger|Messenger|Twitter|TikTok/i.test(ua);
+
+        return {
+            ua,
+            isIOS,
+            isAndroid,
+            isAppBrowser
+        };
+    }
+
+    async function handleUploadChange(e){
+        const file = e.target.files[0];
+        if(!file) return;
+
+        state.setId = createSetId();
+
+        try{
+            state.personImg = await loadImage(URL.createObjectURL(file));
+            state.overlayImages = {};
+
+            for(const name of templates){
+                state.overlayImages[name] = await loadImage(name + ".png");
+            }
+
+            createCanvases();
+            renderAll();
+
+        }catch(error){
+            alert("画像の読み込みに失敗しました。テンプレート画像のファイル名が正しいか確認してください。");
+        }
+    }
+
+    function createSetId(){
+        const now = new Date();
+        const y = now.getFullYear();
+        const m = String(now.getMonth() + 1).padStart(2, "0");
+        const d = String(now.getDate()).padStart(2, "0");
+        const h = String(now.getHours()).padStart(2, "0");
+        const min = String(now.getMinutes()).padStart(2, "0");
+        const s = String(now.getSeconds()).padStart(2, "0");
+
+        return y + m + d + "_" + h + min + s;
+    }
+
+    function loadImage(src){
+        return new Promise((resolve,reject)=>{
+            const img = new Image();
+
+            img.onload = ()=>resolve(img);
+
+            img.onerror = ()=>{
+                console.error("画像を読み込めません：", src);
+                reject(src);
+            };
+
+            img.src = src;
+        });
+    }
+
+    function createCanvases(){
+        elements.previewArea.innerHTML = "";
+
+        templates.forEach((name,index)=>{
+            const div = document.createElement("div");
+            div.className = "preview";
+
+            const title = document.createElement("h3");
+            title.textContent = name;
+
+            const button = document.createElement("button");
+            button.className = "save-button";
+            button.textContent = "この画像を保存";
+            button.addEventListener("click",()=>saveOne(index));
+
+            const canvas = document.createElement("canvas");
+            canvas.width = 900;
+            canvas.height = 1200;
+            canvas.id = "canvas_" + index;
+
+            div.appendChild(title);
+            div.appendChild(button);
+            div.appendChild(canvas);
+
+            elements.previewArea.appendChild(div);
+        });
+    }
+
+    function renderAll(){
+        if(!state.personImg) return;
+
+        templates.forEach((name,index)=>{
+            const canvas = document.getElementById("canvas_" + index);
+            const overlay = state.overlayImages[name];
+
+            if(canvas && overlay){
+                createImage(canvas, overlay);
+            }
+        });
+    }
+
+    function createImage(canvas, overlay){
+        const ctx = canvas.getContext("2d");
+
+        ctx.clearRect(0,0,900,1200);
+
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0,0,900,1200);
+
+        const positions = [
+            [0,0],
+            [450,0],
+            [0,600],
+            [450,600]
+        ];
+
+        positions.forEach(pos=>{
+            drawCover(ctx, state.personImg, pos[0], pos[1], 450, 600);
+        });
+
+        ctx.drawImage(overlay, 0, 0, 900, 1200);
+    }
+
+    function drawCover(ctx,img,x,y,w,h){
+        const scale = Number(elements.scaleInput.value);
+        const offsetX = Number(elements.offsetXInput.value);
+        const offsetY = Number(elements.offsetYInput.value);
+
+        const imgRatio = img.width / img.height;
+        const boxRatio = w / h;
+
+        let baseW;
+        let baseH;
+
+        if(imgRatio > boxRatio){
+            baseH = h;
+            baseW = h * imgRatio;
+        }else{
+            baseW = w;
+            baseH = w / imgRatio;
+        }
+
+        const drawW = baseW * scale;
+        const drawH = baseH * scale;
+
+        const drawX = x + ((w - drawW) / 2) + offsetX;
+        const drawY = y + ((h - drawH) / 2) + offsetY;
+
+        ctx.save();
+        ctx.beginPath();
+        ctx.rect(x,y,w,h);
+        ctx.clip();
+        ctx.drawImage(img, drawX, drawY, drawW, drawH);
+        ctx.restore();
+    }
+
+    async function saveOne(index){
+        if(!state.personImg){
+            alert("先に人物画像を選択してください");
+            return;
+        }
+
+        const name = templates[index];
+        const canvas = document.getElementById("canvas_" + index);
+        const filename = state.setId + "_" + name + ".png";
+
+        try{
+            const blob = await canvasToBlob(canvas);
+            const file = new File([blob], filename, { type:"image/png" });
+
+            if(canUseIOSShare(file)){
+                try{
+                    await navigator.share({
+                        files:[file],
+                        title:filename,
+                        text:"画像を保存してください"
+                    });
+                    return;
+                }catch(shareError){
+                    openImageForIOS(blob);
+                    return;
+                }
+            }
+
+            if(env.isIOS){
+                openImageForIOS(blob);
+                return;
+            }
+
+            downloadBlob(blob, filename);
+
+            if(env.isAndroid){
+                showToast("✓ 保存しました");
+            }
+
+        }catch(error){
+            alert("画像の保存に失敗しました");
+        }
+    }
+
+    function canUseIOSShare(file){
+        if(!env.isIOS) return false;
+
+        return !!(
+            navigator.share &&
+            navigator.canShare &&
+            navigator.canShare({ files:[file] })
+        );
+    }
+
+    function canvasToBlob(canvas){
+        return new Promise((resolve,reject)=>{
+            canvas.toBlob(function(blob){
+                if(blob){
+                    resolve(blob);
+                }else{
+                    reject("画像生成に失敗しました");
+                }
+            },"image/png");
+        });
+    }
+
+    function downloadBlob(blob, filename){
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = filename;
+
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+
+        setTimeout(()=>{
+            URL.revokeObjectURL(url);
+        },500);
+    }
+
+    function openImageForIOS(blob){
+        const url = URL.createObjectURL(blob);
+        const newWindow = window.open(url, "_blank");
+
+        if(!newWindow){
+            alert("画像が開けませんでした。ポップアップを許可してから、もう一度お試しください。");
+            URL.revokeObjectURL(url);
+            return;
+        }
+
+        setTimeout(()=>{
+            URL.revokeObjectURL(url);
+        },60000);
+    }
+
+    function showToast(message){
+        elements.toast.textContent = message;
+        elements.toast.classList.add("show");
+
+        if(state.toastTimer){
+            clearTimeout(state.toastTimer);
+        }
+
+        state.toastTimer = setTimeout(()=>{
+            elements.toast.classList.remove("show");
+        },2000);
+    }
+
+
+const iosGuideToggle=document.getElementById("iosGuideToggle");
+const iosGuide=document.getElementById("iosGuide");
+if(iosGuideToggle){
+iosGuideToggle.addEventListener("click",function(){
+const open=iosGuide.style.display==="block";
+iosGuide.style.display=open?"none":"block";
+iosGuideToggle.textContent=open?"保存方法はこちら ▼":"保存方法を閉じる ▲";
+});
+}
+})();
+</script>
+
+</body>
+</html>
