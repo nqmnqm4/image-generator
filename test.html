@@ -347,9 +347,9 @@ canvas{
             return;
         }
 
-        if(env.isIOS){
-elements.iosMessage.classList.add("show");
-        }
+if (env.isIOS || env.isAndroid) {
+    elements.iosMessage.classList.add("show");
+}
 
         elements.upload.addEventListener("change", handleUploadChange);
         elements.scaleInput.addEventListener("input", renderAll);
