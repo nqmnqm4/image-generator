@@ -242,14 +242,6 @@ canvas{
     opacity:1;
     transform:translateX(-50%) translateY(0);
 }
-
-#iosGuideToggle,
-#androidGuideToggle{
-    display:block;
-    width:fit-content;
-    margin:8px auto 0;
-}
-
 </style>
 </head>
 
@@ -288,6 +280,57 @@ canvas{
 
         <label>上下位置</label>
         <input type="range" id="offsetY" min="-500" max="500" step="1" value="0">
+    </div>
+
+
+    <div id="guideArea" class="guide-area">
+        <div id="iosMessage" class="ios-message">
+            <div class="ios-title">📱 iPhone / iPadの方へ</div>
+
+            <button
+                type="button"
+                id="iosGuideToggle"
+                class="save-button"
+                style="display:block;margin:8px auto 0;">
+
+                保存方法はこちら ▼
+
+            </button>
+
+            <div
+                id="iosGuide"
+                style="display:none;margin-top:16px;text-align:center;">
+
+                <img
+                    src="iphone.png"
+                    style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:10px;">
+
+            </div>
+        </div>
+
+        <div id="androidMessage" class="ios-message">
+            <div class="ios-title">🤖 Androidの方へ</div>
+
+            <button
+                type="button"
+                id="androidGuideToggle"
+                class="save-button"
+                style="display:block;margin:8px auto 0;">
+
+                保存方法はこちら ▼
+
+            </button>
+
+            <div
+                id="androidGuide"
+                style="display:none;margin-top:16px;text-align:center;">
+
+                <img
+                    src="android.png"
+                    style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:10px;">
+
+            </div>
+        </div>
     </div>
 
     <div id="previewArea" class="preview-area"></div>
@@ -443,73 +486,6 @@ canvas{
             div.appendChild(title);
             div.appendChild(button);
 
-          if(index === 0){
-
-    // iPhone
-    const iosMessage = document.createElement("div");
-
-    iosMessage.id = "iosMessage";
-    iosMessage.className = "ios-message";
-
-    iosMessage.innerHTML = `
-        <div class="ios-title">📱 iPhone / iPadの方へ</div>
-
-        <button
-            type="button"
-            id="iosGuideToggle"
-            class="save-button">
-
-            保存方法はこちら ▼
-
-        </button>
-
-        <div
-            id="iosGuide"
-            style="display:none;margin-top:16px;text-align:center;">
-
-            <img
-                src="iphone.png"
-                style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:10px;">
-
-        </div>
-    `;
-
-    div.appendChild(iosMessage);
-
-
-    // Android
-    const androidMessage = document.createElement("div");
-
-    androidMessage.id = "androidMessage";
-    androidMessage.className = "ios-message";
-
-    androidMessage.innerHTML = `
-        <div class="ios-title">🤖 Androidの方へ</div>
-
-        <button
-            type="button"
-            id="androidGuideToggle"
-            class="save-button">
-
-            保存方法はこちら ▼
-
-        </button>
-
-        <div
-            id="androidGuide"
-            style="display:none;margin-top:16px;text-align:center;">
-
-            <img
-                src="android.png"
-                style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:10px;">
-
-        </div>
-    `;
-
-    div.appendChild(androidMessage);
-
-}
-
             div.appendChild(canvas);
 
             elements.previewArea.appendChild(div);
@@ -528,11 +504,35 @@ canvas{
     const androidGuideToggle = document.getElementById("androidGuideToggle");
     const androidGuide = document.getElementById("androidGuide");
 
+    if(iosMessage){
+        iosMessage.classList.remove("show");
+    }
+
+    if(androidMessage){
+        androidMessage.classList.remove("show");
+    }
+
+    if(iosGuide){
+        iosGuide.style.display = "none";
+    }
+
+    if(androidGuide){
+        androidGuide.style.display = "none";
+    }
+
+    if(iosGuideToggle){
+        iosGuideToggle.textContent = "保存方法はこちら ▼";
+    }
+
+    if(androidGuideToggle){
+        androidGuideToggle.textContent = "保存方法はこちら ▼";
+    }
+
     // iPhone / iPad
-    if(env.isIOS && iosMessage){
+    if(env.isIOS && iosMessage && iosGuideToggle && iosGuide){
         iosMessage.classList.add("show");
 
-        iosGuideToggle.addEventListener("click", function(){
+        iosGuideToggle.onclick = function(){
 
             const open = iosGuide.style.display === "block";
 
@@ -543,14 +543,14 @@ canvas{
                 ? "保存方法はこちら ▼"
                 : "保存方法を閉じる ▲";
 
-        });
+        };
     }
 
     // Android
-    if(env.isAndroid && androidMessage){
+    if(env.isAndroid && androidMessage && androidGuideToggle && androidGuide){
         androidMessage.classList.add("show");
 
-        androidGuideToggle.addEventListener("click", function(){
+        androidGuideToggle.onclick = function(){
 
             const open = androidGuide.style.display === "block";
 
@@ -561,7 +561,7 @@ canvas{
                 ? "保存方法はこちら ▼"
                 : "保存方法を閉じる ▲";
 
-        });
+        };
     }
 
 }
