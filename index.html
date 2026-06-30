@@ -147,8 +147,8 @@ canvas{
     border-radius:14px;
     color:#4a3a13;
     text-align:left;
-    font-size:15px;
-    line-height:1.8;
+    font-size:16px;
+    line-height:1.9;
     box-sizing:border-box;
 }
 
@@ -157,30 +157,30 @@ canvas{
 }
 
 .app-browser-warning-title{
-    font-size:18px;
+    font-size:22px;
     font-weight:bold;
     text-align:center;
     margin-bottom:10px;
 }
 
-.app-browser-warning-strong{
-    display:block;
-    margin:12px 0;
-    padding:10px 12px;
-    background:#ffffff;
-    border-radius:10px;
-    font-weight:bold;
+.app-browser-warning-main{
     text-align:center;
-    color:#222;
+    font-size:18px;
+    line-height:1.8;
+    margin:16px 0 20px;
 }
 
 .app-browser-warning ol{
-    margin:8px 0 0 22px;
+    margin:0 0 0 24px;
     padding:0;
 }
 
 .app-browser-warning li{
-    margin:4px 0;
+    margin:14px 0;
+}
+
+.app-browser-warning strong{
+    font-size:18px;
 }
 
 .notice{
@@ -265,15 +265,28 @@ canvas{
 <body>
 
 <div id="appBrowserWarning" class="app-browser-warning">
-   <div class="app-browser-warning-title">
+    <div class="app-browser-warning-title">
         このままではご利用いただけません
     </div>
 
-    画面右上または右下の「…」を押してください。
+    <div class="app-browser-warning-main">
+        画面右上または右下の<br>
+        <strong>「…」を押してください</strong>
+    </div>
 
     <ol>
-        <li>iPhoneの方は<br>「Safariで開く（デフォルトのブラウザで開く　など）」を選んでください</li>
-        <li>Androidの方は<br>「Chromeで開く（デフォルトのブラウザで開く　など）」を選んでください</li>
+        <li>
+            <strong>iPhoneの方</strong><br>
+            「Safariで開く<br>
+            （デフォルトのブラウザで開く など）」<br>
+            を選んでください
+        </li>
+        <li>
+            <strong>Androidの方</strong><br>
+            「Chromeで開く<br>
+            （デフォルトのブラウザで開く など）」<br>
+            を選んでください
+        </li>
     </ol>
 </div>
 
