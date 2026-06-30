@@ -435,45 +435,128 @@ canvas{
             div.appendChild(title);
             div.appendChild(button);
 
-            if(index === 0){
-                const iosMessage = document.createElement("div");
-                iosMessage.id = "iosMessage";
-                iosMessage.className = "ios-message";
-                iosMessage.innerHTML = `
-                    <div class="ios-title">📱 iPhone / iPadの方へ</div>
-                    <button type="button" id="iosGuideToggle" class="save-button" style="display:block;margin:8px auto 0;">保存方法はこちら ▼</button>
-                    <div id="iosGuide" style="display:none;margin-top:16px;text-align:center;">
-                        <img src="iphone.png" alt="iPhone保存方法" style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:10px;">
-                    </div>
-                `;
-                div.appendChild(iosMessage);
-            }
+          if(index === 0){
+
+    // iPhone
+    const iosMessage = document.createElement("div");
+
+    iosMessage.id = "iosMessage";
+    iosMessage.className = "ios-message";
+
+    iosMessage.innerHTML = `
+        <div class="ios-title">📱 iPhone / iPadの方へ</div>
+
+        <button
+            type="button"
+            id="iosGuideToggle"
+            class="save-button">
+
+            保存方法はこちら ▼
+
+        </button>
+
+        <div
+            id="iosGuide"
+            style="display:none;margin-top:16px;text-align:center;">
+
+            <img
+                src="iphone.png"
+                style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:10px;">
+
+        </div>
+    `;
+
+    div.appendChild(iosMessage);
+
+
+    // Android
+    const androidMessage = document.createElement("div");
+
+    androidMessage.id = "androidMessage";
+    androidMessage.className = "ios-message";
+
+    androidMessage.innerHTML = `
+        <div class="ios-title">🤖 Androidの方へ</div>
+
+        <button
+            type="button"
+            id="androidGuideToggle"
+            class="save-button">
+
+            保存方法はこちら ▼
+
+        </button>
+
+        <div
+            id="androidGuide"
+            style="display:none;margin-top:16px;text-align:center;">
+
+            <img
+                src="android.png"
+                style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:10px;">
+
+        </div>
+    `;
+
+    div.appendChild(androidMessage);
+
+}
 
             div.appendChild(canvas);
 
             elements.previewArea.appendChild(div);
         });
 
-        setupIOSGuide();
+        setupGuide();
     }
 
-    function setupIOSGuide(){
-        const iosMessage = document.getElementById("iosMessage");
-        const iosGuideToggle = document.getElementById("iosGuideToggle");
-        const iosGuide = document.getElementById("iosGuide");
+  function setupGuide(){
 
-        if(!iosMessage || !iosGuideToggle || !iosGuide) return;
+    const iosMessage = document.getElementById("iosMessage");
+    const iosGuideToggle = document.getElementById("iosGuideToggle");
+    const iosGuide = document.getElementById("iosGuide");
 
-        if(env.isIOS){
-            iosMessage.classList.add("show");
-        }
+    const androidMessage = document.getElementById("androidMessage");
+    const androidGuideToggle = document.getElementById("androidGuideToggle");
+    const androidGuide = document.getElementById("androidGuide");
+
+    // iPhone / iPad
+    if(env.isIOS && iosMessage){
+        iosMessage.classList.add("show");
 
         iosGuideToggle.addEventListener("click", function(){
-            const isOpen = iosGuide.style.display === "block";
-            iosGuide.style.display = isOpen ? "none" : "block";
-            iosGuideToggle.textContent = isOpen ? "保存方法はこちら ▼" : "保存方法を閉じる ▲";
+
+            const open = iosGuide.style.display === "block";
+
+            iosGuide.style.display = open ? "none" : "block";
+
+            iosGuideToggle.textContent =
+                open
+                ? "保存方法はこちら ▼"
+                : "保存方法を閉じる ▲";
+
         });
     }
+
+    // Android
+    if(env.isAndroid && androidMessage){
+        androidMessage.classList.add("show");
+
+        androidGuideToggle.addEventListener("click", function(){
+
+            const open = androidGuide.style.display === "block";
+
+            androidGuide.style.display = open ? "none" : "block";
+
+            androidGuideToggle.textContent =
+                open
+                ? "保存方法はこちら ▼"
+                : "保存方法を閉じる ▲";
+
+        });
+    }
+
+}
 
     function renderAll(){
         if(!state.personImg) return;
