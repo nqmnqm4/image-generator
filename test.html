@@ -457,23 +457,23 @@ canvas{
         setupIOSGuide();
     }
 
-    function setupIOSGuide(){
-        const iosMessage = document.getElementById("iosMessage");
-        const iosGuideToggle = document.getElementById("iosGuideToggle");
-        const iosGuide = document.getElementById("iosGuide");
+  function setupIOSGuide(){
+    const iosMessage = document.getElementById("iosMessage");
+    const iosGuideToggle = document.getElementById("iosGuideToggle");
+    const iosGuide = document.getElementById("iosGuide");
 
-        if(!iosMessage || !iosGuideToggle || !iosGuide) return;
+    if(!iosMessage || !iosGuideToggle || !iosGuide) return;
 
-if (env.isIOS || env.isAndroid) {
-    elements.iosMessage.classList.add("show");
-}
-
-        iosGuideToggle.addEventListener("click", function(){
-            const isOpen = iosGuide.style.display === "block";
-            iosGuide.style.display = isOpen ? "none" : "block";
-            iosGuideToggle.textContent = isOpen ? "保存方法はこちら ▼" : "保存方法を閉じる ▲";
-        });
+    if(env.isIOS || env.isAndroid){
+        iosMessage.classList.add("show");
     }
+
+    iosGuideToggle.addEventListener("click", function(){
+        const isOpen = iosGuide.style.display === "block";
+        iosGuide.style.display = isOpen ? "none" : "block";
+        iosGuideToggle.textContent = isOpen ? "保存方法はこちら ▼" : "保存方法を閉じる ▲";
+    });
+}
 
     function renderAll(){
         if(!state.personImg) return;
