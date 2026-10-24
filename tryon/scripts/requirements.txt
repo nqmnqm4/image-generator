@@ -1,0 +1,3 @@
+rembg[cpu]==2.0.86
+pillow
+numpy

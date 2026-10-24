@@ -1,0 +1,52 @@
+name: 試着ボードの商品更新
+
+on:
+  schedule:
+    - cron: "17 18 * * *"   # 毎日 日本時間3:17
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "tryon/scripts/**"
+      - ".github/workflows/tryon-update.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tryon-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      U2NET_HOME: ${{ github.workspace }}/.u2net
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: tryon/scripts/requirements.txt
+      - name: 切り抜きモデルのキャッシュ
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ github.workspace }}/.u2net
+            ~/.u2net
+            ~/.rembg
+          key: rembg-models-v1
+      - run: pip install -r tryon/scripts/requirements.txt
+      - name: 商品と画像を更新
+        run: python tryon/scripts/update.py
+      - name: 変更を保存
+        run: |
+          git config user.name "tryon-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tryon/data tryon/img
+          if git diff --cached --quiet; then echo "変更なし"; exit 0; fi
+          git commit -m "試着ボード: 商品データを更新"
+          git pull --rebase origin main
+          git push origin HEAD:main
