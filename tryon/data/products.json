@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-24 16:36",
+ "updated": "2026-10-24 17:51",
  "products": [
   {
    "id": "UQ_487517",
@@ -10,9 +10,12 @@
    "category": "アウター",
    "price": 5990,
    "url": "https://www.uniqlo.com/jp/ja/products/E487517-000/00",
-   "meas": null,
-   "modelCm": 174.0,
-   "modelSize": "",
+   "meas": {
+    "topFrac": 0.1431,
+    "hemFrac": 0.4834
+   },
+   "modelCm": 176.0,
+   "modelSize": "M",
    "colors": [
     {
      "code": "31",
@@ -43,9 +46,12 @@
    "category": "アウター",
    "price": 4990,
    "url": "https://www.uniqlo.com/jp/ja/products/E487516-000/00",
-   "meas": null,
-   "modelCm": 174.0,
-   "modelSize": "",
+   "meas": {
+    "topFrac": 0.1498,
+    "hemFrac": 0.7496
+   },
+   "modelCm": 176.0,
+   "modelSize": "M",
    "colors": [
     {
      "code": "30",
@@ -70,9 +76,12 @@
    "category": "アウター",
    "price": 4990,
    "url": "https://www.uniqlo.com/jp/ja/products/E488785-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.1499,
+    "hemFrac": 0.5064
+   },
    "modelCm": 173.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "34",
@@ -91,9 +100,12 @@
    "category": "アウター",
    "price": 4990,
    "url": "https://www.uniqlo.com/jp/ja/products/E488787-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.1553,
+    "hemFrac": 0.4835
+   },
    "modelCm": 172.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "69",
@@ -112,9 +124,12 @@
    "category": "アウター",
    "price": 7990,
    "url": "https://www.uniqlo.com/jp/ja/products/E487518-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.1707,
+    "hemFrac": 0.7646
+   },
    "modelCm": 175.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "32",
@@ -145,9 +160,12 @@
    "category": "アウター",
    "price": 7990,
    "url": "https://www.uniqlo.com/jp/ja/products/E489026-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.1401,
+    "hemFrac": 0.4987
+   },
    "modelCm": 176.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "34",
@@ -166,9 +184,12 @@
    "category": "アウター",
    "price": 2990,
    "url": "https://www.uniqlo.com/jp/ja/products/E487832-000/00",
-   "meas": null,
-   "modelCm": 176.0,
-   "modelSize": "",
+   "meas": {
+    "topFrac": 0.136,
+    "hemFrac": 0.8662
+   },
+   "modelCm": 174.0,
+   "modelSize": "M",
    "colors": [
     {
      "code": "18",
@@ -205,9 +226,12 @@
    "category": "アウター",
    "price": 16900,
    "url": "https://www.uniqlo.com/jp/ja/products/E488472-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.1137,
+    "hemFrac": 0.4842
+   },
    "modelCm": 172.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "01",
@@ -232,9 +256,12 @@
    "category": "シャツ・ブラウス",
    "price": 3990,
    "url": "https://www.uniqlo.com/jp/ja/products/E489406-000/00",
-   "meas": null,
-   "modelCm": 171.0,
-   "modelSize": "",
+   "meas": {
+    "topFrac": 0.158,
+    "hemFrac": 0.6232
+   },
+   "modelCm": 176.0,
+   "modelSize": "L",
    "colors": [
     {
      "code": "12",
@@ -265,9 +292,12 @@
    "category": "シャツ・ブラウス",
    "price": 3990,
    "url": "https://www.uniqlo.com/jp/ja/products/E488559-000/00",
-   "meas": null,
-   "modelCm": null,
-   "modelSize": null,
+   "meas": {
+    "topFrac": 0.1625,
+    "hemFrac": 0.5084
+   },
+   "modelCm": 176.0,
+   "modelSize": "M",
    "colors": [
     {
      "code": "30",
@@ -292,9 +322,12 @@
    "category": "シャツ・ブラウス",
    "price": 3990,
    "url": "https://www.uniqlo.com/jp/ja/products/E489508-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.1571,
+    "hemFrac": 0.4553
+   },
    "modelCm": 176.0,
-   "modelSize": "",
+   "modelSize": "L",
    "colors": [
     {
      "code": "16",
@@ -319,9 +352,12 @@
    "category": "シャツ・ブラウス",
    "price": 3990,
    "url": "https://www.uniqlo.com/jp/ja/products/E489407-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.1634,
+    "hemFrac": 0.5198
+   },
    "modelCm": 171.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "32",
@@ -340,9 +376,12 @@
    "category": "シャツ・ブラウス",
    "price": 2990,
    "url": "https://www.uniqlo.com/jp/ja/products/E481224-000/00",
-   "meas": null,
-   "modelCm": 180.0,
-   "modelSize": "",
+   "meas": {
+    "topFrac": 0.1362,
+    "hemFrac": 0.4212
+   },
+   "modelCm": 175.0,
+   "modelSize": "M",
    "colors": [
     {
      "code": "34",
@@ -374,8 +413,8 @@
    "price": 2990,
    "url": "https://www.uniqlo.com/jp/ja/products/E470182-000/00",
    "meas": null,
-   "modelCm": 186.0,
-   "modelSize": "",
+   "modelCm": 172.0,
+   "modelSize": "M",
    "colors": [
     {
      "code": "69",
@@ -406,9 +445,12 @@
    "category": "シャツ・ブラウス",
    "price": 2990,
    "url": "https://www.uniqlo.com/jp/ja/products/E486600-000/00",
-   "meas": null,
-   "modelCm": 186.0,
-   "modelSize": "",
+   "meas": {
+    "topFrac": 0.17,
+    "hemFrac": 0.4252
+   },
+   "modelCm": 175.0,
+   "modelSize": "M",
    "colors": [
     {
      "code": "18",
@@ -420,7 +462,7 @@
      "code": "34",
      "img": "img/UQ_486600_34.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/486600/chip/goods_34_486600_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "58",
@@ -439,9 +481,12 @@
    "category": "シャツ・ブラウス",
    "price": 3990,
    "url": "https://www.uniqlo.com/jp/ja/products/E488794-000/00",
-   "meas": null,
-   "modelCm": 186.0,
-   "modelSize": "",
+   "meas": {
+    "topFrac": 0.1633,
+    "hemFrac": 0.4635
+   },
+   "modelCm": 176.0,
+   "modelSize": "M",
    "colors": [
     {
      "code": "38",
@@ -468,13 +513,13 @@
    "url": "https://www.uniqlo.com/jp/ja/products/E470143-001/00",
    "meas": null,
    "modelCm": 176.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "11",
      "img": "img/UQ_470143_11.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/470143/chip/goods_11_470143_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "32",
@@ -493,9 +538,12 @@
    "category": "Tシャツ・スウェット",
    "price": 1990,
    "url": "https://www.uniqlo.com/jp/ja/products/E487595-000/00",
-   "meas": null,
-   "modelCm": null,
-   "modelSize": null,
+   "meas": {
+    "topFrac": 0.1646,
+    "hemFrac": 0.4391
+   },
+   "modelCm": 176.0,
+   "modelSize": "M",
    "colors": [
     {
      "code": "10",
@@ -545,8 +593,8 @@
    "price": 1990,
    "url": "https://www.uniqlo.com/jp/ja/products/E487593-000/00",
    "meas": null,
-   "modelCm": null,
-   "modelSize": null,
+   "modelCm": 175.0,
+   "modelSize": "M",
    "colors": [
     {
      "code": "15",
@@ -570,7 +618,7 @@
      "code": "01",
      "img": "img/UQ_487593_01.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487593/chip/goods_01_487593_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "03",
@@ -595,21 +643,24 @@
    "category": "Tシャツ・スウェット",
    "price": 1990,
    "url": "https://www.uniqlo.com/jp/ja/products/E484336-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.1333,
+    "hemFrac": 0.4616
+   },
    "modelCm": 172.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "19",
      "img": "img/UQ_484336_19.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/484336/chip/goods_19_484336_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "01",
      "img": "img/UQ_484336_01.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/484336/chip/goods_01_484336_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "03",
@@ -630,7 +681,7 @@
    "url": "https://www.uniqlo.com/jp/ja/products/E449753-000/00",
    "meas": null,
    "modelCm": 173.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "12",
@@ -681,7 +732,7 @@
    "url": "https://www.uniqlo.com/jp/ja/products/E488302-000/00",
    "meas": null,
    "modelCm": 173.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "38",
@@ -730,9 +781,12 @@
    "category": "Tシャツ・スウェット",
    "price": 4990,
    "url": "https://www.uniqlo.com/jp/ja/products/E487594-000/00",
-   "meas": null,
-   "modelCm": 174.0,
-   "modelSize": "",
+   "meas": {
+    "topFrac": 0.1456,
+    "hemFrac": 0.469
+   },
+   "modelCm": 176.0,
+   "modelSize": "M",
    "colors": [
     {
      "code": "18",
@@ -769,9 +823,12 @@
    "category": "Tシャツ・スウェット",
    "price": 4990,
    "url": "https://www.uniqlo.com/jp/ja/products/E488571-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.1467,
+    "hemFrac": 0.4614
+   },
    "modelCm": 176.0,
-   "modelSize": "",
+   "modelSize": "L",
    "colors": [
     {
      "code": "30",
@@ -804,7 +861,7 @@
    "url": "https://www.uniqlo.com/jp/ja/products/E475053-000/00",
    "meas": null,
    "modelCm": 176.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "14",
@@ -855,7 +912,7 @@
    "url": "https://www.uniqlo.com/jp/ja/products/E487005-000/00",
    "meas": null,
    "modelCm": 164.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "16",
@@ -894,7 +951,7 @@
    "url": "https://www.uniqlo.com/jp/ja/products/E481731-000/00",
    "meas": null,
    "modelCm": 173.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "15",
@@ -933,13 +990,13 @@
    "url": "https://www.uniqlo.com/jp/ja/products/E484607-000/00",
    "meas": null,
    "modelCm": 173.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "42",
      "img": "img/UQ_484607_42.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/484607/chip/goods_42_484607_chip.jpg",
-     "src": "flat"
+     "src": "model"
     }
    ]
   },
@@ -954,13 +1011,13 @@
    "url": "https://www.uniqlo.com/jp/ja/products/E474983-000/00",
    "meas": null,
    "modelCm": 171.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "53",
      "img": "img/UQ_474983_53.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/474983/chip/goods_53_474983_chip.jpg",
-     "src": "flat"
+     "src": "model"
     }
    ]
   },
@@ -975,7 +1032,7 @@
    "url": "https://www.uniqlo.com/jp/ja/products/E485321-000/00",
    "meas": null,
    "modelCm": 174.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "14",
@@ -1018,9 +1075,12 @@
    "category": "ニット",
    "price": 3990,
    "url": "https://www.uniqlo.com/jp/ja/products/E491606-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.1576,
+    "hemFrac": 0.4412
+   },
    "modelCm": 176.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "69",
@@ -1047,7 +1107,7 @@
    "url": "https://www.uniqlo.com/jp/ja/products/E469410-000/00",
    "meas": null,
    "modelCm": 170.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "10",
@@ -1065,7 +1125,7 @@
      "code": "16",
      "img": "img/UQ_469410_16.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/469410/chip/goods_16_469410_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "38",
@@ -1083,7 +1143,7 @@
      "code": "65",
      "img": "img/UQ_469410_65.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/469410/chip/goods_65_469410_chip.jpg",
-     "src": "flat"
+     "src": "model"
     }
    ]
   },
@@ -1101,7 +1161,7 @@
     "hemFrac": 0.9514
    },
    "modelCm": 170.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "58",
@@ -1150,9 +1210,12 @@
    "category": "パンツ",
    "price": 3990,
    "url": "https://www.uniqlo.com/jp/ja/products/E489415-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.4219,
+    "hemFrac": 0.9575
+   },
    "modelCm": 172.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "37",
@@ -1176,7 +1239,7 @@
     "hemFrac": 0.9562
    },
    "modelCm": 175.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "58",
@@ -1230,7 +1293,7 @@
     "hemFrac": 0.9429
    },
    "modelCm": 175.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "37",
@@ -1254,7 +1317,7 @@
     "hemFrac": 0.9724
    },
    "modelCm": 172.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "39",
@@ -1284,7 +1347,7 @@
     "hemFrac": 0.9664
    },
    "modelCm": 175.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "69",
@@ -1314,7 +1377,7 @@
     "hemFrac": 0.9474
    },
    "modelCm": 170.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "39",
@@ -1326,7 +1389,7 @@
      "code": "09",
      "img": "img/UQ_487959_09.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487959/chip/goods_09_487959_chip.jpg",
-     "src": "flat"
+     "src": "model"
     }
    ]
   },
@@ -1339,9 +1402,12 @@
    "category": "パンツ",
    "price": 3990,
    "url": "https://www.uniqlo.com/jp/ja/products/E488866-000/00",
-   "meas": null,
-   "modelCm": 170.0,
-   "modelSize": "",
+   "meas": {
+    "topFrac": 0.4307,
+    "hemFrac": 0.9745
+   },
+   "modelCm": 164.0,
+   "modelSize": "M",
    "colors": [
     {
      "code": "69",
@@ -1371,7 +1437,7 @@
     "hemFrac": 0.7634
    },
    "modelCm": 170.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "37",
@@ -1402,9 +1468,12 @@
    "category": "スカート・ワンピース",
    "price": 1290,
    "url": "https://www.uniqlo.com/jp/ja/products/E488694-000/00",
-   "meas": null,
-   "modelCm": 174.0,
-   "modelSize": "",
+   "meas": {
+    "topFrac": 0.3738,
+    "hemFrac": 0.7818
+   },
+   "modelCm": 176.0,
+   "modelSize": "25",
    "colors": [
     {
      "code": "65",
@@ -1435,9 +1504,12 @@
    "category": "スカート・ワンピース",
    "price": 1990,
    "url": "https://www.uniqlo.com/jp/ja/products/E488814-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.376,
+    "hemFrac": 0.7419
+   },
    "modelCm": 174.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "35",
@@ -1467,7 +1539,7 @@
     "hemFrac": 0.8584
    },
    "modelCm": 175.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "38",
@@ -1503,25 +1575,25 @@
     "hemFrac": 0.8672
    },
    "modelCm": 164.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "31",
      "img": "img/UQ_485593_31.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485593/chip/goods_31_485593_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "37",
      "img": "img/UQ_485593_37.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485593/chip/goods_37_485593_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "39",
      "img": "img/UQ_485593_39.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485593/chip/goods_39_485593_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "08",
@@ -1533,7 +1605,7 @@
      "code": "09",
      "img": "img/UQ_485593_09.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485593/chip/goods_09_485593_chip.jpg",
-     "src": "flat"
+     "src": "model"
     }
    ]
   },
@@ -1551,43 +1623,43 @@
     "hemFrac": 0.8824
    },
    "modelCm": 155.0,
-   "modelSize": "",
+   "modelSize": "S",
    "colors": [
     {
      "code": "31",
      "img": "img/UQ_486328_31.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/486328/chip/goods_31_486328_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "37",
      "img": "img/UQ_486328_37.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/486328/chip/goods_37_486328_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "39",
      "img": "img/UQ_486328_39.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/486328/chip/goods_39_486328_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "69",
      "img": "img/UQ_486328_69.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/486328/chip/goods_69_486328_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "08",
      "img": "img/UQ_486328_08.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/486328/chip/goods_08_486328_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "09",
      "img": "img/UQ_486328_09.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/486328/chip/goods_09_486328_chip.jpg",
-     "src": "flat"
+     "src": "model"
     }
    ]
   },
@@ -1605,7 +1677,7 @@
     "hemFrac": 0.8157
    },
    "modelCm": 174.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "30",
@@ -1647,13 +1719,13 @@
     "hemFrac": 0.8857
    },
    "modelCm": 175.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "56",
      "img": "img/UQ_489549_56.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/489549/chip/goods_56_489549_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "00",
@@ -1665,7 +1737,7 @@
      "code": "09",
      "img": "img/UQ_489549_09.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/489549/chip/goods_09_489549_chip.jpg",
-     "src": "flat"
+     "src": "model"
     }
    ]
   },
@@ -1678,9 +1750,12 @@
    "category": "アウター",
    "price": 3990,
    "url": "https://www.gu-global.com/jp/ja/products/E361430-000/00",
-   "meas": null,
-   "modelCm": 175.0,
-   "modelSize": "",
+   "meas": {
+    "topFrac": 0.1342,
+    "hemFrac": 0.5276
+   },
+   "modelCm": 171.0,
+   "modelSize": "M",
    "colors": [
     {
      "code": "31",
@@ -1711,9 +1786,12 @@
    "category": "アウター",
    "price": 3990,
    "url": "https://www.gu-global.com/jp/ja/products/E361793-000/00",
-   "meas": null,
-   "modelCm": 169.0,
-   "modelSize": "",
+   "meas": {
+    "topFrac": 0.1591,
+    "hemFrac": 0.852
+   },
+   "modelCm": 162.0,
+   "modelSize": "M",
    "colors": [
     {
      "code": "48",
@@ -1744,9 +1822,12 @@
    "category": "アウター",
    "price": 5990,
    "url": "https://www.gu-global.com/jp/ja/products/E361327-000/00",
-   "meas": null,
-   "modelCm": 171.0,
-   "modelSize": "",
+   "meas": {
+    "topFrac": 0.1351,
+    "hemFrac": 0.5158
+   },
+   "modelCm": 175.0,
+   "modelSize": "L",
    "colors": [
     {
      "code": "57",
@@ -1771,15 +1852,18 @@
    "category": "アウター",
    "price": 5990,
    "url": "https://www.gu-global.com/jp/ja/products/E360905-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.118,
+    "hemFrac": 0.4674
+   },
    "modelCm": 174.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "31",
      "img": "img/GU_360905_31.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360905/chip/goods_31_360905_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "38",
@@ -1804,9 +1888,12 @@
    "category": "アウター",
    "price": 5990,
    "url": "https://www.gu-global.com/jp/ja/products/E360953-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.1343,
+    "hemFrac": 0.4669
+   },
    "modelCm": 173.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "56",
@@ -1831,9 +1918,12 @@
    "category": "アウター",
    "price": 6990,
    "url": "https://www.gu-global.com/jp/ja/products/E361372-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.1056,
+    "hemFrac": 0.4742
+   },
    "modelCm": 170.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "40",
@@ -1845,7 +1935,7 @@
      "code": "42",
      "img": "img/GU_361372_42.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361372/chip/goods_42_361372_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "53",
@@ -1864,9 +1954,12 @@
    "category": "アウター",
    "price": 3990,
    "url": "https://www.gu-global.com/jp/ja/products/E360822-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.1181,
+    "hemFrac": 0.4882
+   },
    "modelCm": 170.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "31",
@@ -1897,9 +1990,12 @@
    "category": "アウター",
    "price": 3990,
    "url": "https://www.gu-global.com/jp/ja/products/E361295-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.1433,
+    "hemFrac": 0.4831
+   },
    "modelCm": 175.0,
-   "modelSize": "",
+   "modelSize": "L",
    "colors": [
     {
      "code": "31",
@@ -1926,7 +2022,7 @@
    "url": "https://www.gu-global.com/jp/ja/products/E360805-000/00",
    "meas": null,
    "modelCm": 169.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "11",
@@ -1971,7 +2067,7 @@
    "url": "https://www.gu-global.com/jp/ja/products/E360549-000/00",
    "meas": null,
    "modelCm": 169.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "27",
@@ -2016,7 +2112,7 @@
    "url": "https://www.gu-global.com/jp/ja/products/E360801-000/00",
    "meas": null,
    "modelCm": 174.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "12",
@@ -2059,9 +2155,12 @@
    "category": "ニット",
    "price": 2990,
    "url": "https://www.gu-global.com/jp/ja/products/E361317-000/00",
-   "meas": null,
-   "modelCm": 171.0,
-   "modelSize": "",
+   "meas": {
+    "topFrac": 0.146,
+    "hemFrac": 0.9264
+   },
+   "modelCm": 175.0,
+   "modelSize": "L",
    "colors": [
     {
      "code": "38",
@@ -2100,7 +2199,7 @@
    "url": "https://www.gu-global.com/jp/ja/products/E360547-000/00",
    "meas": null,
    "modelCm": 175.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "31",
@@ -2145,7 +2244,7 @@
    "url": "https://www.gu-global.com/jp/ja/products/E361375-000/00",
    "meas": null,
    "modelCm": 172.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "18",
@@ -2188,9 +2287,12 @@
    "category": "ニット",
    "price": 2990,
    "url": "https://www.gu-global.com/jp/ja/products/E360799-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.1465,
+    "hemFrac": 0.4751
+   },
    "modelCm": 175.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "30",
@@ -2221,9 +2323,12 @@
    "category": "ニット",
    "price": 2990,
    "url": "https://www.gu-global.com/jp/ja/products/E361673-000/00",
-   "meas": null,
-   "modelCm": 173.0,
-   "modelSize": "",
+   "meas": {
+    "topFrac": 0.1358,
+    "hemFrac": 0.4767
+   },
+   "modelCm": 169.0,
+   "modelSize": "M",
    "colors": [
     {
      "code": "48",
@@ -2250,7 +2355,7 @@
    "url": "https://www.gu-global.com/jp/ja/products/E361505-000/00",
    "meas": null,
    "modelCm": 171.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "18",
@@ -2293,9 +2398,12 @@
    "category": "Tシャツ",
    "price": 1290,
    "url": "https://www.gu-global.com/jp/ja/products/E361506-000/00",
-   "meas": null,
-   "modelCm": 173.0,
-   "modelSize": "",
+   "meas": {
+    "topFrac": 0.1647,
+    "hemFrac": 0.5328
+   },
+   "modelCm": 171.0,
+   "modelSize": "M",
    "colors": [
     {
      "code": "18",
@@ -2326,9 +2434,12 @@
    "category": "Tシャツ",
    "price": 1290,
    "url": "https://www.gu-global.com/jp/ja/products/E362229-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.1612,
+    "hemFrac": 0.527
+   },
    "modelCm": 174.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "30",
@@ -2359,9 +2470,12 @@
    "category": "Tシャツ",
    "price": 990,
    "url": "https://www.gu-global.com/jp/ja/products/E361840-000/00",
-   "meas": null,
-   "modelCm": 169.0,
-   "modelSize": "",
+   "meas": {
+    "topFrac": 0.1661,
+    "hemFrac": 0.4918
+   },
+   "modelCm": 175.0,
+   "modelSize": "M",
    "colors": [
     {
      "code": "30",
@@ -2404,9 +2518,12 @@
    "category": "Tシャツ",
    "price": 1990,
    "url": "https://www.gu-global.com/jp/ja/products/E361842-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.1623,
+    "hemFrac": 0.5148
+   },
    "modelCm": 171.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "01",
@@ -2431,15 +2548,18 @@
    "category": "Tシャツ",
    "price": 990,
    "url": "https://www.gu-global.com/jp/ja/products/E360889-000/00",
-   "meas": null,
-   "modelCm": 175.0,
-   "modelSize": "",
+   "meas": {
+    "topFrac": 0.1606,
+    "hemFrac": 0.4114
+   },
+   "modelCm": 169.0,
+   "modelSize": "M",
    "colors": [
     {
      "code": "30",
      "img": "img/GU_360889_30.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360889/chip/goods_30_360889_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "44",
@@ -2476,9 +2596,12 @@
    "category": "Tシャツ",
    "price": 1290,
    "url": "https://www.gu-global.com/jp/ja/products/E360882-000/00",
-   "meas": null,
-   "modelCm": 173.0,
-   "modelSize": "",
+   "meas": {
+    "topFrac": 0.168,
+    "hemFrac": 0.4282
+   },
+   "modelCm": 162.0,
+   "modelSize": "M",
    "colors": [
     {
      "code": "61",
@@ -2515,9 +2638,12 @@
    "category": "Tシャツ",
    "price": 1290,
    "url": "https://www.gu-global.com/jp/ja/products/E360578-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.159,
+    "hemFrac": 0.4291
+   },
    "modelCm": 173.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "15",
@@ -2566,9 +2692,12 @@
    "category": "スウェット",
    "price": 3990,
    "url": "https://www.gu-global.com/jp/ja/products/E361685-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.1262,
+    "hemFrac": 0.4473
+   },
    "modelCm": 175.0,
-   "modelSize": "",
+   "modelSize": "L",
    "colors": [
     {
      "code": "30",
@@ -2595,7 +2724,7 @@
    "url": "https://www.gu-global.com/jp/ja/products/E361784-000/00",
    "meas": null,
    "modelCm": 168.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "30",
@@ -2644,9 +2773,12 @@
    "category": "スウェット",
    "price": 2990,
    "url": "https://www.gu-global.com/jp/ja/products/E360575-000/00",
-   "meas": null,
-   "modelCm": 173.0,
-   "modelSize": "",
+   "meas": {
+    "topFrac": 0.1469,
+    "hemFrac": 0.5077
+   },
+   "modelCm": 170.0,
+   "modelSize": "M",
    "colors": [
     {
      "code": "18",
@@ -2683,15 +2815,18 @@
    "category": "スウェット",
    "price": 1990,
    "url": "https://www.gu-global.com/jp/ja/products/E358273-000/00",
-   "meas": null,
-   "modelCm": 172.0,
-   "modelSize": "",
+   "meas": {
+    "topFrac": 0.1411,
+    "hemFrac": 0.8804
+   },
+   "modelCm": 170.0,
+   "modelSize": "M",
    "colors": [
     {
      "code": "30",
      "img": "img/GU_358273_30.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/358273/chip/goods_30_358273_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "03",
@@ -2717,8 +2852,8 @@
    "price": 2990,
    "url": "https://www.gu-global.com/jp/ja/products/E360454-000/00",
    "meas": null,
-   "modelCm": 185.0,
-   "modelSize": "",
+   "modelCm": 174.0,
+   "modelSize": "M",
    "colors": [
     {
      "code": "49",
@@ -2762,8 +2897,8 @@
    "price": 2990,
    "url": "https://www.gu-global.com/jp/ja/products/E360458-000/00",
    "meas": null,
-   "modelCm": 180.0,
-   "modelSize": "",
+   "modelCm": 174.0,
+   "modelSize": "L",
    "colors": [
     {
      "code": "47",
@@ -2813,8 +2948,8 @@
    "price": 3990,
    "url": "https://www.gu-global.com/jp/ja/products/E360456-000/00",
    "meas": null,
-   "modelCm": 185.0,
-   "modelSize": "",
+   "modelCm": 170.0,
+   "modelSize": "M",
    "colors": [
     {
      "code": "57",
@@ -2852,8 +2987,8 @@
    "price": 2990,
    "url": "https://www.gu-global.com/jp/ja/products/E361365-000/00",
    "meas": null,
-   "modelCm": 185.0,
-   "modelSize": "",
+   "modelCm": 173.0,
+   "modelSize": "M",
    "colors": [
     {
      "code": "18",
@@ -2896,9 +3031,12 @@
    "category": "シャツ・ブラウス",
    "price": 2990,
    "url": "https://www.gu-global.com/jp/ja/products/E359080-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.1434,
+    "hemFrac": 0.4643
+   },
    "modelCm": 170.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "37",
@@ -2929,9 +3067,12 @@
    "category": "シャツ・ブラウス",
    "price": 2990,
    "url": "https://www.gu-global.com/jp/ja/products/E360854-001/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.1367,
+    "hemFrac": 0.4827
+   },
    "modelCm": 175.0,
-   "modelSize": "",
+   "modelSize": "L",
    "colors": [
     {
      "code": "00",
@@ -2950,9 +3091,12 @@
    "category": "シャツ・ブラウス",
    "price": 2990,
    "url": "https://www.gu-global.com/jp/ja/products/E360864-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.1491,
+    "hemFrac": 0.429
+   },
    "modelCm": 173.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "18",
@@ -2977,9 +3121,12 @@
    "category": "シャツ・ブラウス",
    "price": 1290,
    "url": "https://www.gu-global.com/jp/ja/products/E360853-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.1537,
+    "hemFrac": 0.427
+   },
    "modelCm": 172.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "56",
@@ -3012,19 +3159,19 @@
    "url": "https://www.gu-global.com/jp/ja/products/E359811-000/00",
    "meas": null,
    "modelCm": 173.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "12",
      "img": "img/GU_359811_12.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/359811/chip/goods_12_359811_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "56",
      "img": "img/GU_359811_56.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/359811/chip/goods_56_359811_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "68",
@@ -3036,13 +3183,13 @@
      "code": "01",
      "img": "img/GU_359811_01.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/359811/chip/goods_01_359811_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "09",
      "img": "img/GU_359811_09.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/359811/chip/goods_09_359811_chip.jpg",
-     "src": "flat"
+     "src": "model"
     }
    ]
   },
@@ -3055,9 +3202,12 @@
    "category": "シャツ・ブラウス",
    "price": 1990,
    "url": "https://www.gu-global.com/jp/ja/products/E358738-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.2012,
+    "hemFrac": 0.4427
+   },
    "modelCm": 170.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "10",
@@ -3088,9 +3238,12 @@
    "category": "シャツ・ブラウス",
    "price": 2990,
    "url": "https://www.gu-global.com/jp/ja/products/E361711-000/00",
-   "meas": null,
-   "modelCm": 170.0,
-   "modelSize": "",
+   "meas": {
+    "topFrac": 0.1539,
+    "hemFrac": 0.413
+   },
+   "modelCm": 173.0,
+   "modelSize": "M",
    "colors": [
     {
      "code": "44",
@@ -3121,9 +3274,12 @@
    "category": "シャツ・ブラウス",
    "price": 990,
    "url": "https://www.gu-global.com/jp/ja/products/E361328-000/00",
-   "meas": null,
+   "meas": {
+    "topFrac": 0.1029,
+    "hemFrac": 0.4901
+   },
    "modelCm": 172.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "37",
@@ -3147,7 +3303,7 @@
     "hemFrac": 0.9555
    },
    "modelCm": 169.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "37",
@@ -3189,7 +3345,7 @@
     "hemFrac": 0.9566
    },
    "modelCm": 162.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "37",
@@ -3231,7 +3387,7 @@
     "hemFrac": 0.9735
    },
    "modelCm": 172.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "37",
@@ -3273,7 +3429,7 @@
     "hemFrac": 0.961
    },
    "modelCm": 175.0,
-   "modelSize": "",
+   "modelSize": "L",
    "colors": [
     {
      "code": "38",
@@ -3309,7 +3465,7 @@
     "hemFrac": 0.9752
    },
    "modelCm": 170.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "64",
@@ -3345,7 +3501,7 @@
     "hemFrac": 0.9046
    },
    "modelCm": 160.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "64",
@@ -3381,7 +3537,7 @@
     "hemFrac": 0.9707
    },
    "modelCm": 172.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "64",
@@ -3417,7 +3573,7 @@
     "hemFrac": 0.9883
    },
    "modelCm": 170.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "68",
@@ -3453,25 +3609,25 @@
     "hemFrac": 0.8668
    },
    "modelCm": 173.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "32",
      "img": "img/GU_361591_32.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361591/chip/goods_32_361591_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "06",
      "img": "img/GU_361591_06.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361591/chip/goods_06_361591_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "08",
      "img": "img/GU_361591_08.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361591/chip/goods_08_361591_chip.jpg",
-     "src": "flat"
+     "src": "model"
     }
    ]
   },
@@ -3489,25 +3645,25 @@
     "hemFrac": 0.9236
    },
    "modelCm": 160.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "32",
      "img": "img/GU_362884_32.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362884/chip/goods_32_362884_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "06",
      "img": "img/GU_362884_06.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362884/chip/goods_06_362884_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "08",
      "img": "img/GU_362884_08.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362884/chip/goods_08_362884_chip.jpg",
-     "src": "flat"
+     "src": "model"
     }
    ]
   },
@@ -3525,19 +3681,19 @@
     "hemFrac": 0.8925
    },
    "modelCm": 174.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "32",
      "img": "img/GU_362190_32.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362190/chip/goods_32_362190_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "06",
      "img": "img/GU_362190_06.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362190/chip/goods_06_362190_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "08",
@@ -3561,7 +3717,7 @@
     "hemFrac": 0.9294
    },
    "modelCm": 171.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "32",
@@ -3591,7 +3747,7 @@
     "hemFrac": 0.9238
    },
    "modelCm": 175.0,
-   "modelSize": "",
+   "modelSize": "L",
    "colors": [
     {
      "code": "63",
@@ -3621,7 +3777,7 @@
     "hemFrac": 0.8644
    },
    "modelCm": 171.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "30",
@@ -3657,7 +3813,7 @@
      "code": "30",
      "img": "img/GU_361462_30.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361462/chip/goods_30_361462_chip.jpg",
-     "src": "flat"
+     "src": "model"
     },
     {
      "code": "09",
@@ -3681,13 +3837,13 @@
     "hemFrac": 0.8586
    },
    "modelCm": 168.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "40",
      "img": "img/GU_359835_40.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/359835/chip/goods_40_359835_chip.jpg",
-     "src": "flat"
+     "src": "model"
     }
    ]
   },
@@ -3705,7 +3861,7 @@
     "hemFrac": 0.8235
    },
    "modelCm": 169.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "30",
@@ -3735,7 +3891,7 @@
     "hemFrac": 0.598
    },
    "modelCm": 175.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "69",
@@ -3759,7 +3915,7 @@
     "hemFrac": 0.6514
    },
    "modelCm": 170.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "55",
@@ -3783,7 +3939,7 @@
     "hemFrac": 0.7382
    },
    "modelCm": 173.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "56",
@@ -3813,7 +3969,7 @@
     "hemFrac": 0.7964
    },
    "modelCm": 170.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "69",
@@ -3843,7 +3999,7 @@
     "hemFrac": 0.6521
    },
    "modelCm": 172.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "15",
@@ -3873,7 +4029,7 @@
     "hemFrac": 0.7249
    },
    "modelCm": 173.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "56",
@@ -3909,7 +4065,7 @@
     "hemFrac": 0.6243
    },
    "modelCm": 171.0,
-   "modelSize": "",
+   "modelSize": "M",
    "colors": [
     {
      "code": "55",
