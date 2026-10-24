@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>パーソナルカラー 着せ替え</title>
+<style>
+  :root{
+    --bg:#faf6f2; --card:#ffffff; --ink:#3b3330; --sub:#8a7d77; --line:#eadfd7;
+    --accent:#b9786a; --accent-ink:#ffffff; --soft:#f3e9e2;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",system-ui,sans-serif;}
+  .wrap{max-width:520px;margin:0 auto;padding:16px 16px 40px}
+  h1{font-size:20px;text-align:center;margin:8px 0 4px;letter-spacing:.04em}
+  .lead{font-size:14px;color:var(--sub);text-align:center;margin:0 0 16px;line-height:1.6}
+
+  .btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;
+    min-height:56px;border:none;border-radius:999px;font-size:17px;font-weight:700;
+    background:var(--accent);color:var(--accent-ink);cursor:pointer;
+    box-shadow:0 3px 0 rgba(0,0,0,.12);font-family:inherit}
+  .btn:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(0,0,0,.12)}
+  .btn.sub{background:var(--card);color:var(--accent);border:2px solid var(--accent);box-shadow:none}
+  .btn[disabled]{opacity:.5}
+  .row{display:flex;gap:10px;margin-top:12px}
+  .row .btn{font-size:15px;min-height:52px}
+
+  .status{margin:14px 0;padding:14px;border-radius:14px;background:var(--soft);
+    font-size:15px;text-align:center;line-height:1.6;display:none}
+  .status.show{display:block}
+  .status.err{background:#fdecea;color:#9b2c2c}
+  .spinner{display:inline-block;width:18px;height:18px;border:3px solid #d8c4b9;
+    border-top-color:var(--accent);border-radius:50%;animation:spin 1s linear infinite;vertical-align:-3px;margin-right:6px}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  /* 見比べ */
+  .compare{position:relative;margin-top:12px;border-radius:16px;overflow:hidden;
+    background:#ddd;touch-action:pan-y;user-select:none;-webkit-user-select:none;display:none}
+  .compare.show{display:block}
+  .compare canvas{display:block;width:100%;height:auto}
+  .compare .before{position:absolute;inset:0;width:100%;height:100%}
+  .handle{position:absolute;top:0;bottom:0;width:0;left:50%}
+  .handle::before{content:"";position:absolute;top:0;bottom:0;left:-1.5px;width:3px;background:#fff;
+    box-shadow:0 0 4px rgba(0,0,0,.35)}
+  .knob{position:absolute;top:50%;left:0;transform:translate(-50%,-50%);width:48px;height:48px;
+    border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.3);
+    display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--accent);font-weight:700}
+  .tag{position:absolute;top:10px;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700;
+    background:rgba(255,255,255,.85);color:var(--ink);pointer-events:none}
+  .tag.l{left:10px}.tag.r{right:10px}
+  .hint{font-size:13px;color:var(--sub);text-align:center;margin:8px 0 0}
+
+  .now{margin:16px 0 8px;text-align:center;font-size:15px;color:var(--sub)}
+  .now b{font-size:20px;color:var(--ink);margin-left:4px}
+
+  /* パレット */
+  .panel{display:none}
+  .panel.show{display:block}
+  .tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}
+  .tab{min-height:46px;border-radius:12px;border:2px solid var(--line);background:var(--card);
+    font-size:16px;font-weight:700;color:var(--sub);cursor:pointer;font-family:inherit}
+  .tab.on{border-color:var(--accent);background:var(--accent);color:#fff}
+  .chips{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px;
+    background:var(--card);border-radius:16px;padding:14px;border:1px solid var(--line)}
+  .chip{border:none;background:none;padding:0;cursor:pointer;font-family:inherit;color:var(--ink)}
+  .chip .sw{display:block;width:100%;aspect-ratio:1/1;border-radius:50%;
+    border:1px solid rgba(0,0,0,.12);box-shadow:inset 0 0 0 4px #fff;transition:transform .1s}
+  .chip .nm{display:block;margin-top:6px;font-size:13px;line-height:1.3}
+  .chip.on .sw{box-shadow:inset 0 0 0 4px #fff,0 0 0 3px var(--accent);transform:scale(1.04)}
+  .chip.on .nm{font-weight:700}
+  .reset{margin-top:10px}
+  .note{font-size:12px;color:var(--sub);line-height:1.6;margin-top:16px}
+  input[type=file]{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>パーソナルカラー 着せ替え</h1>
+  <p class="lead">お写真の洋服の色を<br>ボタンひとつで変えられます</p>
+
+  <label class="btn" id="pickBtn" for="file">📷 写真を選ぶ</label>
+  <input type="file" id="file" accept="image/*">
+
+  <div class="status" id="status"></div>
+
+  <div class="compare" id="compare">
+    <canvas id="after"></canvas>
+    <canvas id="before" class="before"></canvas>
+    <span class="tag l">元の写真</span>
+    <span class="tag r">着せ替え</span>
+    <div class="handle" id="handle"><div class="knob">⇔</div></div>
+  </div>
+
+  <div class="panel" id="panel">
+    <p class="hint">白い丸を左右に動かすと見比べられます</p>
+    <p class="now">いまの色<b id="nowName">元の色</b></p>
+
+    <div class="tabs" id="tabs"></div>
+    <div class="chips" id="chips"></div>
+
+    <div class="row">
+      <button class="btn" id="saveBtn">💾 保存する</button>
+      <button class="btn sub" id="origBtn">元の色に戻す</button>
+    </div>
+    <div class="row">
+      <label class="btn sub" for="file">別の写真にする</label>
+    </div>
+    <p class="note">※ 服の範囲は自動で判定しています。肌に近い色の服や、髪・手が服に重なっている写真は、境目が少しずれることがあります。<br>※ 写真はこの端末の中だけで処理され、どこにも送信されません。</p>
+  </div>
+</div>
+
+<script type="module">
+const MP_VER = "0.10.14";
+const MP_URL = `https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@${MP_VER}`;
+const MODEL_URL = "https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_multiclass_256x256/float32/latest/selfie_multiclass_256x256.tflite";
+const CLOTHES = 4;          // selfie_multiclass の「服」
+const MAX_SIDE = 1400;      // 処理する画像の最大サイズ
+
+const PALETTE = {
+  "春": [
+    ["コーラルピンク","#F4846F"],["サーモンピンク","#FA9A85"],["ピーチ","#FFB98A"],
+    ["イエローグリーン","#A8C94F"],["ターコイズ","#3FB8AF"],["キャメル","#C68E4E"]],
+  "夏": [
+    ["ローズピンク","#D9829B"],["ラベンダー","#B4A3D1"],["パウダーブルー","#9DB8D9"],
+    ["ミントグリーン","#9FD3C1"],["ローズブラウン","#A4757A"],["ライトグレー","#B9BCC2"]],
+  "秋": [
+    ["テラコッタ","#B85C3C"],["マスタード","#C9A033"],["オリーブ","#6E7A3A"],
+    ["カーキ","#8A7F55"],["ブラウン","#7A4E2D"],["ディープティール","#2F6F6A"]],
+  "冬": [
+    ["ロイヤルブルー","#2346B0"],["マゼンタ","#C2185B"],["トゥルーレッド","#C8102E"],
+    ["エメラルド","#00936A"],["ブラック","#1A1A1A"],["ピュアホワイト","#F7F7F7"]],
+};
+
+const $ = id => document.getElementById(id);
+const fileIn = $("file"), statusEl = $("status"), compare = $("compare"), panel = $("panel");
+const afterC = $("after"), beforeC = $("before"), handle = $("handle");
+
+let segmenter = null;
+let W = 0, H = 0, orig = null, mask = null, labL = null, meanL = 0, current = null;
+let season = "春";
+
+/* ---------- 表示 ---------- */
+function setStatus(html, type){
+  statusEl.className = "status show" + (type === "err" ? " err" : "");
+  statusEl.innerHTML = html;
+}
+function hideStatus(){ statusEl.className = "status"; }
+
+/* ---------- 色の計算（sRGB ⇔ Lab） ---------- */
+const toLin = c => (c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4));
+const toSrgb = c => (c <= 0.0031308 ? 12.92 * c : 1.055 * Math.pow(c, 1 / 2.4) - 0.055);
+const LIN = new Float32Array(256); for (let i = 0; i < 256; i++) LIN[i] = toLin(i / 255);
+const fLab = t => (t > 216 / 24389 ? Math.cbrt(t) : (24389 / 27 * t + 16) / 116);
+const fInv = t => (t * t * t > 216 / 24389 ? t * t * t : (116 * t - 16) / (24389 / 27));
+const XN = 0.95047, ZN = 1.08883;
+
+function rgb2lab(r, g, b){
+  const R = LIN[r], G = LIN[g], B = LIN[b];
+  const x = (0.4124 * R + 0.3576 * G + 0.1805 * B) / XN;
+  const y = 0.2126 * R + 0.7152 * G + 0.0722 * B;
+  const z = (0.0193 * R + 0.1192 * G + 0.9505 * B) / ZN;
+  const fx = fLab(x), fy = fLab(y), fz = fLab(z);
+  return [116 * fy - 16, 500 * (fx - fy), 200 * (fy - fz)];
+}
+function lab2rgb(L, a, b, out){
+  const fy = (L + 16) / 116, fx = fy + a / 500, fz = fy - b / 200;
+  const x = fInv(fx) * XN, y = fInv(fy), z = Math.max(0, fInv(fz) * ZN);
+  let R = 3.2406 * x - 1.5372 * y - 0.4986 * z;
+  let G = -0.9689 * x + 1.8758 * y + 0.0415 * z;
+  let B = 0.0557 * x - 0.2040 * y + 1.0570 * z;
+  out[0] = Math.round(Math.min(1, Math.max(0, toSrgb(Math.max(0, R)))) * 255);
+  out[1] = Math.round(Math.min(1, Math.max(0, toSrgb(Math.max(0, G)))) * 255);
+  out[2] = Math.round(Math.min(1, Math.max(0, toSrgb(Math.max(0, B)))) * 255);
+}
+const hex2rgb = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+
+/* ---------- AIの準備 ---------- */
+async function loadSegmenter(){
+  if (segmenter) return segmenter;
+  const { FilesetResolver, ImageSegmenter } = await import(`${MP_URL}/vision_bundle.mjs`);
+  const fileset = await FilesetResolver.forVisionTasks(`${MP_URL}/wasm`);
+  segmenter = await ImageSegmenter.createFromOptions(fileset, {
+    baseOptions: { modelAssetPath: MODEL_URL, delegate: "CPU" },
+    runningMode: "IMAGE",
+    outputCategoryMask: false,
+    outputConfidenceMasks: true,
+  });
+  return segmenter;
+}
+
+/* ---------- 写真の読み込み ---------- */
+function loadImage(file){
+  return new Promise((res, rej) => {
+    const img = new Image();
+    img.onload = () => res(img);
+    img.onerror = rej;
+    img.src = URL.createObjectURL(file);
+  });
+}
+
+fileIn.addEventListener("change", async () => {
+  const file = fileIn.files && fileIn.files[0];
+  fileIn.value = "";
+  if (!file) return;
+  panel.classList.remove("show");
+  compare.classList.remove("show");
+  try {
+    setStatus('<span class="spinner"></span>写真を読み込んでいます…');
+    const img = await loadImage(file);
+    const s = Math.min(1, MAX_SIDE / Math.max(img.naturalWidth, img.naturalHeight));
+    W = Math.round(img.naturalWidth * s); H = Math.round(img.naturalHeight * s);
+    const work = document.createElement("canvas");
+    work.width = W; work.height = H;
+    const wctx = work.getContext("2d");
+    wctx.drawImage(img, 0, 0, W, H);
+    orig = wctx.getImageData(0, 0, W, H);
+
+    setStatus('<span class="spinner"></span>服の範囲を判定しています…<br><small>はじめての時は少し時間がかかります</small>');
+    const seg = await loadSegmenter();
+    const result = seg.segment(work);
+    const cm = result.confidenceMasks[CLOTHES];
+    buildMask(resample(cm.getAsFloat32Array(), cm.width, cm.height));
+    result.close && result.close();
+
+    if (!prepare()){
+      setStatus("服の部分が見つかりませんでした。<br>上半身がはっきり写った写真でお試しください。", "err");
+      return;
+    }
+    setupCanvases();
+    current = null;
+    $("nowName").textContent = "元の色";
+    renderChips();
+    draw();
+    hideStatus();
+    compare.classList.add("show");
+    panel.classList.add("show");
+    $("pickBtn").style.display = "none";
+  } catch (e){
+    console.error(e);
+    setStatus("うまく読み込めませんでした。<br>電波の良い場所で、もう一度お試しください。", "err");
+  }
+});
+
+/* マスクが写真と違う大きさで返ってきた場合に合わせる */
+function resample(src, sw, sh){
+  if (sw === W && sh === H) return src;
+  const out = new Float32Array(W * H);
+  for (let y = 0; y < H; y++){
+    const fy = Math.min(sh - 1, Math.max(0, (y + 0.5) * sh / H - 0.5));
+    const y0 = Math.floor(fy), y1 = Math.min(sh - 1, y0 + 1), wy = fy - y0;
+    for (let x = 0; x < W; x++){
+      const fx = Math.min(sw - 1, Math.max(0, (x + 0.5) * sw / W - 0.5));
+      const x0 = Math.floor(fx), x1 = Math.min(sw - 1, x0 + 1), wx = fx - x0;
+      out[y * W + x] =
+        (src[y0 * sw + x0] * (1 - wx) + src[y0 * sw + x1] * wx) * (1 - wy) +
+        (src[y1 * sw + x0] * (1 - wx) + src[y1 * sw + x1] * wx) * wy;
+    }
+  }
+  return out;
+}
+
+/* 自信度 → なめらかな境目のマスク */
+function buildMask(conf){
+  const raw = new Float32Array(W * H);
+  for (let i = 0; i < raw.length; i++){
+    const t = Math.min(1, Math.max(0, (conf[i] - 0.35) / 0.3));
+    raw[i] = t * t * (3 - 2 * t);
+  }
+  // 境目を少しだけぼかす（横→縦）
+  const r = Math.max(1, Math.round(Math.max(W, H) / 600));
+  const tmp = new Float32Array(W * H);
+  mask = new Float32Array(W * H);
+  const n = 2 * r + 1;
+  for (let y = 0; y < H; y++){
+    let s = 0; const o = y * W;
+    for (let x = -r; x <= r; x++) s += raw[o + Math.min(W - 1, Math.max(0, x))];
+    for (let x = 0; x < W; x++){
+      tmp[o + x] = s / n;
+      s += raw[o + Math.min(W - 1, x + r + 1)] - raw[o + Math.max(0, x - r)];
+    }
+  }
+  for (let x = 0; x < W; x++){
+    let s = 0;
+    for (let y = -r; y <= r; y++) s += tmp[Math.min(H - 1, Math.max(0, y)) * W + x];
+    for (let y = 0; y < H; y++){
+      mask[y * W + x] = s / n;
+      s += tmp[Math.min(H - 1, y + r + 1) * W + x] - tmp[Math.max(0, y - r) * W + x];
+    }
+  }
+}
+
+/* 服の明るさ（凹凸・影）を取り出す */
+function prepare(){
+  const d = orig.data;
+  labL = new Float32Array(W * H);
+  let sum = 0, wsum = 0;
+  for (let i = 0, p = 0; i < labL.length; i++, p += 4){
+    const m = mask[i];
+    if (m < 0.01) continue;
+    const L = rgb2lab(d[p], d[p + 1], d[p + 2])[0];
+    labL[i] = L; sum += L * m; wsum += m;
+  }
+  meanL = wsum ? sum / wsum : 0;
+  return wsum > W * H * 0.01;
+}
+
+function setupCanvases(){
+  for (const c of [afterC, beforeC]){ c.width = W; c.height = H; }
+  beforeC.getContext("2d").putImageData(orig, 0, 0);
+  setPos(50);
+}
+
+/* ---------- 色を変える ---------- */
+function draw(){
+  const ctx = afterC.getContext("2d");
+  if (!current){ ctx.putImageData(orig, 0, 0); return; }
+  const [tl, ta, tb] = rgb2lab(...hex2rgb(current[1]));
+  // 暗い色は凹凸を少し控えめに（黒がグレーっぽくならないように）
+  const k = tl >= meanL ? 1 : 0.6 + 0.4 * tl / Math.max(meanL, 1);
+  const src = orig.data;
+  const out = new ImageData(W, H);
+  const o = out.data, rgb = [0, 0, 0];
+  for (let i = 0, p = 0; i < mask.length; i++, p += 4){
+    const m = mask[i];
+    if (m < 0.01){
+      o[p] = src[p]; o[p + 1] = src[p + 1]; o[p + 2] = src[p + 2]; o[p + 3] = 255;
+      continue;
+    }
+    const L = Math.min(100, Math.max(0, tl + (labL[i] - meanL) * k));
+    lab2rgb(L, ta, tb, rgb);
+    o[p]     = src[p]     * (1 - m) + rgb[0] * m;
+    o[p + 1] = src[p + 1] * (1 - m) + rgb[1] * m;
+    o[p + 2] = src[p + 2] * (1 - m) + rgb[2] * m;
+    o[p + 3] = 255;
+  }
+  ctx.putImageData(out, 0, 0);
+}
+
+/* ---------- パレット ---------- */
+function renderTabs(){
+  const tabs = $("tabs"); tabs.innerHTML = "";
+  for (const name of Object.keys(PALETTE)){
+    const b = document.createElement("button");
+    b.className = "tab" + (name === season ? " on" : "");
+    b.textContent = name;
+    b.onclick = () => { season = name; renderTabs(); renderChips(); };
+    tabs.appendChild(b);
+  }
+}
+function renderChips(){
+  const box = $("chips"); box.innerHTML = "";
+  for (const c of PALETTE[season]){
+    const b = document.createElement("button");
+    b.className = "chip" + (current && current[1] === c[1] ? " on" : "");
+    b.innerHTML = `<span class="sw" style="background:${c[1]}"></span><span class="nm">${c[0]}</span>`;
+    b.onclick = () => {
+      current = c;
+      $("nowName").textContent = `${season}・${c[0]}`;
+      renderChips();
+      draw();
+    };
+    box.appendChild(b);
+  }
+}
+$("origBtn").onclick = () => { current = null; $("nowName").textContent = "元の色"; renderChips(); draw(); };
+renderTabs();
+
+/* ---------- 左右スライドで見比べ ---------- */
+function setPos(pct){
+  pct = Math.min(100, Math.max(0, pct));
+  beforeC.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+  handle.style.left = pct + "%";
+}
+let dragging = false;
+function posFromEvent(e){
+  const r = compare.getBoundingClientRect();
+  setPos((e.clientX - r.left) / r.width * 100);
+}
+compare.addEventListener("pointerdown", e => { dragging = true; compare.setPointerCapture(e.pointerId); posFromEvent(e); });
+compare.addEventListener("pointermove", e => { if (dragging) posFromEvent(e); });
+compare.addEventListener("pointerup", () => { dragging = false; });
+compare.addEventListener("pointercancel", () => { dragging = false; });
+
+/* ---------- 保存 ---------- */
+$("saveBtn").onclick = () => {
+  const name = current ? `${season}_${current[0]}` : "元の色";
+  afterC.toBlob(async blob => {
+    const file = new File([blob], `着せ替え_${name}.jpg`, { type: "image/jpeg" });
+    if (navigator.canShare && navigator.canShare({ files: [file] })){
+      try { await navigator.share({ files: [file] }); return; }
+      catch (e){ if (e.name === "AbortError") return; }
+    }
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = file.name;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 3000);
+  }, "image/jpeg", 0.92);
+};
+</script>
+</body>
+</html>
