@@ -191,6 +191,16 @@ def load_img(url):
 
 
 # ---------------- main ----------------
+def plausible(m, kind, name):
+    """測った位置がありえない値（パンツまで上着と判定した等）のときは使わない"""
+    long_ = any(w in name for w in ["コート", "ロング", "マキシ"])
+    if kind == "top":
+        return m["topFrac"] < 0.3 and m["hemFrac"] <= (0.95 if long_ else 0.72)
+    if kind == "dress":
+        return m["topFrac"] < 0.3 and 0.45 <= m["hemFrac"] <= 1.0
+    return 0.6 <= m["hemFrac"] <= 1.02
+
+
 def product_kind(cls_kind, name):
     if cls_kind == "mix":
         return "dress" if ("ワンピース" in name or "ドレス" in name) else "bottom"
@@ -332,7 +342,9 @@ def main():
 
                 prices = it.get("prices") or {}
                 price = ((prices.get("promo") or {}).get("value")) or ((prices.get("base") or {}).get("value"))
-                c0 = cache.get(key, {})
+                c0 = dict(cache.get(key, {}))
+                if c0.get("meas") and not plausible(c0["meas"], kind, name):
+                    c0["meas"] = None
                 if c0.get("meas"):
                     stats["measured"] += 1
                 products.append({

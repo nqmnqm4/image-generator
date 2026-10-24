@@ -46,10 +46,7 @@
    "category": "アウター",
    "price": 4990,
    "url": "https://www.uniqlo.com/jp/ja/products/E487516-000/00",
-   "meas": {
-    "topFrac": 0.1498,
-    "hemFrac": 0.7496
-   },
+   "meas": null,
    "modelCm": 176.0,
    "modelSize": "M",
    "colors": [
@@ -124,10 +121,7 @@
    "category": "アウター",
    "price": 7990,
    "url": "https://www.uniqlo.com/jp/ja/products/E487518-000/00",
-   "meas": {
-    "topFrac": 0.1707,
-    "hemFrac": 0.7646
-   },
+   "meas": null,
    "modelCm": 175.0,
    "modelSize": "M",
    "colors": [
@@ -184,10 +178,7 @@
    "category": "アウター",
    "price": 2990,
    "url": "https://www.uniqlo.com/jp/ja/products/E487832-000/00",
-   "meas": {
-    "topFrac": 0.136,
-    "hemFrac": 0.8662
-   },
+   "meas": null,
    "modelCm": 174.0,
    "modelSize": "M",
    "colors": [
@@ -1786,10 +1777,7 @@
    "category": "アウター",
    "price": 3990,
    "url": "https://www.gu-global.com/jp/ja/products/E361793-000/00",
-   "meas": {
-    "topFrac": 0.1591,
-    "hemFrac": 0.852
-   },
+   "meas": null,
    "modelCm": 162.0,
    "modelSize": "M",
    "colors": [
@@ -2155,10 +2143,7 @@
    "category": "ニット",
    "price": 2990,
    "url": "https://www.gu-global.com/jp/ja/products/E361317-000/00",
-   "meas": {
-    "topFrac": 0.146,
-    "hemFrac": 0.9264
-   },
+   "meas": null,
    "modelCm": 175.0,
    "modelSize": "L",
    "colors": [
@@ -2815,10 +2800,7 @@
    "category": "スウェット",
    "price": 1990,
    "url": "https://www.gu-global.com/jp/ja/products/E358273-000/00",
-   "meas": {
-    "topFrac": 0.1411,
-    "hemFrac": 0.8804
-   },
+   "meas": null,
    "modelCm": 170.0,
    "modelSize": "M",
    "colors": [
@@ -3994,10 +3976,7 @@
    "category": "ワンピース",
    "price": 1490,
    "url": "https://www.gu-global.com/jp/ja/products/E361313-000/00",
-   "meas": {
-    "topFrac": 0.3093,
-    "hemFrac": 0.6521
-   },
+   "meas": null,
    "modelCm": 172.0,
    "modelSize": "M",
    "colors": [

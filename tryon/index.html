@@ -119,6 +119,7 @@
       <div class="nm" id="selName"></div>
       <div class="meta" id="selMeta"></div>
       <div class="slider"><label for="scale">大きさ</label><input id="scale" type="range" min="70" max="140" value="100"><span id="scaleVal">100%</span></div>
+      <div class="slider"><label for="wscale">横幅</label><input id="wscale" type="range" min="70" max="160" value="100"><span id="wscaleVal">100%</span></div>
       <div class="row">
         <button class="btn ghost" id="resetBtn">丈の目安の位置に戻す</button>
         <button class="btn ghost" id="frontBtn">前に出す</button>
@@ -244,7 +245,7 @@ function wear(p,ci){
   S.layers.filter(L=>conflicts.includes(L.p.kind)).forEach(removeLayer);
   const el=document.createElement('div');el.className='layer';
   const img=new Image();img.alt='';img.src=c.img;
-  const L={p,c,el,img,dx:0,dy:0,scale:1,ar:1};
+  const L={p,c,el,img,dx:0,dy:0,scale:1,wscale:1,ar:1};
   img.onload=()=>{L.ar=img.naturalWidth/img.naturalHeight;place(L)};
   el.appendChild(img);stage.appendChild(el);
   el.style.zIndex=p.kind==='bottom'?(S.z+=1):(S.z+=2);
@@ -270,7 +271,7 @@ function geometry(L){
 function place(L){
   if(!ready())return;
   const g=geometry(L),r=S.photoH/S.photoW;
-  const h=g.h*L.scale, w=h*L.ar*r; // width as fraction of stage width
+  const h=g.h*L.scale, w=h*L.ar*r*L.wscale; // width as fraction of stage width
   const cx=S.head.x+L.dx, top=g.top+L.dy;
   Object.assign(L.el.style,{left:((cx-w/2)*100)+'%',top:(top*100)+'%',width:(w*100)+'%',height:(h*100)+'%'});
 }
@@ -280,6 +281,7 @@ function setActive(L){
   $('selName').textContent=L.p.brandLabel+'　'+L.p.name;
   $('selMeta').textContent=L.p.meas?`丈はモデル（身長${L.p.modelCm}cm${L.p.modelSize?'・'+L.p.modelSize+'サイズ着用':''}）の写真から計算しています。`+(S.heightCm?'':'身長が未入力のため158cmで計算中です。'):'この商品はモデル写真から丈を測れなかったため、おおよその位置に置いています。指で動かして合わせてください。';
   $('scale').value=Math.round(L.scale*100);$('scaleVal').textContent=Math.round(L.scale*100)+'%';
+  $('wscale').value=Math.round(L.wscale*100);$('wscaleVal').textContent=Math.round(L.wscale*100)+'%';
 }
 function removeLayer(L){L.el.remove();S.layers=S.layers.filter(x=>x!==L);if(S.active===L)setActive(null)}
 function bind(L){
@@ -295,7 +297,8 @@ function bind(L){
   L.el.addEventListener('pointerup',end);L.el.addEventListener('pointercancel',end);
 }
 $('scale').oninput=()=>{if(!S.active)return;S.active.scale=$('scale').value/100;$('scaleVal').textContent=$('scale').value+'%';place(S.active)};
-$('resetBtn').onclick=()=>{const L=S.active;if(!L)return;L.dx=L.dy=0;L.scale=1;setActive(L);place(L)};
+$('wscale').oninput=()=>{if(!S.active)return;S.active.wscale=$('wscale').value/100;$('wscaleVal').textContent=$('wscale').value+'%';place(S.active)};
+$('resetBtn').onclick=()=>{const L=S.active;if(!L)return;L.dx=L.dy=0;L.scale=1;L.wscale=1;setActive(L);place(L)};
 $('frontBtn').onclick=()=>{if(S.active)S.active.el.style.zIndex=(S.z+=1)};
 $('delBtn').onclick=()=>{if(S.active)removeLayer(S.active)};
 $('clearBtn').onclick=()=>[...S.layers].forEach(removeLayer);
