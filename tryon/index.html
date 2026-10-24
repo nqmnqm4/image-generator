@@ -278,7 +278,7 @@ function relayout(){S.layers.forEach(place)}
 function setActive(L){
   S.active=L;S.layers.forEach(x=>x.el.classList.toggle('sel',x===L));$('selPanel').hidden=!L;if(!L)return;
   $('selName').textContent=L.p.brandLabel+'　'+L.p.name;
-  $('selMeta').textContent=L.p.meas?`丈はモデル（身長${L.p.modelCm}cm・${L.p.modelSize||''}サイズ着用）の写真から計算しています。`+(S.heightCm?'':'身長が未入力のため158cmで計算中です。'):'この商品はモデル写真から丈を測れなかったため、おおよその位置に置いています。指で動かして合わせてください。';
+  $('selMeta').textContent=L.p.meas?`丈はモデル（身長${L.p.modelCm}cm${L.p.modelSize?'・'+L.p.modelSize+'サイズ着用':''}）の写真から計算しています。`+(S.heightCm?'':'身長が未入力のため158cmで計算中です。'):'この商品はモデル写真から丈を測れなかったため、おおよその位置に置いています。指で動かして合わせてください。';
   $('scale').value=Math.round(L.scale*100);$('scaleVal').textContent=Math.round(L.scale*100)+'%';
 }
 function removeLayer(L){L.el.remove();S.layers=S.layers.filter(x=>x!==L);if(S.active===L)setActive(null)}

@@ -8,6 +8,7 @@ GitHub Actions で毎日実行し、tryon/data/products.json と tryon/img/ を�
 import io
 import json
 import os
+import re
 import sys
 import time
 import urllib.parse
@@ -25,6 +26,7 @@ OUT = os.path.join(DATA, "products.json")
 
 PER_CLASS = int(os.environ.get("TRYON_PER_CLASS", "8"))
 MAX_COLORS = 6
+CACHE_V = 2
 UA = "Mozilla/5.0 (compatible; tryon-board/1.0; personal use)"
 
 BRANDS = [
@@ -164,6 +166,20 @@ def cut_from_model(img, kind):
     return Image.fromarray(a)
 
 
+def looks_like_model(img, cut):
+    """商品だけの写真のはずが人が写っている場合を見分ける（服より上に頭、下に脚が大きくはみ出している）"""
+    fg = np.array(cut)[..., 3] > 20
+    fe = rows_extent(fg, 0.02)
+    if not fe:
+        return False
+    m = cloth_masks(img.convert("RGB"))
+    ce = rows_extent(m["upper"] | m["lower"] | m["full"], 0.2)
+    if not ce:
+        return False
+    h = fe[1] - fe[0] + 1
+    return (ce[0] - fe[0]) > 0.1 * h or (fe[1] - ce[1]) > 0.15 * h
+
+
 def load_img(url):
     b = get(url, binary=True)
     if not b:
@@ -195,17 +211,34 @@ def model_info(brand, item):
     if not j or j.get("status") != "ok":
         return None
     res = j["result"]
-    sizes = {s.get("code"): s.get("name") for s in res.get("sizes", [])}
-    for c, v in (res.get("images", {}).get("main") or {}).items():
+    sizes_by_disp = {s.get("displayCode"): s.get("name") for s in res.get("sizes", [])}
+    sizes_by_code = {s.get("code"): s.get("name") for s in res.get("sizes", [])}
+    l1 = str(item.get("l1Id"))
+    imgs = res.get("images", {}) or {}
+    entries = [v for v in (imgs.get("main") or {}).values()] + list(imgs.get("sub") or [])
+    cands = []
+    for v in entries:
+        if not isinstance(v, dict) or not v.get("image"):
+            continue
         for m in v.get("model") or []:
             h = ((m.get("modelSize") or {}).get("universal") or {}).get("height")
-            if h:
-                code = m.get("sizeCode") or m.get("size") or ""
-                if isinstance(code, dict):
-                    code = code.get("code", "")
-                return {"color": c, "image": v.get("image"), "heightCm": float(h),
-                        "size": sizes.get(code, code if isinstance(code, str) else "")}
-    return None
+            if not h:
+                continue
+            blob = json.dumps(m, ensure_ascii=False)
+            size = ""
+            mm = re.search(re.escape(l1) + r"-\d{2}-(\d{3})-", blob)
+            if mm:
+                size = sizes_by_disp.get(mm.group(1), "")
+            if not size:
+                for code, nm in sizes_by_code.items():
+                    if code and code in blob:
+                        size = nm
+                        break
+            women = "women" in blob.lower()
+            cands.append({"image": v["image"], "heightCm": float(h), "size": size, "women": women})
+            break
+    cands.sort(key=lambda c: (not c["women"]))
+    return cands
 
 
 def main():
@@ -235,18 +268,27 @@ def main():
                 kind = product_kind(cls_kind, name)
                 key = f"{brand['key']}_{l1}"
 
-                # 丈の測定（商品ごとに1回、結果はキャッシュ）
-                if key not in cache:
-                    mi = model_info(brand, it)
-                    meas = None
-                    if mi and mi.get("image"):
-                        mimg = load_img(mi["image"])
-                        if mimg is not None:
-                            try:
-                                meas = measure(mimg, kind, mi["heightCm"])
-                            except Exception as e:
-                                print("measure error", key, e, file=sys.stderr)
-                    cache[key] = {"meas": meas, "modelCm": mi and mi["heightCm"], "modelSize": mi and mi["size"]}
+                # 丈の測定（商品ごとに1回、結果はキャッシュ）。全身が写ったモデル写真を最大5枚まで探す
+                if cache.get(key, {}).get("v") != CACHE_V:
+                    for fn_old in os.listdir(IMG):
+                        if fn_old.startswith(key + "_"):
+                            os.remove(os.path.join(IMG, fn_old))  # 切り抜き方法を変えたので作り直す
+                    cands = model_info(brand, it) or []
+                    meas, used_c = None, (cands[0] if cands else None)
+                    for cd in cands[:5]:
+                        mimg = load_img(cd["image"])
+                        if mimg is None:
+                            continue
+                        try:
+                            meas = measure(mimg, kind, cd["heightCm"])
+                        except Exception as e:
+                            print("measure error", key, e, file=sys.stderr)
+                        if meas:
+                            used_c = cd
+                            break
+                    prev_src = {}
+                    cache[key] = {"v": CACHE_V, "meas": meas, "src": prev_src,
+                                  "modelCm": used_c and used_c["heightCm"], "modelSize": used_c and used_c["size"]}
 
                 colors = []
                 for c in list(main_imgs.keys())[:MAX_COLORS]:
@@ -260,8 +302,13 @@ def main():
                         fimg = load_img(flat_url)
                         if fimg is not None:
                             try:
-                                ok = save_cut(cut_flat(fimg), path)
-                                src = "flat" if ok else None
+                                cut = cut_flat(fimg)
+                                if looks_like_model(fimg, cut):
+                                    cut, kind_src = cut_from_model(fimg, kind), "model"
+                                else:
+                                    kind_src = "flat"
+                                ok = save_cut(cut, path)
+                                src = kind_src if ok else None
                             except Exception as e:
                                 print("flat error", fn, e, file=sys.stderr)
                         if not ok:
