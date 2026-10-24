@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-24 17:53",
+ "updated": "2026-10-25 05:56",
  "products": [
   {
    "id": "UQ_487517",
@@ -971,27 +971,6 @@
    ]
   },
   {
-   "id": "UQ_484607",
-   "brand": "UQ",
-   "brandLabel": "UNIQLO",
-   "name": "ポロセーター/ウォッシャブル",
-   "kind": "top",
-   "category": "ニット",
-   "price": 1290,
-   "url": "https://www.uniqlo.com/jp/ja/products/E484607-000/00",
-   "meas": null,
-   "modelCm": 173.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "42",
-     "img": "img/UQ_484607_42.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/484607/chip/goods_42_484607_chip.jpg",
-     "src": "model"
-    }
-   ]
-  },
-  {
    "id": "UQ_474983",
    "brand": "UQ",
    "brandLabel": "UNIQLO",
@@ -1134,6 +1113,57 @@
      "code": "65",
      "img": "img/UQ_469410_65.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/469410/chip/goods_65_469410_chip.jpg",
+     "src": "model"
+    }
+   ]
+  },
+  {
+   "id": "UQ_469426",
+   "brand": "UQ",
+   "brandLabel": "UNIQLO",
+   "name": "メリノリブタートルネックセーター",
+   "kind": "top",
+   "category": "ニット",
+   "price": 3990,
+   "url": "https://www.uniqlo.com/jp/ja/products/E450514-000/00",
+   "meas": null,
+   "modelCm": 174.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "14",
+     "img": "img/UQ_469426_14.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/469426/chip/goods_14_469426_chip.jpg",
+     "src": "model"
+    },
+    {
+     "code": "15",
+     "img": "img/UQ_469426_15.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/469426/chip/goods_15_469426_chip.jpg",
+     "src": "model"
+    },
+    {
+     "code": "18",
+     "img": "img/UQ_469426_18.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/469426/chip/goods_18_469426_chip.jpg",
+     "src": "model"
+    },
+    {
+     "code": "26",
+     "img": "img/UQ_469426_26.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/469426/chip/goods_26_469426_chip.jpg",
+     "src": "model"
+    },
+    {
+     "code": "31",
+     "img": "img/UQ_469426_31.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/469426/chip/goods_31_469426_chip.jpg",
+     "src": "model"
+    },
+    {
+     "code": "38",
+     "img": "img/UQ_469426_38.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/469426/chip/goods_38_469426_chip.jpg",
      "src": "model"
     }
    ]
