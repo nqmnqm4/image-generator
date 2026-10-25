@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-25 05:56",
+ "updated": "2026-10-26 05:57",
  "products": [
   {
    "id": "UQ_487517",
@@ -516,6 +516,12 @@
      "code": "32",
      "img": "img/UQ_470143_32.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/470143/chip/goods_32_470143_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "39",
+     "img": "img/UQ_470143_39.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/470143/chip/goods_39_470143_chip.jpg",
      "src": "flat"
     }
    ]
@@ -2525,36 +2531,6 @@
    ]
   },
   {
-   "id": "GU_361842",
-   "brand": "GU",
-   "brandLabel": "GU",
-   "name": "ウォームリブ2ピースT(12分袖) by rokh",
-   "kind": "top",
-   "category": "Tシャツ",
-   "price": 1990,
-   "url": "https://www.gu-global.com/jp/ja/products/E361842-000/00",
-   "meas": {
-    "topFrac": 0.1623,
-    "hemFrac": 0.5148
-   },
-   "modelCm": 171.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "01",
-     "img": "img/GU_361842_01.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361842/chip/goods_01_361842_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "03",
-     "img": "img/GU_361842_03.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361842/chip/goods_03_361842_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
    "id": "GU_360889",
    "brand": "GU",
    "brandLabel": "GU",
@@ -2603,6 +2579,36 @@
    ]
   },
   {
+   "id": "GU_361842",
+   "brand": "GU",
+   "brandLabel": "GU",
+   "name": "ウォームリブ2ピースT(12分袖) by rokh",
+   "kind": "top",
+   "category": "Tシャツ",
+   "price": 1990,
+   "url": "https://www.gu-global.com/jp/ja/products/E361842-000/00",
+   "meas": {
+    "topFrac": 0.1623,
+    "hemFrac": 0.5148
+   },
+   "modelCm": 171.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "01",
+     "img": "img/GU_361842_01.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361842/chip/goods_01_361842_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "03",
+     "img": "img/GU_361842_03.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361842/chip/goods_03_361842_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
    "id": "GU_360882",
    "brand": "GU",
    "brandLabel": "GU",
@@ -2645,55 +2651,55 @@
    ]
   },
   {
-   "id": "GU_360578",
+   "id": "GU_360579",
    "brand": "GU",
    "brandLabel": "GU",
-   "name": "ウォームリブクルーネックT(12分袖)",
+   "name": "ウォームリブタートルネックT(長袖)",
    "kind": "top",
    "category": "Tシャツ",
    "price": 1290,
-   "url": "https://www.gu-global.com/jp/ja/products/E360578-000/00",
+   "url": "https://www.gu-global.com/jp/ja/products/E360579-000/00",
    "meas": {
-    "topFrac": 0.159,
-    "hemFrac": 0.4291
+    "topFrac": 0.1351,
+    "hemFrac": 0.482
    },
    "modelCm": 173.0,
    "modelSize": "M",
    "colors": [
     {
      "code": "15",
-     "img": "img/GU_360578_15.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360578/chip/goods_15_360578_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "36",
-     "img": "img/GU_360578_36.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360578/chip/goods_36_360578_chip.jpg",
+     "img": "img/GU_360579_15.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360579/chip/goods_15_360579_chip.jpg",
      "src": "flat"
     },
     {
      "code": "47",
-     "img": "img/GU_360578_47.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360578/chip/goods_47_360578_chip.jpg",
+     "img": "img/GU_360579_47.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360579/chip/goods_47_360579_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "53",
+     "img": "img/GU_360579_53.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360579/chip/goods_53_360579_chip.jpg",
      "src": "flat"
     },
     {
      "code": "01",
-     "img": "img/GU_360578_01.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360578/chip/goods_01_360578_chip.jpg",
+     "img": "img/GU_360579_01.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360579/chip/goods_01_360579_chip.jpg",
      "src": "flat"
     },
     {
      "code": "08",
-     "img": "img/GU_360578_08.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360578/chip/goods_08_360578_chip.jpg",
+     "img": "img/GU_360579_08.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360579/chip/goods_08_360579_chip.jpg",
      "src": "flat"
     },
     {
      "code": "09",
-     "img": "img/GU_360578_09.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360578/chip/goods_09_360578_chip.jpg",
+     "img": "img/GU_360579_09.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360579/chip/goods_09_360579_chip.jpg",
      "src": "flat"
     }
    ]
@@ -3278,25 +3284,22 @@
    ]
   },
   {
-   "id": "GU_361328",
+   "id": "GU_357534",
    "brand": "GU",
    "brandLabel": "GU",
-   "name": "ドルマンスリーブシアーシャツ(フラワー)",
+   "name": "オックスフォードショートシャツ",
    "kind": "top",
    "category": "シャツ・ブラウス",
-   "price": 990,
-   "url": "https://www.gu-global.com/jp/ja/products/E361328-000/00",
-   "meas": {
-    "topFrac": 0.1029,
-    "hemFrac": 0.4901
-   },
-   "modelCm": 172.0,
-   "modelSize": "M",
+   "price": 1990,
+   "url": "https://www.gu-global.com/jp/ja/products/E357534-000/00",
+   "meas": null,
+   "modelCm": null,
+   "modelSize": null,
    "colors": [
     {
-     "code": "37",
-     "img": "img/GU_361328_37.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361328/chip/goods_37_361328_chip.jpg",
+     "code": "01",
+     "img": "img/GU_357534_01.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/357534/chip/goods_01_357534_chip.jpg",
      "src": "flat"
     }
    ]
@@ -3968,31 +3971,37 @@
    ]
   },
   {
-   "id": "GU_360859",
+   "id": "GU_362134",
    "brand": "GU",
    "brandLabel": "GU",
-   "name": "スキッパーシャツワンピース",
+   "name": "リブボタンネックワンピース",
    "kind": "dress",
    "category": "ワンピース",
-   "price": 1490,
-   "url": "https://www.gu-global.com/jp/ja/products/E360859-000/00",
+   "price": 2990,
+   "url": "https://www.gu-global.com/jp/ja/products/E362134-000/00",
    "meas": {
-    "topFrac": 0.1556,
-    "hemFrac": 0.7964
+    "topFrac": 0.1497,
+    "hemFrac": 0.7249
    },
-   "modelCm": 170.0,
+   "modelCm": 173.0,
    "modelSize": "M",
    "colors": [
     {
+     "code": "56",
+     "img": "img/GU_362134_56.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362134/chip/goods_56_362134_chip.jpg",
+     "src": "flat"
+    },
+    {
      "code": "69",
-     "img": "img/GU_360859_69.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360859/chip/goods_69_360859_chip.jpg",
+     "img": "img/GU_362134_69.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362134/chip/goods_69_362134_chip.jpg",
      "src": "flat"
     },
     {
      "code": "09",
-     "img": "img/GU_360859_09.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360859/chip/goods_09_360859_chip.jpg",
+     "img": "img/GU_362134_09.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362134/chip/goods_09_362134_chip.jpg",
      "src": "flat"
     }
    ]
@@ -4025,37 +4034,31 @@
    ]
   },
   {
-   "id": "GU_362134",
+   "id": "GU_360859",
    "brand": "GU",
    "brandLabel": "GU",
-   "name": "リブボタンネックワンピース",
+   "name": "スキッパーシャツワンピース",
    "kind": "dress",
    "category": "ワンピース",
-   "price": 2990,
-   "url": "https://www.gu-global.com/jp/ja/products/E362134-000/00",
+   "price": 1490,
+   "url": "https://www.gu-global.com/jp/ja/products/E360859-000/00",
    "meas": {
-    "topFrac": 0.1497,
-    "hemFrac": 0.7249
+    "topFrac": 0.1556,
+    "hemFrac": 0.7964
    },
-   "modelCm": 173.0,
+   "modelCm": 170.0,
    "modelSize": "M",
    "colors": [
     {
-     "code": "56",
-     "img": "img/GU_362134_56.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362134/chip/goods_56_362134_chip.jpg",
-     "src": "flat"
-    },
-    {
      "code": "69",
-     "img": "img/GU_362134_69.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362134/chip/goods_69_362134_chip.jpg",
+     "img": "img/GU_360859_69.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360859/chip/goods_69_360859_chip.jpg",
      "src": "flat"
     },
     {
      "code": "09",
-     "img": "img/GU_362134_09.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362134/chip/goods_09_362134_chip.jpg",
+     "img": "img/GU_360859_09.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360859/chip/goods_09_360859_chip.jpg",
      "src": "flat"
     }
    ]

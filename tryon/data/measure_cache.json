@@ -213,7 +213,8 @@
   "meas": null,
   "src": {
    "11": "model",
-   "32": "flat"
+   "32": "flat",
+   "39": "flat"
   },
   "modelCm": 176.0,
   "modelSize": "M"
@@ -1528,5 +1529,31 @@
   },
   "modelCm": 174.0,
   "modelSize": "M"
+ },
+ "GU_360579": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.1351,
+   "hemFrac": 0.482
+  },
+  "src": {
+   "15": "flat",
+   "47": "flat",
+   "53": "flat",
+   "01": "flat",
+   "08": "flat",
+   "09": "flat"
+  },
+  "modelCm": 173.0,
+  "modelSize": "M"
+ },
+ "GU_357534": {
+  "v": 2,
+  "meas": null,
+  "src": {
+   "01": "flat"
+  },
+  "modelCm": null,
+  "modelSize": null
  }
 }
