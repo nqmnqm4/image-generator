@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-26 05:57",
+ "updated": "2026-10-27 07:43",
  "products": [
   {
    "id": "UQ_487517",
@@ -198,12 +198,6 @@
      "code": "05",
      "img": "img/UQ_487832_05.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487832/chip/goods_05_487832_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "09",
-     "img": "img/UQ_487832_09.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487832/chip/goods_09_487832_chip.jpg",
      "src": "flat"
     }
    ]
@@ -776,7 +770,7 @@
    "name": "ボアフリースコンビネーションジャケット",
    "kind": "top",
    "category": "Tシャツ・スウェット",
-   "price": 4990,
+   "price": 3990,
    "url": "https://www.uniqlo.com/jp/ja/products/E487594-000/00",
    "meas": {
     "topFrac": 0.1456,
@@ -1487,6 +1481,36 @@
    ]
   },
   {
+   "id": "UQ_488814",
+   "brand": "UQ",
+   "brandLabel": "UNIQLO",
+   "name": "スマートキュロット/プリント",
+   "kind": "bottom",
+   "category": "スカート・ワンピース",
+   "price": 1990,
+   "url": "https://www.uniqlo.com/jp/ja/products/E488814-000/00",
+   "meas": {
+    "topFrac": 0.376,
+    "hemFrac": 0.7419
+   },
+   "modelCm": 174.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "35",
+     "img": "img/UQ_488814_35.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488814/chip/goods_35_488814_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "08",
+     "img": "img/UQ_488814_08.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488814/chip/goods_08_488814_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
    "id": "UQ_487976",
    "brand": "UQ",
    "brandLabel": "UNIQLO",
@@ -1518,36 +1542,6 @@
      "code": "08",
      "img": "img/UQ_487976_08.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487976/chip/goods_08_487976_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
-   "id": "UQ_488814",
-   "brand": "UQ",
-   "brandLabel": "UNIQLO",
-   "name": "スマートキュロット/プリント",
-   "kind": "bottom",
-   "category": "スカート・ワンピース",
-   "price": 1990,
-   "url": "https://www.uniqlo.com/jp/ja/products/E488814-000/00",
-   "meas": {
-    "topFrac": 0.376,
-    "hemFrac": 0.7419
-   },
-   "modelCm": 174.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "35",
-     "img": "img/UQ_488814_35.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488814/chip/goods_35_488814_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "08",
-     "img": "img/UQ_488814_08.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488814/chip/goods_08_488814_chip.jpg",
      "src": "flat"
     }
    ]
@@ -2711,7 +2705,7 @@
    "name": "スウェットパーカ by rokh",
    "kind": "top",
    "category": "スウェット",
-   "price": 3990,
+   "price": 2990,
    "url": "https://www.gu-global.com/jp/ja/products/E361685-000/00",
    "meas": {
     "topFrac": 0.1262,
@@ -3137,7 +3131,7 @@
    "name": "クロップドシャツ",
    "kind": "top",
    "category": "シャツ・ブラウス",
-   "price": 1290,
+   "price": 990,
    "url": "https://www.gu-global.com/jp/ja/products/E360853-000/00",
    "meas": {
     "topFrac": 0.1537,
@@ -3437,7 +3431,7 @@
    "name": "バレルユーティリティジーンズ by rokh",
    "kind": "bottom",
    "category": "パンツ",
-   "price": 3990,
+   "price": 2990,
    "url": "https://www.gu-global.com/jp/ja/products/E361797-000/00",
    "meas": {
     "topFrac": 0.4514,
@@ -4070,7 +4064,7 @@
    "name": "バイカラーミニワンピース",
    "kind": "dress",
    "category": "ワンピース",
-   "price": 2990,
+   "price": 1990,
    "url": "https://www.gu-global.com/jp/ja/products/E361511-000/00",
    "meas": {
     "topFrac": 0.1474,
