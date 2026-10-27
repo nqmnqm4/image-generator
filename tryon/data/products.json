@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-27 07:43",
+ "updated": "2026-10-28 07:20",
  "products": [
   {
    "id": "UQ_487517",
@@ -198,6 +198,12 @@
      "code": "05",
      "img": "img/UQ_487832_05.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487832/chip/goods_05_487832_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "09",
+     "img": "img/UQ_487832_09.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487832/chip/goods_09_487832_chip.jpg",
      "src": "flat"
     }
    ]
@@ -3161,6 +3167,42 @@
    ]
   },
   {
+   "id": "GU_358738",
+   "brand": "GU",
+   "brandLabel": "GU",
+   "name": "オックスフォードショートシャツ",
+   "kind": "top",
+   "category": "シャツ・ブラウス",
+   "price": 1990,
+   "url": "https://www.gu-global.com/jp/ja/products/E358738-000/00",
+   "meas": {
+    "topFrac": 0.2012,
+    "hemFrac": 0.4427
+   },
+   "modelCm": 170.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "10",
+     "img": "img/GU_358738_10.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/358738/chip/goods_10_358738_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "63",
+     "img": "img/GU_358738_63.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/358738/chip/goods_63_358738_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "01",
+     "img": "img/GU_358738_01.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/358738/chip/goods_01_358738_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
    "id": "GU_359811",
    "brand": "GU",
    "brandLabel": "GU",
@@ -3202,42 +3244,6 @@
      "img": "img/GU_359811_09.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/359811/chip/goods_09_359811_chip.jpg",
      "src": "model"
-    }
-   ]
-  },
-  {
-   "id": "GU_358738",
-   "brand": "GU",
-   "brandLabel": "GU",
-   "name": "オックスフォードショートシャツ",
-   "kind": "top",
-   "category": "シャツ・ブラウス",
-   "price": 1990,
-   "url": "https://www.gu-global.com/jp/ja/products/E358738-000/00",
-   "meas": {
-    "topFrac": 0.2012,
-    "hemFrac": 0.4427
-   },
-   "modelCm": 170.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "10",
-     "img": "img/GU_358738_10.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/358738/chip/goods_10_358738_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "63",
-     "img": "img/GU_358738_63.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/358738/chip/goods_63_358738_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "01",
-     "img": "img/GU_358738_01.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/358738/chip/goods_01_358738_chip.jpg",
-     "src": "flat"
     }
    ]
   },
