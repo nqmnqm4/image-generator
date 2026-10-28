@@ -1555,5 +1555,156 @@
   },
   "modelCm": null,
   "modelSize": null
+ },
+ "UQ_488723": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.1272,
+   "hemFrac": 0.5193
+  },
+  "src": {
+   "30": "flat",
+   "37": "flat",
+   "39": "flat"
+  },
+  "modelCm": 176.0,
+  "modelSize": "M"
+ },
+ "UQ_484705": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.4028,
+   "hemFrac": 0.8776
+  },
+  "src": {
+   "62": "model"
+  },
+  "modelCm": 173.0,
+  "modelSize": "M"
+ },
+ "UQ_484821": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.357,
+   "hemFrac": 0.8869
+  },
+  "src": {
+   "62": "model"
+  },
+  "modelCm": 160.0,
+  "modelSize": "S"
+ },
+ "UQ_487995": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.3755,
+   "hemFrac": 0.8623
+  },
+  "src": {
+   "56": "flat",
+   "00": "flat",
+   "09": "flat"
+  },
+  "modelCm": 158.0,
+  "modelSize": "M"
+ },
+ "UQ_491207": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.3778,
+   "hemFrac": 0.8276
+  },
+  "src": {
+   "39": "flat",
+   "03": "model",
+   "09": "flat"
+  },
+  "modelCm": 172.0,
+  "modelSize": "M"
+ },
+ "UQ_484820": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.3931,
+   "hemFrac": 0.9128
+  },
+  "src": {
+   "00": "model"
+  },
+  "modelCm": 160.0,
+  "modelSize": "S"
+ },
+ "UQ_488934": {
+  "v": 2,
+  "meas": null,
+  "src": {
+   "12": "flat"
+  },
+  "modelCm": 175.0,
+  "modelSize": "M"
+ },
+ "UQ_489000": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.4309,
+   "hemFrac": 0.884
+  },
+  "src": {
+   "31": "flat",
+   "69": "flat"
+  },
+  "modelCm": 175.0,
+  "modelSize": "M"
+ },
+ "GU_360875": {
+  "v": 2,
+  "meas": null,
+  "src": {
+   "39": "flat",
+   "57": "flat",
+   "09": "flat"
+  },
+  "modelCm": 170.0,
+  "modelSize": "M"
+ },
+ "GU_362048": {
+  "v": 2,
+  "meas": null,
+  "src": {
+   "15": "flat",
+   "61": "flat",
+   "01": "flat",
+   "03": "flat",
+   "09": "flat"
+  },
+  "modelCm": 174.0,
+  "modelSize": "M"
+ },
+ "GU_358176": {
+  "v": 2,
+  "meas": null,
+  "src": {
+   "10": "model",
+   "12": "flat",
+   "16": "model",
+   "18": "flat",
+   "30": "flat",
+   "38": "flat"
+  },
+  "modelCm": 175.0,
+  "modelSize": "M"
+ },
+ "GU_361609": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.1507,
+   "hemFrac": 0.5532
+  },
+  "src": {
+   "18": "flat",
+   "01": "flat"
+  },
+  "modelCm": 170.0,
+  "modelSize": "M"
  }
 }
