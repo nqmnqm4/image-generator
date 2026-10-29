@@ -1107,7 +1107,8 @@
    "hemFrac": 0.4827
   },
   "src": {
-   "00": "flat"
+   "00": "flat",
+   "69": "flat"
   },
   "modelCm": 175.0,
   "modelSize": "L"
@@ -1703,6 +1704,19 @@
   "src": {
    "18": "flat",
    "01": "flat"
+  },
+  "modelCm": 170.0,
+  "modelSize": "M"
+ },
+ "GU_361516": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.1591,
+   "hemFrac": 0.7877
+  },
+  "src": {
+   "67": "flat",
+   "09": "flat"
   },
   "modelCm": 170.0,
   "modelSize": "M"
