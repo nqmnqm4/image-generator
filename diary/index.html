@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F2737D">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="似合う日記">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>私の似合う日記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+/* Layout: one narrow column like a pocket diary — record card on top, then the month page and the "褒められた" shelf */
+:root{
+  --bg:#FFF7F5; --surface:#FFFFFF; --ink:#3B2A2A; --sub:#7A5D5A;
+  --coral:#F2737D; --coral-ink:#C2414F; --soft:#FFE6E4; --line:#F4D3CF; --gold:#E9A23B;
+  --display:'Zen Maru Gothic','Hiragino Maru Gothic ProN','Yu Gothic',sans-serif;
+  --body:'Zen Kaku Gothic New','Hiragino Sans','Yu Gothic',sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#231919; --surface:#2F2223; --ink:#FBECEA; --sub:#CDB1AE;
+  --coral:#F2737D; --coral-ink:#FF9CA4; --soft:#4A2D30; --line:#4B3537; --gold:#F0B65C; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#231919; --surface:#2F2223; --ink:#FBECEA; --sub:#CDB1AE;
+  --coral:#F2737D; --coral-ink:#FF9CA4; --soft:#4A2D30; --line:#4B3537; --gold:#F0B65C; color-scheme:dark}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{background:var(--bg);margin:0}
+[hidden]{display:none!important}
+img{max-width:100%}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.7;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 48px}
+.wrap{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+h1,h2{font-family:var(--display);font-weight:700;text-wrap:balance;margin:0}
+h1{font-size:2rem;line-height:1.3;color:var(--coral-ink)}
+h2{font-size:1.3rem}
+p{margin:0}
+.lead{color:var(--sub)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:16px}
+label.field{display:flex;flex-direction:column;gap:6px;font-weight:700}
+input[type=date],textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px;width:100%;box-sizing:border-box}
+textarea{min-height:84px;resize:vertical}
+.photo-pick{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;min-height:180px;border:2px dashed var(--coral);border-radius:16px;background:var(--soft);color:var(--coral-ink);font-weight:700;cursor:pointer;text-align:center;padding:16px;overflow:hidden}
+.photo-pick img{max-height:320px;border-radius:12px;object-fit:contain}
+.photo-pick{cursor:default;border-style:dashed}
+.pick-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pick-btn{position:relative;display:flex;align-items:center;justify-content:center;min-height:56px;border-radius:999px;background:var(--coral);color:#fff;font-weight:700;font-size:.95rem;white-space:nowrap;text-align:center;padding:8px 6px;cursor:pointer;overflow:hidden}
+.pick-btn:nth-child(2){background:var(--surface);color:var(--coral-ink);border:2px solid var(--coral)}
+.pick-btn input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;font-size:0}
+.pick-btn:focus-within{outline:3px solid var(--gold);outline-offset:2px}
+.safe{background:var(--soft);color:var(--coral-ink);border-radius:12px;padding:10px 14px;font-size:.9rem;font-weight:700}
+.praise{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:14px;border:1px solid var(--line);cursor:pointer;font-weight:700;user-select:none}
+.praise input{width:24px;height:24px;accent-color:var(--coral)}
+.praise.on{background:var(--soft);border-color:var(--coral);color:var(--coral-ink)}
+button{font:inherit;font-weight:700;cursor:pointer;border-radius:999px;border:none;padding:14px 22px}
+.btn-main{background:var(--coral);color:#fff;font-size:1.05rem}
+.btn-main:disabled{opacity:.5;cursor:default}
+.btn-ghost{background:transparent;color:var(--coral-ink);border:1px solid var(--line)}
+button:focus-visible,.photo-pick:focus-within,.praise:focus-within,input:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.stat b{display:block;font-family:var(--display);font-size:1.9rem;line-height:1.2;color:var(--coral-ink);font-variant-numeric:tabular-nums}
+.stat span{color:var(--sub);font-size:.9rem}
+.tabs{display:flex;gap:8px}
+.tabs button{flex:1;background:var(--surface);color:var(--sub);border:1px solid var(--line);padding:12px}
+.tabs button[aria-selected=true]{background:var(--coral);color:#fff;border-color:var(--coral)}
+.monthbar{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.monthbar button{background:var(--surface);border:1px solid var(--line);color:var(--ink);padding:8px 16px}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.dow{text-align:center;font-size:.8rem;color:var(--sub);font-weight:700}
+.day{aspect-ratio:3/4;border-radius:10px;background:var(--surface);border:1px solid var(--line);position:relative;overflow:hidden;padding:0;color:var(--ink);font-size:.8rem;font-weight:500;max-width:100%}
+.day.empty{background:transparent;border:none;cursor:default}
+.day .num{position:absolute;top:3px;left:5px;z-index:2;text-shadow:0 0 3px var(--surface)}
+.day img,.day .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.day .heart{position:absolute;right:3px;bottom:2px;z-index:2;font-size:.9rem;color:var(--coral)}
+.day.today{border:2px solid var(--coral)}
+.ph{display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--coral-ink);background:linear-gradient(160deg,var(--soft),var(--line))}
+.shelf{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;padding:0;text-align:left;color:var(--ink);display:flex;flex-direction:column;font-weight:400}
+.tile .img{aspect-ratio:3/4;position:relative;max-width:100%}
+.tile .img img,.tile .img .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tile .cap{padding:10px 12px;font-size:.9rem;min-width:0}
+.tile .cap b{display:block;color:var(--coral-ink)}
+.note{background:var(--soft);color:var(--coral-ink);border-radius:14px;padding:12px 16px;font-size:.92rem;font-weight:500}
+.empty-msg{color:var(--sub);text-align:center;padding:24px 8px}
+dialog{border:none;border-radius:20px;padding:0;max-width:min(520px,calc(100vw - 32px));width:100%;background:var(--surface);color:var(--ink)}
+dialog::backdrop{background:rgba(40,20,20,.55)}
+.dlg{display:flex;flex-direction:column;gap:14px;padding:20px}
+.dlg img,.dlg .ph{width:100%;max-height:60vh;object-fit:contain;border-radius:14px;min-height:200px}
+.dlg .row{display:flex;gap:10px;flex-wrap:wrap}
+.dlg .row button{flex:1}
+.danger{background:transparent;color:var(--sub);border:1px solid var(--line)}
+.confirm{display:flex;flex-direction:column;gap:10px;background:var(--soft);border-radius:14px;padding:14px}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:999px;font-weight:700;z-index:20}
+@media (prefers-reduced-motion:no-preference){.tile,.day{transition:transform .15s}.tile:hover{transform:translateY(-2px)}}
+/* opening */
+.splash{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;
+  background:radial-gradient(circle at 50% 40%,#FFD9D6 0%,#FFB3B0 45%,#F2737D 100%);color:#fff;overflow:hidden;cursor:pointer;
+  padding:env(safe-area-inset-top,0px) max(16px,env(safe-area-inset-right,0px)) env(safe-area-inset-bottom,0px) max(16px,env(safe-area-inset-left,0px));
+  transition:opacity .6s ease, transform .6s ease}
+.splash.out{opacity:0;transform:scale(1.06);pointer-events:none}
+.splash .ttl{font-family:var(--display);font-weight:700;font-size:2.4rem;line-height:1.25;text-shadow:0 2px 12px rgba(194,65,79,.35)}
+.splash .sub{font-family:var(--display);font-weight:700;font-size:1.15rem;text-shadow:0 1px 8px rgba(194,65,79,.6)}
+.splash .hg{font-size:3rem;line-height:1}
+.fl{position:absolute;bottom:-40px;font-size:24px;color:#fff;opacity:.85;pointer-events:none}
+.burst{position:fixed;z-index:40;pointer-events:none;font-size:22px;color:var(--coral)}
+@media (prefers-reduced-motion:no-preference){
+  .splash .hg{animation:pop .8s cubic-bezier(.2,1.6,.4,1) both}
+  .splash .ttl{animation:rise .8s .25s ease both}
+  .splash .sub{animation:rise .8s .55s ease both}
+  .fl{animation:float 3s ease-in forwards}
+  .burst{animation:burst 1.1s ease-out forwards}
+}
+@keyframes pop{0%{transform:scale(0) rotate(-20deg)}100%{transform:scale(1) rotate(0)}}
+@keyframes rise{0%{opacity:0;transform:translateY(16px)}100%{opacity:1;transform:none}}
+@keyframes float{0%{transform:translateY(0) rotate(0);opacity:0}15%{opacity:.9}100%{transform:translateY(-110vh) rotate(40deg);opacity:0}}
+@keyframes burst{0%{transform:translate(0,0) scale(.4);opacity:1}100%{transform:translate(var(--dx),var(--dy)) scale(1.2);opacity:0}}
+</style>
+</head>
+<body>
+<div class="splash" id="splash" role="presentation">
+  <div class="hg">♥</div>
+  <div class="ttl">私の<br>似合う日記</div>
+  <div class="sub">今日も、似合う私でいこう</div>
+</div>
+
+<div class="wrap">
+  <header style="display:flex;flex-direction:column;gap:8px">
+    <h1>私の似合う日記</h1>
+    <p class="lead">毎日のコーデを写真で残して、褒められた日に印をつけましょう。たまっていくほど、あなたの「似合う」が見えてきます。</p>
+  </header>
+
+  <section class="card" aria-labelledby="rec-h">
+    <h2 id="rec-h">今日のコーデを残す</h2>
+    <div class="photo-pick" id="pick">
+      <span id="pickText">今日のコーデの写真を入れましょう</span>
+      <img id="preview" alt="選んだコーデの写真" hidden>
+    </div>
+    <div class="pick-btns">
+      <label class="pick-btn">📷 カメラで撮る<input type="file" id="photoCam" accept="image/*" capture="environment"></label>
+      <label class="pick-btn">🖼 アルバムから選ぶ<input type="file" id="photo" accept="image/*"></label>
+    </div>
+    <p class="safe">🔒 写真はインターネットには送られません。このスマホの中だけに保存されます。</p>
+    <label class="field" for="date">日付<input type="date" id="date"></label>
+    <label class="field" for="memo">ひとことメモ<textarea id="memo" placeholder="例：イエベの黄色ニットにベージュのパンツ。顔色が明るく見えた"></textarea></label>
+    <label class="praise" id="praiseWrap"><input type="checkbox" id="praised"> ♥ 今日、褒められた！</label>
+    <button class="btn-main" id="save" disabled>日記に残す</button>
+  </section>
+
+  <div class="stats">
+    <div class="stat"><b id="sDays">0</b><span>今月、記録した日</span></div>
+    <div class="stat"><b id="sPraise">0</b><span>今月、褒められた日</span></div>
+  </div>
+
+  <p class="note" id="sampleNote" hidden>いま並んでいるのは見本です。最初の1枚を記録すると、見本は消えます。</p>
+
+  <div class="tabs" role="tablist">
+    <button role="tab" id="tabCal" aria-selected="true">カレンダー</button>
+    <button role="tab" id="tabPraise" aria-selected="false">♥ 褒められた日</button>
+  </div>
+
+  <section id="calView" aria-label="カレンダー">
+    <div class="monthbar"><button id="prev" aria-label="前の月">‹</button><h2 id="monthLabel"></h2><button id="next" aria-label="次の月">›</button></div>
+    <div class="cal" id="cal" style="margin-top:12px"></div>
+  </section>
+
+  <section id="praiseView" hidden aria-label="褒められたコーデ">
+    <div class="shelf" id="shelf"></div>
+  </section>
+
+  <div class="card" style="gap:8px"><h2 style="font-size:1.05rem">ずっと使うために</h2><p class="lead" style="font-size:.9rem">このページを「ホーム画面に追加」すると、アプリのように開けます。iPhoneはSafariの共有ボタン（□↑）から、Androidはメニュー（︙）から追加できます。</p><p class="lead" style="font-size:.9rem">日記はこのスマホの中だけにあります。ブラウザのデータを消すと日記も消えるので、残したい写真は「アルバムに保存」しておきましょう。</p></div>
+</div>
+
+<dialog id="dlg"><div class="dlg" id="dlgBody"></div></dialog>
+
+<script>
+(function(){
+  const $=id=>document.getElementById(id);
+  const pad=n=>String(n).padStart(2,'0');
+  const ymd=d=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+  const today=ymd(new Date());
+  let entries=[];        // {id,date,memo,praised,img}
+  let usingSample=false;
+  let view=new Date(); view.setDate(1);
+  let pendingImg=null;
+
+  // ---- storage (IndexedDB, falls back to memory) ----
+  let db=null;
+  function openDB(){return new Promise(res=>{try{const r=indexedDB.open('niau-diary',1);
+    r.onupgradeneeded=()=>r.result.createObjectStore('e',{keyPath:'id'});
+    r.onsuccess=()=>{db=r.result;res()};r.onerror=()=>res();}catch(e){res()}})}
+  function loadAll(){return new Promise(res=>{if(!db)return res([]);try{const q=db.transaction('e').objectStore('e').getAll();q.onsuccess=()=>res(q.result||[]);q.onerror=()=>res([]);}catch(e){res([])}})}
+  function put(x){try{if(db)db.transaction('e','readwrite').objectStore('e').put(x)}catch(e){}}
+  function del(id){try{if(db)db.transaction('e','readwrite').objectStore('e').delete(id)}catch(e){}}
+
+  function samples(){
+    const y=view.getFullYear(),m=view.getMonth(),t=new Date().getDate();
+    const pick=[2,5,8,11,13].filter(d=>d<=Math.max(t,13));
+    const memos=['ピンクベージュのカーディガン。母に「若く見える」と言われた','ネイビーのワンピース。少し顔が暗く見えたかも','白シャツをタックイン。すっきり見えた','黄色のニット。顔色が明るい','グレーのパンツにブラウン小物'];
+    return pick.map((d,i)=>({id:'s'+i,date:y+'-'+pad(m+1)+'-'+pad(d),memo:memos[i],praised:i===0||i===3,img:null,sample:true}));
+  }
+  function list(){return usingSample?samples():entries}
+
+  // ---- photo pick + resize ----
+  function onPick(e){
+    const f=e.target.files&&e.target.files[0]; if(!f)return;
+    const rd=new FileReader(); rd.onload=()=>{const im=new Image();im.onload=()=>{
+      const max=1000,s=Math.min(1,max/Math.max(im.width,im.height));
+      const c=document.createElement('canvas');c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);
+      c.getContext('2d').drawImage(im,0,0,c.width,c.height);
+      pendingImg=c.toDataURL('image/jpeg',0.82);
+      $('preview').src=pendingImg;$('preview').hidden=false;$('pickText').textContent='';$('save').disabled=false;};
+      im.src=rd.result;}; rd.readAsDataURL(f);
+  }
+  $('photo').addEventListener('change',onPick);$('photoCam').addEventListener('change',onPick);
+  $('date').value=today;
+  $('praised').addEventListener('change',()=>$('praiseWrap').classList.toggle('on',$('praised').checked));
+  $('save').addEventListener('click',()=>{
+    if(!pendingImg)return;
+    const x={id:Date.now().toString(36),date:$('date').value||today,memo:$('memo').value.trim(),praised:$('praised').checked,img:pendingImg};
+    burst(x.praised?22:12);
+    entries.push(x);put(x);usingSample=false;
+    pendingImg=null;$('photo').value='';$('photoCam').value='';$('preview').hidden=true;$('pickText').textContent='今日のコーデの写真を入れましょう';
+    $('memo').value='';$('praised').checked=false;$('praiseWrap').classList.remove('on');$('save').disabled=true;
+    const d=new Date(x.date);view=new Date(d.getFullYear(),d.getMonth(),1);
+    render();toast(x.praised?'褒められたコーデを残しました ♥':'日記に残しました');
+  });
+
+  // opening
+  (function(){const sp=$('splash');const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(!reduce){const marks=['♥','✿','♥','✦','♥','✿','♥','✦','♥','✿','♥','✦'];
+      marks.forEach((m,i)=>{const s=document.createElement('span');s.className='fl';s.textContent=m;s.style.left=(5+i*8)%95+'%';s.style.fontSize=(16+(i*7)%22)+'px';s.style.animationDelay=(i*0.12)+'s';sp.appendChild(s)});}
+    let done=false;const close=()=>{if(done)return;done=true;sp.classList.add('out');setTimeout(()=>sp.remove(),700)};
+    sp.addEventListener('click',close);setTimeout(close,reduce?600:2300);})();
+
+  function burst(n){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const r=$('save').getBoundingClientRect();
+    for(let i=0;i<n;i++){const s=document.createElement('span');s.className='burst';s.textContent=i%3?'♥':'✿';
+      s.style.left=(r.left+r.width/2)+'px';s.style.top=(r.top+r.height/2)+'px';const a=Math.PI*2*i/n;
+      s.style.setProperty('--dx',Math.cos(a)*(90+Math.random()*60)+'px');s.style.setProperty('--dy',(Math.sin(a)*(90+Math.random()*60)-40)+'px');
+      document.body.appendChild(s);setTimeout(()=>s.remove(),1200)}}
+
+  async function saveImg(x){
+    try{const blob=await (await fetch(x.img)).blob();const file=new File([blob],'niau-'+x.date+'.jpg',{type:'image/jpeg'});
+      if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file]});return}
+      const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=file.name;document.body.appendChild(a);a.click();a.remove();toast('保存しました');
+    }catch(e){if(e&&e.name!=='AbortError')toast('保存できませんでした。写真を長押しして保存してください')}}
+  function toast(t){const el=document.createElement('div');el.className='toast';el.textContent=t;document.body.appendChild(el);setTimeout(()=>el.remove(),2200)}
+
+  // ---- tabs ----
+  function tab(which){const cal=which==='cal';$('tabCal').setAttribute('aria-selected',cal);$('tabPraise').setAttribute('aria-selected',!cal);$('calView').hidden=!cal;$('praiseView').hidden=cal}
+  $('tabCal').onclick=()=>tab('cal');$('tabPraise').onclick=()=>tab('praise');
+  $('prev').onclick=()=>{view=new Date(view.getFullYear(),view.getMonth()-1,1);render()};
+  $('next').onclick=()=>{view=new Date(view.getFullYear(),view.getMonth()+1,1);render()};
+
+  function thumb(x){return x.img?'<img src="'+x.img+'" alt="">':'<div class="ph">見本</div>'}
+  function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+  function jdate(s){const [y,m,d]=s.split('-').map(Number);const w='日月火水木金土'[new Date(y,m-1,d).getDay()];return m+'月'+d+'日（'+w+'）'}
+
+  function render(){
+    $('sampleNote').hidden=!usingSample;
+    const y=view.getFullYear(),m=view.getMonth();
+    $('monthLabel').textContent=y+'年'+(m+1)+'月';
+    const all=list();
+    const byDate={};all.forEach(x=>{(byDate[x.date]=byDate[x.date]||[]).push(x)});
+    const cal=$('cal');cal.innerHTML='';
+    '日月火水木金土'.split('').forEach(w=>{const d=document.createElement('div');d.className='dow';d.textContent=w;cal.appendChild(d)});
+    const first=new Date(y,m,1).getDay(),days=new Date(y,m+1,0).getDate();
+    for(let i=0;i<first;i++){const e=document.createElement('div');e.className='day empty';cal.appendChild(e)}
+    for(let d=1;d<=days;d++){
+      const key=y+'-'+pad(m+1)+'-'+pad(d),xs=byDate[key]||[],x=xs[xs.length-1];
+      const b=document.createElement('button');b.className='day'+(key===today?' today':'');
+      b.setAttribute('aria-label',(m+1)+'月'+d+'日'+(x?'の記録あり':''));
+      b.innerHTML='<span class="num">'+d+'</span>'+(x?thumb(x)+(xs.some(z=>z.praised)?'<span class="heart">♥</span>':''):'');
+      if(x)b.onclick=()=>open(x);else b.onclick=()=>{$('date').value=key;window.scrollTo({top:0,behavior:'smooth'})};
+      cal.appendChild(b);
+    }
+    const mon=all.filter(x=>x.date.startsWith(y+'-'+pad(m+1)));
+    $('sDays').textContent=new Set(mon.map(x=>x.date)).size;
+    $('sPraise').textContent=new Set(mon.filter(x=>x.praised).map(x=>x.date)).size;
+    const shelf=$('shelf');shelf.innerHTML='';
+    const pr=all.filter(x=>x.praised).sort((a,b)=>b.date.localeCompare(a.date));
+    if(!pr.length){shelf.innerHTML='<p class="empty-msg" style="grid-column:1/-1">褒められた日に ♥ をつけると、ここに並びます。</p>'}
+    pr.forEach(x=>{const t=document.createElement('button');t.className='tile';
+      t.innerHTML='<div class="img">'+thumb(x)+'</div><div class="cap"><b>♥ '+jdate(x.date)+'</b>'+esc(x.memo||'')+'</div>';t.onclick=()=>open(x);shelf.appendChild(t)});
+  }
+
+  function open(x){
+    const body=$('dlgBody');
+    body.innerHTML=(x.img?'<img src="'+x.img+'" alt="'+jdate(x.date)+'のコーデ">':'<div class="ph">見本</div>')+
+      '<h2>'+jdate(x.date)+(x.praised?' <span style="color:var(--coral)">♥</span>':'')+'</h2>'+
+      (x.memo?'<p>'+esc(x.memo)+'</p>':'')+
+      (x.sample?'<p class="note">これは見本です。</p><div class="row"><button class="btn-main" id="dClose">閉じる</button></div>':
+      '<button class="btn-ghost" id="dSave">📥 写真をアルバムに保存</button><div class="row"><button class="btn-ghost" id="dPraise">'+(x.praised?'♥ の印を外す':'♥ 褒められた印をつける')+'</button><button class="btn-main" id="dClose">閉じる</button></div><button class="danger" id="dDel">この日記を消す</button><div id="dConfirm"></div>');
+    const dlg=$('dlg');
+    $('dClose').onclick=()=>dlg.close();
+    if(!x.sample){
+      $('dSave').onclick=()=>saveImg(x);
+      $('dPraise').onclick=()=>{x.praised=!x.praised;put(x);render();open(x)};
+      $('dDel').onclick=()=>{$('dConfirm').innerHTML='<div class="confirm"><p>この日のコーデを消しますか？消すと元に戻せません。</p><div class="row"><button class="btn-ghost" id="cNo">やめる</button><button class="btn-main" id="cYes">消す</button></div></div>';
+        $('cNo').onclick=()=>$('dConfirm').innerHTML='';
+        $('cYes').onclick=()=>{entries=entries.filter(e=>e.id!==x.id);del(x.id);if(!entries.length)usingSample=true;dlg.close();render();toast('消しました')};};
+    }
+    if(!dlg.open){try{dlg.showModal()}catch(e){dlg.setAttribute('open','')}}
+  }
+  $('dlg').addEventListener('click',e=>{if(e.target===$('dlg'))$('dlg').close()});
+
+  if('serviceWorker' in navigator){try{navigator.serviceWorker.register('sw.js')}catch(e){}}
+  openDB().then(loadAll).then(r=>{entries=r||[];usingSample=!entries.length;render()});
+  usingSample=true;render();
+})();
+</script>
+
+</body>
+</html>
