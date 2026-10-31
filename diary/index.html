@@ -6,19 +6,20 @@
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#F2737D">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="似合う日記">
+<meta name="apple-mobile-web-app-title" content="コーデ帖">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
-<title>私の似合う日記</title>
+<title>きょうのコーデ帖</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Klee+One:wght@600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
 <style>
 /* Layout: one narrow column like a pocket diary — record card on top, then the month page and the "褒められた" shelf */
 :root{
   --bg:#FFF7F5; --surface:#FFFFFF; --ink:#3B2A2A; --sub:#7A5D5A;
   --coral:#F2737D; --coral-ink:#C2414F; --soft:#FFE6E4; --line:#F4D3CF; --gold:#E9A23B;
   --display:'Zen Maru Gothic','Hiragino Maru Gothic ProN','Yu Gothic',sans-serif;
+  --hand:'Klee One','Zen Maru Gothic',cursive;
   --body:'Zen Kaku Gothic New','Hiragino Sans','Yu Gothic',sans-serif;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
@@ -97,15 +98,22 @@ dialog::backdrop{background:rgba(40,20,20,.55)}
 .confirm{display:flex;flex-direction:column;gap:10px;background:var(--soft);border-radius:14px;padding:14px}
 .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:999px;font-weight:700;z-index:20}
 @media (prefers-reduced-motion:no-preference){.tile,.day{transition:transform .15s}.tile:hover{transform:translateY(-2px)}}
+/* logo */
+.logo{display:flex;flex-direction:column;align-items:center;gap:2px;font-family:var(--hand);font-weight:600;color:var(--ink);line-height:1.25;text-align:center}
+.logo svg{width:64px;height:36px;color:var(--coral)}
+.logo .t{font-size:2.3rem;letter-spacing:.06em}
+.logo em{font-style:normal;color:var(--coral-ink)}
+.tagline{font-family:var(--display);font-weight:700;color:var(--coral-ink);letter-spacing:.08em;text-align:center}
+header.top{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
 /* opening */
 .splash{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;
   background:radial-gradient(circle at 50% 40%,#FFD9D6 0%,#FFB3B0 45%,#F2737D 100%);color:#fff;overflow:hidden;cursor:pointer;
   padding:env(safe-area-inset-top,0px) max(16px,env(safe-area-inset-right,0px)) env(safe-area-inset-bottom,0px) max(16px,env(safe-area-inset-left,0px));
   transition:opacity .6s ease, transform .6s ease}
 .splash.out{opacity:0;transform:scale(1.06);pointer-events:none}
-.splash .ttl{font-family:var(--display);font-weight:700;font-size:2.4rem;line-height:1.25;text-shadow:0 2px 12px rgba(194,65,79,.35)}
+.splash .ttl{font-family:var(--hand);font-weight:600;font-size:2.6rem;letter-spacing:.06em;line-height:1.25;text-shadow:0 2px 12px rgba(194,65,79,.35)}
 .splash .sub{font-family:var(--display);font-weight:700;font-size:1.15rem;text-shadow:0 1px 8px rgba(194,65,79,.6)}
-.splash .hg{font-size:3rem;line-height:1}
+.splash .hg{width:96px;height:54px;color:#fff;filter:drop-shadow(0 2px 8px rgba(194,65,79,.4))}
 .fl{position:absolute;bottom:-40px;font-size:24px;color:#fff;opacity:.85;pointer-events:none}
 .burst{position:fixed;z-index:40;pointer-events:none;font-size:22px;color:var(--coral)}
 @media (prefers-reduced-motion:no-preference){
@@ -123,15 +131,16 @@ dialog::backdrop{background:rgba(40,20,20,.55)}
 </head>
 <body>
 <div class="splash" id="splash" role="presentation">
-  <div class="hg">♥</div>
-  <div class="ttl">私の<br>似合う日記</div>
+  <div class="hg"><svg viewBox="0 0 60 34" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M30 10c0-4 6-4 6 0 0 3-6 3-6 6"/><path d="M30 16 4 30h52L30 16"/></svg></div>
+  <div class="ttl">きょうの<br>コーデ帖</div>
   <div class="sub">今日も、似合う私でいこう</div>
 </div>
 
 <div class="wrap">
-  <header style="display:flex;flex-direction:column;gap:8px">
-    <h1>私の似合う日記</h1>
-    <p class="lead">毎日のコーデを写真で残して、褒められた日に印をつけましょう。たまっていくほど、あなたの「似合う」が見えてきます。</p>
+  <header class="top">
+    <h1 class="logo"><svg viewBox="0 0 60 34" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M30 10c0-4 6-4 6 0 0 3-6 3-6 6"/><path d="M30 16 4 30h52L30 16"/></svg><span class="t">きょうの<em>コーデ</em>帖</span></h1>
+    <p class="tagline">今日も、似合う私でいこう</p>
+    <p class="lead">毎日のコーデを写真とひとことで残して、褒められた日に♥をつけましょう。たまっていくほど、あなたの「似合う」が見えてきます。</p>
   </header>
 
   <section class="card" aria-labelledby="rec-h">
@@ -142,7 +151,7 @@ dialog::backdrop{background:rgba(40,20,20,.55)}
     </div>
     <div class="pick-btns">
       <label class="pick-btn">📷 カメラで撮る<input type="file" id="photoCam" accept="image/*" capture="environment"></label>
-      <label class="pick-btn">🖼 アルバムから選ぶ<input type="file" id="photo" accept="image/*"></label>
+      <label class="pick-btn">🖼 写真から選ぶ<input type="file" id="photo" accept="image/*"></label>
     </div>
     <p class="safe">🔒 写真はインターネットには送られません。このスマホの中だけに保存されます。</p>
     <label class="field" for="date">日付<input type="date" id="date"></label>
@@ -172,7 +181,7 @@ dialog::backdrop{background:rgba(40,20,20,.55)}
     <div class="shelf" id="shelf"></div>
   </section>
 
-  <div class="card" style="gap:8px"><h2 style="font-size:1.05rem">ずっと使うために</h2><p class="lead" style="font-size:.9rem">このページを「ホーム画面に追加」すると、アプリのように開けます。iPhoneはSafariの共有ボタン（□↑）から、Androidはメニュー（︙）から追加できます。</p><p class="lead" style="font-size:.9rem">日記はこのスマホの中だけにあります。ブラウザのデータを消すと日記も消えるので、残したい写真は「アルバムに保存」しておきましょう。</p></div>
+  <div class="card" style="gap:8px"><h2 style="font-size:1.05rem">ずっと使うために</h2><p class="lead" style="font-size:.9rem">このページを「ホーム画面に追加」すると、アプリのように開けます。iPhoneはSafariの共有ボタン（□↑）から、Androidはメニュー（︙）から追加できます。</p><p class="lead" style="font-size:.9rem">日記はこのスマホの中だけにあります。スマホを買い替えたときや、Safari・Chromeの履歴を消したときは、日記も消えてしまいます。残したい日は、日付をタップして「📥 スマホの写真に残す」を押しておくと安心です。写真・日付・ひとことが1枚の画像になって残ります。</p></div>
 </div>
 
 <dialog id="dlg"><div class="dlg" id="dlgBody"></div></dialog>
@@ -243,11 +252,48 @@ dialog::backdrop{background:rgba(40,20,20,.55)}
       s.style.setProperty('--dx',Math.cos(a)*(90+Math.random()*60)+'px');s.style.setProperty('--dy',(Math.sin(a)*(90+Math.random()*60)-40)+'px');
       document.body.appendChild(s);setTimeout(()=>s.remove(),1200)}}
 
+  // 日記の1ページ（写真＋日付＋ひとこと＋♥）を1枚の画像にする
+  function loadImg(src){return new Promise((res,rej)=>{const i=new Image();i.onload=()=>res(i);i.onerror=rej;i.src=src})}
+  function wrapLines(ctx,text,maxW){const out=[];String(text).split('\n').forEach(par=>{let line='';for(const ch of par){if(ctx.measureText(line+ch).width>maxW&&line){out.push(line);line=ch}else line+=ch}out.push(line)});return out}
+  async function makePage(x){
+    try{await Promise.all([document.fonts.load('600 40px "Klee One"'),document.fonts.load('700 50px "Zen Maru Gothic"'),document.fonts.load('500 40px "Zen Kaku Gothic New"')])}catch(e){}
+    const W=1080,P=60,IW=W-P*2-48;
+    const im=await loadImg(x.img);
+    let ih=Math.round(im.height*IW/im.width);const maxH=1240;let sy=0,sh=im.height;
+    if(ih>maxH){sh=Math.round(im.width*maxH/IW);sy=Math.round((im.height-sh)/2);ih=maxH}
+    const c=document.createElement('canvas'),ctx=c.getContext('2d');
+    ctx.font='500 40px "Zen Kaku Gothic New","Hiragino Sans",sans-serif';
+    const lines=x.memo?wrapLines(ctx,x.memo,IW):[];
+    const H=P+24+ih+40+64+(lines.length?24+lines.length*60:0)+48+80+P;
+    c.width=W;c.height=H;
+    ctx.fillStyle='#FFF7F5';ctx.fillRect(0,0,W,H);
+    const cy=P,ch=H-P*2-80;
+    ctx.fillStyle='#FFFFFF';ctx.beginPath();ctx.roundRect(P,cy,W-P*2,ch,36);ctx.fill();
+    ctx.strokeStyle='#F4D3CF';ctx.lineWidth=3;ctx.stroke();
+    const ix=P+24,iy=cy+24;
+    ctx.save();ctx.beginPath();ctx.roundRect(ix,iy,IW,ih,24);ctx.clip();ctx.drawImage(im,0,sy,im.width,sh,ix,iy,IW,ih);ctx.restore();
+    let y=iy+ih+40+50;
+    ctx.fillStyle='#C2414F';ctx.font='700 50px "Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif';ctx.textBaseline='alphabetic';
+    const d=jdate(x.date);ctx.fillText(d,ix,y);
+    if(x.praised){const dw=ctx.measureText(d+'  ').width;ctx.fillStyle='#F2737D';ctx.fillText('♥ 褒められた日',ix+dw,y)}
+    y+=14;
+    if(lines.length){ctx.fillStyle='#3B2A2A';ctx.font='500 40px "Zen Kaku Gothic New","Hiragino Sans",sans-serif';y+=24;lines.forEach(l=>{y+=60;ctx.fillText(l,ix,y-12)})}
+    // ロゴ
+    const ly=H-P-26;ctx.textAlign='center';ctx.fillStyle='#7A5D5A';ctx.font='600 40px "Klee One","Zen Maru Gothic",cursive';
+    ctx.fillText('きょうのコーデ帖',W/2+30,ly);
+    const tw=ctx.measureText('きょうのコーデ帖').width,hx=W/2+30-tw/2-70,hy=ly-34;
+    ctx.save();ctx.translate(hx,hy);ctx.scale(1.1,1.1);ctx.strokeStyle='#F2737D';ctx.lineWidth=3;ctx.lineCap='round';ctx.lineJoin='round';
+    ctx.stroke(new Path2D('M30 10c0-4 6-4 6 0 0 3-6 3-6 6'));ctx.stroke(new Path2D('M30 16 4 30h52L30 16'));ctx.restore();
+    return new Promise(res=>c.toBlob(b=>res({blob:b,url:c.toDataURL('image/jpeg',0.9)}),'image/jpeg',0.9));
+  }
   async function saveImg(x){
-    try{const blob=await (await fetch(x.img)).blob();const file=new File([blob],'niau-'+x.date+'.jpg',{type:'image/jpeg'});
+    let pg=null;
+    try{pg=await makePage(x);const file=new File([pg.blob],'kode-'+x.date+'.jpg',{type:'image/jpeg'});
       if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file]});return}
-      const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=file.name;document.body.appendChild(a);a.click();a.remove();toast('保存しました');
-    }catch(e){if(e&&e.name!=='AbortError')toast('保存できませんでした。写真を長押しして保存してください')}}
+      const a=document.createElement('a');a.href=URL.createObjectURL(pg.blob);a.download=file.name;document.body.appendChild(a);a.click();a.remove();toast('スマホに残しました');
+    }catch(e){if(e&&e.name==='AbortError')return;
+      if(pg){const im=document.querySelector('#dlgBody img');if(im)im.src=pg.url}
+      toast('上の画像を長押しして「写真に追加」を押してください')}}
   function toast(t){const el=document.createElement('div');el.className='toast';el.textContent=t;document.body.appendChild(el);setTimeout(()=>el.remove(),2200)}
 
   // ---- tabs ----
@@ -294,7 +340,7 @@ dialog::backdrop{background:rgba(40,20,20,.55)}
       '<h2>'+jdate(x.date)+(x.praised?' <span style="color:var(--coral)">♥</span>':'')+'</h2>'+
       (x.memo?'<p>'+esc(x.memo)+'</p>':'')+
       (x.sample?'<p class="note">これは見本です。</p><div class="row"><button class="btn-main" id="dClose">閉じる</button></div>':
-      '<button class="btn-ghost" id="dSave">📥 写真をアルバムに保存</button><div class="row"><button class="btn-ghost" id="dPraise">'+(x.praised?'♥ の印を外す':'♥ 褒められた印をつける')+'</button><button class="btn-main" id="dClose">閉じる</button></div><button class="danger" id="dDel">この日記を消す</button><div id="dConfirm"></div>');
+      '<button class="btn-ghost" id="dSave">📥 スマホの写真に残す</button><div class="row"><button class="btn-ghost" id="dPraise">'+(x.praised?'♥ の印を外す':'♥ 褒められた印をつける')+'</button><button class="btn-main" id="dClose">閉じる</button></div><button class="danger" id="dDel">この日記を消す</button><div id="dConfirm"></div>');
     const dlg=$('dlg');
     $('dClose').onclick=()=>dlg.close();
     if(!x.sample){
