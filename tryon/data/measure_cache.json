@@ -1938,5 +1938,19 @@
   },
   "modelCm": 170.0,
   "modelSize": "M"
+ },
+ "GU_361513": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.1694,
+   "hemFrac": 0.6356
+  },
+  "src": {
+   "69": "flat",
+   "06": "flat",
+   "09": "flat"
+  },
+  "modelCm": 173.0,
+  "modelSize": "S/M"
  }
 }
