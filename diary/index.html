@@ -98,10 +98,28 @@ dialog::backdrop{background:rgba(40,20,20,.55)}
 .confirm{display:flex;flex-direction:column;gap:10px;background:var(--soft);border-radius:14px;padding:14px}
 .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:999px;font-weight:700;z-index:20}
 @media (prefers-reduced-motion:no-preference){.tile,.day{transition:transform .15s}.tile:hover{transform:translateY(-2px)}}
+/* bottom sheet + fixed button */
+.addbar{position:fixed;left:0;right:0;bottom:0;z-index:15;display:flex;justify-content:center;
+  padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));
+  background:linear-gradient(transparent,var(--bg) 40%)}
+.addbar button{width:100%;max-width:560px;font-size:1.15rem;padding:18px;box-shadow:0 6px 18px rgba(194,65,79,.35)}
+dialog.sheet{margin:auto auto 0;max-width:560px;width:100%;border-radius:24px 24px 0 0;max-height:92vh;overflow:auto}
+dialog.sheet .card{border:none;border-radius:0;padding:20px 20px calc(24px + env(safe-area-inset-bottom,0px))}
+.sheet-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.sheet-head button{background:transparent;color:var(--sub);padding:8px 12px;font-size:1.4rem;line-height:1}
+.safe{font-size:.85rem;color:var(--sub);text-align:center}
+.day.praised{border:3px solid var(--coral)}
+.day.today .num{background:var(--coral);color:#fff;border-radius:999px;min-width:1.6em;text-align:center;top:2px;left:2px;text-shadow:none}
+.cheer{position:fixed;left:50%;top:38%;transform:translate(-50%,-50%);z-index:45;background:var(--surface);color:var(--coral-ink);
+  font-family:var(--display);font-weight:700;font-size:1.5rem;padding:22px 30px;border-radius:24px;box-shadow:0 10px 30px rgba(194,65,79,.3);text-align:center;pointer-events:none;white-space:nowrap}
+.cheer small{display:block;font-size:.95rem;color:var(--sub);margin-top:4px}
+@media (prefers-reduced-motion:no-preference){.cheer{animation:cheer 1.8s ease forwards}}
+@keyframes cheer{0%{opacity:0;transform:translate(-50%,-40%) scale(.8)}15%{opacity:1;transform:translate(-50%,-50%) scale(1.05)}25%{transform:translate(-50%,-50%) scale(1)}80%{opacity:1}100%{opacity:0}}
+body{padding-bottom:120px}
 /* logo */
 .logo{display:flex;flex-direction:column;align-items:center;gap:2px;font-family:var(--hand);font-weight:600;color:var(--ink);line-height:1.25;text-align:center}
-.logo svg{width:64px;height:36px;color:var(--coral)}
-.logo .t{font-size:2.3rem;letter-spacing:.06em}
+.logo svg{width:48px;height:27px;color:var(--coral)}
+.logo .t{font-size:1.8rem;letter-spacing:.06em}
 .logo em{font-style:normal;color:var(--coral-ink)}
 .tagline{font-family:var(--display);font-weight:700;color:var(--coral-ink);letter-spacing:.08em;text-align:center}
 header.top{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
@@ -140,32 +158,12 @@ header.top{display:flex;flex-direction:column;align-items:center;gap:10px;text-a
   <header class="top">
     <h1 class="logo"><svg viewBox="0 0 60 34" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M30 10c0-4 6-4 6 0 0 3-6 3-6 6"/><path d="M30 16 4 30h52L30 16"/></svg><span class="t">きょうの<em>コーデ</em>帖</span></h1>
     <p class="tagline">今日も、似合う私でいこう</p>
-    <p class="lead">毎日のコーデを写真とひとことで残して、褒められた日に♥をつけましょう。たまっていくほど、あなたの「似合う」が見えてきます。</p>
   </header>
-
-  <section class="card" aria-labelledby="rec-h">
-    <h2 id="rec-h">今日のコーデを残す</h2>
-    <div class="photo-pick" id="pick">
-      <span id="pickText">今日のコーデの写真を入れましょう</span>
-      <img id="preview" alt="選んだコーデの写真" hidden>
-    </div>
-    <div class="pick-btns">
-      <label class="pick-btn">📷 カメラで撮る<input type="file" id="photoCam" accept="image/*" capture="environment"></label>
-      <label class="pick-btn">🖼 写真から選ぶ<input type="file" id="photo" accept="image/*"></label>
-    </div>
-    <p class="safe">🔒 写真はインターネットには送られません。このスマホの中だけに保存されます。</p>
-    <label class="field" for="date">日付<input type="date" id="date"></label>
-    <label class="field" for="memo">ひとことメモ<textarea id="memo" placeholder="例：イエベの黄色ニットにベージュのパンツ。顔色が明るく見えた"></textarea></label>
-    <label class="praise" id="praiseWrap"><input type="checkbox" id="praised"> ♥ 今日、褒められた！</label>
-    <button class="btn-main" id="save" disabled>日記に残す</button>
-  </section>
 
   <div class="stats">
     <div class="stat"><b id="sDays">0</b><span>今月、記録した日</span></div>
     <div class="stat"><b id="sPraise">0</b><span>今月、褒められた日</span></div>
   </div>
-
-  <p class="note" id="sampleNote" hidden>いま並んでいるのは見本です。最初の1枚を記録すると、見本は消えます。</p>
 
   <div class="tabs" role="tablist">
     <button role="tab" id="tabCal" aria-selected="true">カレンダー</button>
@@ -180,9 +178,26 @@ header.top{display:flex;flex-direction:column;align-items:center;gap:10px;text-a
   <section id="praiseView" hidden aria-label="褒められたコーデ">
     <div class="shelf" id="shelf"></div>
   </section>
-
-  <div class="card" style="gap:8px"><h2 style="font-size:1.05rem">ずっと使うために</h2><p class="lead" style="font-size:.9rem">このページを「ホーム画面に追加」すると、アプリのように開けます。iPhoneはSafariの共有ボタン（□↑）から、Androidはメニュー（︙）から追加できます。</p><p class="lead" style="font-size:.9rem">日記はこのスマホの中だけにあります。スマホを買い替えたときや、Safari・Chromeの履歴を消したときは、日記も消えてしまいます。残したい日は、日付をタップして「📥 スマホの写真に残す」を押しておくと安心です。写真・日付・ひとことが1枚の画像になって残ります。</p></div>
 </div>
+
+<div class="addbar"><button class="btn-main" id="openAdd">＋ 今日のコーデを残す</button></div>
+
+<dialog id="sheet" class="sheet"><section class="card" aria-labelledby="rec-h">
+    <div class="sheet-head"><h2 id="rec-h">今日のコーデを残す</h2><button id="closeAdd" aria-label="閉じる">×</button></div>
+    <div class="photo-pick" id="pick">
+      <span id="pickText">今日のコーデの写真を入れましょう</span>
+      <img id="preview" alt="選んだコーデの写真" hidden>
+    </div>
+    <div class="pick-btns">
+      <label class="pick-btn">📷 カメラで撮る<input type="file" id="photoCam" accept="image/*" capture="environment"></label>
+      <label class="pick-btn">🖼 写真から選ぶ<input type="file" id="photo" accept="image/*"></label>
+    </div>
+    <label class="field" for="date">日付<input type="date" id="date"></label>
+    <label class="field" for="memo">ひとことメモ<textarea id="memo" placeholder="例：イエベの黄色ニットにベージュのパンツ。顔色が明るく見えた"></textarea></label>
+    <label class="praise" id="praiseWrap"><input type="checkbox" id="praised"> ♥ 今日、褒められた！</label>
+    <button class="btn-main" id="save" disabled>日記に残す</button>
+    <p class="safe">🔒 写真はこのスマホの中だけに残ります</p>
+</section></dialog>
 
 <dialog id="dlg"><div class="dlg" id="dlgBody"></div></dialog>
 
@@ -227,16 +242,22 @@ header.top{display:flex;flex-direction:column;align-items:center;gap:10px;text-a
   }
   $('photo').addEventListener('change',onPick);$('photoCam').addEventListener('change',onPick);
   $('date').value=today;
+  const sheet=$('sheet');
+  function openSheet(date){$('date').value=date||today;if(!sheet.open){try{sheet.showModal()}catch(e){sheet.setAttribute('open','')}}}
+  $('openAdd').onclick=()=>openSheet(today);
+  $('closeAdd').onclick=()=>sheet.close();
+  sheet.addEventListener('click',e=>{if(e.target===sheet)sheet.close()});
   $('praised').addEventListener('change',()=>$('praiseWrap').classList.toggle('on',$('praised').checked));
   $('save').addEventListener('click',()=>{
     if(!pendingImg)return;
     const x={id:Date.now().toString(36),date:$('date').value||today,memo:$('memo').value.trim(),praised:$('praised').checked,img:pendingImg};
-    burst(x.praised?22:12);
     entries.push(x);put(x);usingSample=false;
     pendingImg=null;$('photo').value='';$('photoCam').value='';$('preview').hidden=true;$('pickText').textContent='今日のコーデの写真を入れましょう';
     $('memo').value='';$('praised').checked=false;$('praiseWrap').classList.remove('on');$('save').disabled=true;
     const d=new Date(x.date);view=new Date(d.getFullYear(),d.getMonth(),1);
-    render();toast(x.praised?'褒められたコーデを残しました ♥':'日記に残しました');
+    sheet.close();render();
+    const ym=x.date.slice(0,7),n=new Set(entries.filter(e=>e.date.startsWith(ym)).map(e=>e.date)).size;
+    burst(x.praised?24:14);cheer((x.praised?'褒められた日 ♥':'今日も素敵です✨'),(+x.date.slice(5,7))+'月の'+n+'日目');
   });
 
   // opening
@@ -246,9 +267,10 @@ header.top{display:flex;flex-direction:column;align-items:center;gap:10px;text-a
     let done=false;const close=()=>{if(done)return;done=true;sp.classList.add('out');setTimeout(()=>sp.remove(),700)};
     sp.addEventListener('click',close);setTimeout(close,reduce?600:2300);})();
 
-  function burst(n){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const r=$('save').getBoundingClientRect();
+  function cheer(a,b){const el=document.createElement('div');el.className='cheer';el.innerHTML=esc(a)+'<small>'+esc(b)+'</small>';document.body.appendChild(el);setTimeout(()=>el.remove(),1900)}
+  function burst(n){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const r=$('openAdd').getBoundingClientRect();
     for(let i=0;i<n;i++){const s=document.createElement('span');s.className='burst';s.textContent=i%3?'♥':'✿';
-      s.style.left=(r.left+r.width/2)+'px';s.style.top=(r.top+r.height/2)+'px';const a=Math.PI*2*i/n;
+      s.style.left=(r.left+r.width/2)+'px';s.style.top=(window.innerHeight*0.38)+'px';const a=Math.PI*2*i/n;
       s.style.setProperty('--dx',Math.cos(a)*(90+Math.random()*60)+'px');s.style.setProperty('--dy',(Math.sin(a)*(90+Math.random()*60)-40)+'px');
       document.body.appendChild(s);setTimeout(()=>s.remove(),1200)}}
 
@@ -307,7 +329,6 @@ header.top{display:flex;flex-direction:column;align-items:center;gap:10px;text-a
   function jdate(s){const [y,m,d]=s.split('-').map(Number);const w='日月火水木金土'[new Date(y,m-1,d).getDay()];return m+'月'+d+'日（'+w+'）'}
 
   function render(){
-    $('sampleNote').hidden=!usingSample;
     const y=view.getFullYear(),m=view.getMonth();
     $('monthLabel').textContent=y+'年'+(m+1)+'月';
     const all=list();
@@ -318,10 +339,10 @@ header.top{display:flex;flex-direction:column;align-items:center;gap:10px;text-a
     for(let i=0;i<first;i++){const e=document.createElement('div');e.className='day empty';cal.appendChild(e)}
     for(let d=1;d<=days;d++){
       const key=y+'-'+pad(m+1)+'-'+pad(d),xs=byDate[key]||[],x=xs[xs.length-1];
-      const b=document.createElement('button');b.className='day'+(key===today?' today':'');
+      const b=document.createElement('button');b.className='day'+(key===today?' today':'')+(xs.some(z=>z.praised)?' praised':'');
       b.setAttribute('aria-label',(m+1)+'月'+d+'日'+(x?'の記録あり':''));
       b.innerHTML='<span class="num">'+d+'</span>'+(x?thumb(x)+(xs.some(z=>z.praised)?'<span class="heart">♥</span>':''):'');
-      if(x)b.onclick=()=>open(x);else b.onclick=()=>{$('date').value=key;window.scrollTo({top:0,behavior:'smooth'})};
+      if(x)b.onclick=()=>open(x);else b.onclick=()=>openSheet(key);
       cal.appendChild(b);
     }
     const mon=all.filter(x=>x.date.startsWith(y+'-'+pad(m+1)));
