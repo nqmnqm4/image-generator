@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-01 06:41",
+ "updated": "2026-11-02 07:08",
  "products": [
   {
    "id": "UQ_487517",
@@ -1943,37 +1943,31 @@
    ]
   },
   {
-   "id": "GU_361513",
+   "id": "GU_360956",
    "brand": "GU",
    "brandLabel": "GU",
-   "name": "スーパーオーバーサイズニットガウン",
+   "name": "スーパーウォームパデッドコート",
    "kind": "top",
    "category": "アウター",
-   "price": 2990,
-   "url": "https://www.gu-global.com/jp/ja/products/E361513-000/00",
+   "price": 8990,
+   "url": "https://www.gu-global.com/jp/ja/products/E360956-000/00",
    "meas": {
-    "topFrac": 0.1694,
-    "hemFrac": 0.6356
+    "topFrac": 0.131,
+    "hemFrac": 0.7273
    },
-   "modelCm": 173.0,
-   "modelSize": "S/M",
+   "modelCm": 174.0,
+   "modelSize": "M",
    "colors": [
     {
-     "code": "69",
-     "img": "img/GU_361513_69.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361513/chip/goods_69_361513_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "06",
-     "img": "img/GU_361513_06.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361513/chip/goods_06_361513_chip.jpg",
+     "code": "56",
+     "img": "img/GU_360956_56.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360956/chip/goods_56_360956_chip.jpg",
      "src": "flat"
     },
     {
      "code": "09",
-     "img": "img/GU_361513_09.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361513/chip/goods_09_361513_chip.jpg",
+     "img": "img/GU_360956_09.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360956/chip/goods_09_360956_chip.jpg",
      "src": "flat"
     }
    ]
@@ -2850,9 +2844,21 @@
      "src": "flat"
     },
     {
+     "code": "54",
+     "img": "img/GU_360458_54.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360458/chip/goods_54_360458_chip.jpg",
+     "src": "flat"
+    },
+    {
      "code": "66",
      "img": "img/GU_360458_66.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360458/chip/goods_66_360458_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "78",
+     "img": "img/GU_360458_78.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360458/chip/goods_78_360458_chip.jpg",
      "src": "flat"
     },
     {
@@ -2865,18 +2871,6 @@
      "code": "03",
      "img": "img/GU_360458_03.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360458/chip/goods_03_360458_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "07",
-     "img": "img/GU_360458_07.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360458/chip/goods_07_360458_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "09",
-     "img": "img/GU_360458_09.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360458/chip/goods_09_360458_chip.jpg",
      "src": "flat"
     }
    ]
@@ -2898,6 +2892,12 @@
      "code": "57",
      "img": "img/GU_360456_57.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360456/chip/goods_57_360456_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "69",
+     "img": "img/GU_360456_69.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360456/chip/goods_69_360456_chip.jpg",
      "src": "flat"
     },
     {
@@ -3002,36 +3002,6 @@
    ]
   },
   {
-   "id": "GU_360864",
-   "brand": "GU",
-   "brandLabel": "GU",
-   "name": "ドルマンスリーブチェックシャツ",
-   "kind": "top",
-   "category": "シャツ・ブラウス",
-   "price": 2990,
-   "url": "https://www.gu-global.com/jp/ja/products/E360864-000/00",
-   "meas": {
-    "topFrac": 0.1491,
-    "hemFrac": 0.429
-   },
-   "modelCm": 173.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "18",
-     "img": "img/GU_360864_18.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360864/chip/goods_18_360864_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "53",
-     "img": "img/GU_360864_53.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360864/chip/goods_53_360864_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
    "id": "GU_360853",
    "brand": "GU",
    "brandLabel": "GU",
@@ -3063,6 +3033,36 @@
      "code": "09",
      "img": "img/GU_360853_09.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360853/chip/goods_09_360853_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
+   "id": "GU_360864",
+   "brand": "GU",
+   "brandLabel": "GU",
+   "name": "ドルマンスリーブチェックシャツ",
+   "kind": "top",
+   "category": "シャツ・ブラウス",
+   "price": 2990,
+   "url": "https://www.gu-global.com/jp/ja/products/E360864-000/00",
+   "meas": {
+    "topFrac": 0.1491,
+    "hemFrac": 0.429
+   },
+   "modelCm": 173.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "18",
+     "img": "img/GU_360864_18.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360864/chip/goods_18_360864_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "53",
+     "img": "img/GU_360864_53.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360864/chip/goods_53_360864_chip.jpg",
      "src": "flat"
     }
    ]

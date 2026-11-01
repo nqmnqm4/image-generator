@@ -1056,7 +1056,9 @@
    "02": "flat",
    "03": "flat",
    "07": "flat",
-   "09": "flat"
+   "09": "flat",
+   "54": "flat",
+   "78": "flat"
   },
   "modelCm": 174.0,
   "modelSize": "L"
@@ -1068,7 +1070,8 @@
    "57": "flat",
    "03": "flat",
    "08": "flat",
-   "09": "flat"
+   "09": "flat",
+   "69": "flat"
   },
   "modelCm": 170.0,
   "modelSize": "M"
@@ -1952,5 +1955,18 @@
   },
   "modelCm": 173.0,
   "modelSize": "S/M"
+ },
+ "GU_360956": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.131,
+   "hemFrac": 0.7273
+  },
+  "src": {
+   "56": "flat",
+   "09": "flat"
+  },
+  "modelCm": 174.0,
+  "modelSize": "M"
  }
 }
