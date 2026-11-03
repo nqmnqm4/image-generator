@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03 10:10",
+ "updated": "2026-11-04 08:28",
  "products": [
   {
    "id": "UQ_487408",
@@ -260,48 +260,6 @@
    ]
   },
   {
-   "id": "UQ_469869",
-   "brand": "UQ",
-   "brandLabel": "UNIQLO",
-   "name": "ウルトラライトダウンジャケット/NANODESIGN",
-   "kind": "top",
-   "category": "アウター",
-   "price": 7990,
-   "url": "https://www.uniqlo.com/jp/ja/products/E469869-000/00",
-   "meas": {
-    "topFrac": 0.1566,
-    "hemFrac": 0.4961
-   },
-   "modelCm": 174.0,
-   "modelSize": "S",
-   "colors": [
-    {
-     "code": "12",
-     "img": "img/UQ_469869_12.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/469869/chip/goods_12_469869_chip.jpg",
-     "src": "model"
-    },
-    {
-     "code": "01",
-     "img": "img/UQ_469869_01.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/469869/chip/goods_01_469869_chip.jpg",
-     "src": "model"
-    },
-    {
-     "code": "04",
-     "img": "img/UQ_469869_04.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/469869/chip/goods_04_469869_chip.jpg",
-     "src": "model"
-    },
-    {
-     "code": "09",
-     "img": "img/UQ_469869_09.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/469869/chip/goods_09_469869_chip.jpg",
-     "src": "model"
-    }
-   ]
-  },
-  {
    "id": "UQ_478577",
    "brand": "UQ",
    "brandLabel": "UNIQLO",
@@ -330,6 +288,30 @@
      "code": "09",
      "img": "img/UQ_478577_09.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/478577/chip/goods_09_478577_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
+   "id": "UQ_489429",
+   "brand": "UQ",
+   "brandLabel": "UNIQLO",
+   "name": "シームレスダウンパーカ",
+   "kind": "top",
+   "category": "アウター",
+   "price": 14900,
+   "url": "https://www.uniqlo.com/jp/ja/products/E489429-000/00",
+   "meas": {
+    "topFrac": 0.1604,
+    "hemFrac": 0.5151
+   },
+   "modelCm": 176.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "57",
+     "img": "img/UQ_489429_57.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/489429/chip/goods_57_489429_chip.jpg",
      "src": "flat"
     }
    ]
@@ -1926,12 +1908,6 @@
    "modelSize": null,
    "colors": [
     {
-     "code": "35",
-     "img": "img/GU_357674_35.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/357674/chip/goods_35_357674_chip.jpg",
-     "src": "flat"
-    },
-    {
      "code": "69",
      "img": "img/GU_357674_69.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/357674/chip/goods_69_357674_chip.jpg",
@@ -2487,12 +2463,6 @@
      "src": "model"
     },
     {
-     "code": "12",
-     "img": "img/GU_358176_12.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/358176/chip/goods_12_358176_chip.jpg",
-     "src": "flat"
-    },
-    {
      "code": "16",
      "img": "img/GU_358176_16.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/358176/chip/goods_16_358176_chip.jpg",
@@ -2515,6 +2485,12 @@
      "img": "img/GU_358176_38.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/358176/chip/goods_38_358176_chip.jpg",
      "src": "flat"
+    },
+    {
+     "code": "52",
+     "img": "img/GU_358176_52.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/358176/chip/goods_52_358176_chip.jpg",
+     "src": "model"
     }
    ]
   },
@@ -3752,36 +3728,6 @@
    ]
   },
   {
-   "id": "GU_361303",
-   "brand": "GU",
-   "brandLabel": "GU",
-   "name": "フリルスカート by rokh",
-   "kind": "bottom",
-   "category": "スカート",
-   "price": 3990,
-   "url": "https://www.gu-global.com/jp/ja/products/E361303-000/00",
-   "meas": {
-    "topFrac": 0.4047,
-    "hemFrac": 0.9294
-   },
-   "modelCm": 171.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "32",
-     "img": "img/GU_361303_32.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361303/chip/goods_32_361303_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "68",
-     "img": "img/GU_361303_68.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361303/chip/goods_68_361303_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
    "id": "GU_362043",
    "brand": "GU",
    "brandLabel": "GU",
@@ -3807,6 +3753,36 @@
      "code": "08",
      "img": "img/GU_362043_08.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362043/chip/goods_08_362043_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
+   "id": "GU_361303",
+   "brand": "GU",
+   "brandLabel": "GU",
+   "name": "フリルスカート by rokh",
+   "kind": "bottom",
+   "category": "スカート",
+   "price": 3990,
+   "url": "https://www.gu-global.com/jp/ja/products/E361303-000/00",
+   "meas": {
+    "topFrac": 0.4047,
+    "hemFrac": 0.9294
+   },
+   "modelCm": 171.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "32",
+     "img": "img/GU_361303_32.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361303/chip/goods_32_361303_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "68",
+     "img": "img/GU_361303_68.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361303/chip/goods_68_361303_chip.jpg",
      "src": "flat"
     }
    ]
@@ -4058,12 +4034,6 @@
    "modelCm": 170.0,
    "modelSize": "M",
    "colors": [
-    {
-     "code": "69",
-     "img": "img/GU_360859_69.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360859/chip/goods_69_360859_chip.jpg",
-     "src": "flat"
-    },
     {
      "code": "09",
      "img": "img/GU_360859_09.webp",

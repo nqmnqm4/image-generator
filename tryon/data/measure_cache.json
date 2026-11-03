@@ -1693,7 +1693,8 @@
    "16": "model",
    "18": "flat",
    "30": "flat",
-   "38": "flat"
+   "38": "flat",
+   "52": "model"
   },
   "modelCm": 175.0,
   "modelSize": "M"
@@ -2088,6 +2089,18 @@
    "07": "flat"
   },
   "modelCm": 173.0,
+  "modelSize": "M"
+ },
+ "UQ_489429": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.1604,
+   "hemFrac": 0.5151
+  },
+  "src": {
+   "57": "flat"
+  },
+  "modelCm": 176.0,
   "modelSize": "M"
  }
 }
