@@ -1968,5 +1968,126 @@
   },
   "modelCm": 174.0,
   "modelSize": "M"
+ },
+ "UQ_487408": {
+  "v": 2,
+  "meas": null,
+  "src": {
+   "19": "flat",
+   "35": "flat",
+   "00": "flat",
+   "05": "flat",
+   "09": "flat"
+  },
+  "modelCm": 176.0,
+  "modelSize": "M"
+ },
+ "UQ_487404": {
+  "v": 2,
+  "meas": null,
+  "src": {
+   "37": "flat",
+   "69": "flat",
+   "01": "flat",
+   "09": "flat"
+  },
+  "modelCm": 170.0,
+  "modelSize": "M"
+ },
+ "UQ_479751": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.1316,
+   "hemFrac": 0.5042
+  },
+  "src": {
+   "11": "model",
+   "39": "model",
+   "73": "model",
+   "01": "model",
+   "04": "model",
+   "09": "model"
+  },
+  "modelCm": 172.0,
+  "modelSize": "M"
+ },
+ "UQ_487469": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.1447,
+   "hemFrac": 0.4489
+  },
+  "src": {
+   "69": "model"
+  },
+  "modelCm": 171.0,
+  "modelSize": "M"
+ },
+ "UQ_469863": {
+  "v": 2,
+  "meas": null,
+  "src": {
+   "10": "model",
+   "11": "flat",
+   "37": "flat",
+   "01": "flat",
+   "09": "flat"
+  },
+  "modelCm": 170.0,
+  "modelSize": "M"
+ },
+ "UQ_469871": {
+  "v": 2,
+  "meas": null,
+  "src": {
+   "30": "flat",
+   "60": "flat",
+   "69": "flat",
+   "71": "flat",
+   "06": "model",
+   "09": "flat"
+  },
+  "modelCm": 170.0,
+  "modelSize": "M"
+ },
+ "UQ_469869": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.1566,
+   "hemFrac": 0.4961
+  },
+  "src": {
+   "12": "model",
+   "01": "model",
+   "04": "model",
+   "09": "model"
+  },
+  "modelCm": 174.0,
+  "modelSize": "S"
+ },
+ "UQ_478577": {
+  "v": 2,
+  "meas": null,
+  "src": {
+   "36": "flat",
+   "01": "flat",
+   "09": "flat"
+  },
+  "modelCm": 176.0,
+  "modelSize": "L"
+ },
+ "UQ_470187": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.1622,
+   "hemFrac": 0.5191
+  },
+  "src": {
+   "15": "flat",
+   "01": "flat",
+   "07": "flat"
+  },
+  "modelCm": 173.0,
+  "modelSize": "M"
  }
 }
