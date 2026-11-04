@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04 08:28",
+ "updated": "2026-11-05 08:46",
  "products": [
   {
    "id": "UQ_487408",
@@ -92,7 +92,7 @@
    "name": "パフテックジャケット",
    "kind": "top",
    "category": "アウター",
-   "price": 5990,
+   "price": 4990,
    "url": "https://www.uniqlo.com/jp/ja/products/E479751-000/00",
    "meas": {
     "topFrac": 0.1316,
@@ -585,15 +585,45 @@
    "kind": "top",
    "category": "Tシャツ・スウェット",
    "price": 1290,
-   "url": "https://www.uniqlo.com/jp/ja/products/E470143-001/00",
+   "url": "https://www.uniqlo.com/jp/ja/products/E470143-000/00",
    "meas": null,
    "modelCm": 176.0,
    "modelSize": "M",
    "colors": [
     {
+     "code": "10",
+     "img": "img/UQ_470143_10.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/470143/chip/goods_10_470143_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "12",
+     "img": "img/UQ_470143_12.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/470143/chip/goods_12_470143_chip.jpg",
+     "src": "flat"
+    },
+    {
      "code": "32",
      "img": "img/UQ_470143_32.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/470143/chip/goods_32_470143_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "39",
+     "img": "img/UQ_470143_39.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/470143/chip/goods_39_470143_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "61",
+     "img": "img/UQ_470143_61.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/470143/chip/goods_61_470143_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "79",
+     "img": "img/UQ_470143_79.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/470143/chip/goods_79_470143_chip.jpg",
      "src": "flat"
     }
    ]
@@ -797,7 +827,7 @@
    "name": "ファーライクフーディージャケット",
    "kind": "top",
    "category": "Tシャツ・スウェット",
-   "price": 5990,
+   "price": 4990,
    "url": "https://www.uniqlo.com/jp/ja/products/E488723-000/00",
    "meas": {
     "topFrac": 0.1272,
@@ -1022,81 +1052,6 @@
    ]
   },
   {
-   "id": "UQ_485321",
-   "brand": "UQ",
-   "brandLabel": "UNIQLO",
-   "name": "3Dメリノブレンドリブポロセーター",
-   "kind": "top",
-   "category": "ニット",
-   "price": 3990,
-   "url": "https://www.uniqlo.com/jp/ja/products/E485321-000/00",
-   "meas": null,
-   "modelCm": 174.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "14",
-     "img": "img/UQ_485321_14.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485321/chip/goods_14_485321_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "35",
-     "img": "img/UQ_485321_35.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485321/chip/goods_35_485321_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "01",
-     "img": "img/UQ_485321_01.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485321/chip/goods_01_485321_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "08",
-     "img": "img/UQ_485321_08.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485321/chip/goods_08_485321_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "09",
-     "img": "img/UQ_485321_09.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485321/chip/goods_09_485321_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
-   "id": "UQ_491606",
-   "brand": "UQ",
-   "brandLabel": "UNIQLO",
-   "name": "3Dメリノブレンドリブポロセーター",
-   "kind": "top",
-   "category": "ニット",
-   "price": 3990,
-   "url": "https://www.uniqlo.com/jp/ja/products/E491606-000/00",
-   "meas": {
-    "topFrac": 0.1576,
-    "hemFrac": 0.4412
-   },
-   "modelCm": 176.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "69",
-     "img": "img/UQ_491606_69.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/491606/chip/goods_69_491606_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "01",
-     "img": "img/UQ_491606_01.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/491606/chip/goods_01_491606_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
    "id": "UQ_469410",
    "brand": "UQ",
    "brandLabel": "UNIQLO",
@@ -1195,6 +1150,81 @@
      "img": "img/UQ_469426_38.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/469426/chip/goods_38_469426_chip.jpg",
      "src": "model"
+    }
+   ]
+  },
+  {
+   "id": "UQ_485321",
+   "brand": "UQ",
+   "brandLabel": "UNIQLO",
+   "name": "3Dメリノブレンドリブポロセーター",
+   "kind": "top",
+   "category": "ニット",
+   "price": 3990,
+   "url": "https://www.uniqlo.com/jp/ja/products/E485321-000/00",
+   "meas": null,
+   "modelCm": 174.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "14",
+     "img": "img/UQ_485321_14.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485321/chip/goods_14_485321_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "35",
+     "img": "img/UQ_485321_35.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485321/chip/goods_35_485321_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "01",
+     "img": "img/UQ_485321_01.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485321/chip/goods_01_485321_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "08",
+     "img": "img/UQ_485321_08.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485321/chip/goods_08_485321_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "09",
+     "img": "img/UQ_485321_09.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485321/chip/goods_09_485321_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
+   "id": "UQ_491606",
+   "brand": "UQ",
+   "brandLabel": "UNIQLO",
+   "name": "3Dメリノブレンドリブポロセーター",
+   "kind": "top",
+   "category": "ニット",
+   "price": 3990,
+   "url": "https://www.uniqlo.com/jp/ja/products/E491606-000/00",
+   "meas": {
+    "topFrac": 0.1576,
+    "hemFrac": 0.4412
+   },
+   "modelCm": 176.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "69",
+     "img": "img/UQ_491606_69.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/491606/chip/goods_69_491606_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "01",
+     "img": "img/UQ_491606_01.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/491606/chip/goods_01_491606_chip.jpg",
+     "src": "flat"
     }
    ]
   },
@@ -1829,6 +1859,36 @@
    ]
   },
   {
+   "id": "GU_361776",
+   "brand": "GU",
+   "brandLabel": "GU",
+   "name": "コージーメルトンコクーンピーコート(スーパーオーバーサイズフィット)",
+   "kind": "top",
+   "category": "アウター",
+   "price": 6990,
+   "url": "https://www.gu-global.com/jp/ja/products/E361776-000/00",
+   "meas": {
+    "topFrac": 0.1596,
+    "hemFrac": 0.8257
+   },
+   "modelCm": 170.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "69",
+     "img": "img/GU_361776_69.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361776/chip/goods_69_361776_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "08",
+     "img": "img/GU_361776_08.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361776/chip/goods_08_361776_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
    "id": "GU_357498",
    "brand": "GU",
    "brandLabel": "GU",
@@ -1860,36 +1920,6 @@
      "code": "09",
      "img": "img/GU_357498_09.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/357498/chip/goods_09_357498_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
-   "id": "GU_361776",
-   "brand": "GU",
-   "brandLabel": "GU",
-   "name": "コージーメルトンコクーンピーコート(スーパーオーバーサイズフィット)",
-   "kind": "top",
-   "category": "アウター",
-   "price": 6990,
-   "url": "https://www.gu-global.com/jp/ja/products/E361776-000/00",
-   "meas": {
-    "topFrac": 0.1596,
-    "hemFrac": 0.8257
-   },
-   "modelCm": 170.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "69",
-     "img": "img/GU_361776_69.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361776/chip/goods_69_361776_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "08",
-     "img": "img/GU_361776_08.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361776/chip/goods_08_361776_chip.jpg",
      "src": "flat"
     }
    ]
@@ -2928,21 +2958,9 @@
      "src": "flat"
     },
     {
-     "code": "54",
-     "img": "img/GU_360458_54.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360458/chip/goods_54_360458_chip.jpg",
-     "src": "flat"
-    },
-    {
      "code": "66",
      "img": "img/GU_360458_66.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360458/chip/goods_66_360458_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "78",
-     "img": "img/GU_360458_78.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360458/chip/goods_78_360458_chip.jpg",
      "src": "flat"
     },
     {
@@ -2955,6 +2973,18 @@
      "code": "03",
      "img": "img/GU_360458_03.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360458/chip/goods_03_360458_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "07",
+     "img": "img/GU_360458_07.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360458/chip/goods_07_360458_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "09",
+     "img": "img/GU_360458_09.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360458/chip/goods_09_360458_chip.jpg",
      "src": "flat"
     }
    ]
@@ -3290,26 +3320,29 @@
    ]
   },
   {
-   "id": "GU_361328",
+   "id": "GU_358737",
    "brand": "GU",
    "brandLabel": "GU",
-   "name": "ドルマンスリーブシアーシャツ(フラワー)",
+   "name": "ドレープフレアシャツ(半袖)",
    "kind": "top",
    "category": "シャツ・ブラウス",
    "price": 990,
-   "url": "https://www.gu-global.com/jp/ja/products/E361328-000/00",
-   "meas": {
-    "topFrac": 0.1029,
-    "hemFrac": 0.4901
-   },
+   "url": "https://www.gu-global.com/jp/ja/products/E358737-000/00",
+   "meas": null,
    "modelCm": 172.0,
    "modelSize": "M",
    "colors": [
     {
-     "code": "37",
-     "img": "img/GU_361328_37.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361328/chip/goods_37_361328_chip.jpg",
-     "src": "flat"
+     "code": "42",
+     "img": "img/GU_358737_42.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/358737/chip/goods_42_358737_chip.jpg",
+     "src": "model"
+    },
+    {
+     "code": "00",
+     "img": "img/GU_358737_00.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/358737/chip/goods_00_358737_chip.jpg",
+     "src": "model"
     }
    ]
   },
@@ -3453,6 +3486,12 @@
      "code": "68",
      "img": "img/GU_360647_68.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360647/chip/goods_68_360647_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "69",
+     "img": "img/GU_360647_69.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360647/chip/goods_69_360647_chip.jpg",
      "src": "flat"
     },
     {
