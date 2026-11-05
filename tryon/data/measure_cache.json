@@ -1211,7 +1211,8 @@
    "64": "flat",
    "68": "flat",
    "08": "flat",
-   "69": "flat"
+   "69": "flat",
+   "01": "flat"
   },
   "modelCm": 169.0,
   "modelSize": "M"
@@ -2116,6 +2117,32 @@
    "00": "model"
   },
   "modelCm": 172.0,
+  "modelSize": "M"
+ },
+ "UQ_485307": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.1634,
+   "hemFrac": 0.9627
+  },
+  "src": {
+   "69": "flat",
+   "01": "flat"
+  },
+  "modelCm": 172.0,
+  "modelSize": "M"
+ },
+ "UQ_489100": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.1528,
+   "hemFrac": 0.452
+  },
+  "src": {
+   "69": "flat",
+   "08": "flat"
+  },
+  "modelCm": 175.0,
   "modelSize": "M"
  }
 }
