@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06 08:43",
+ "updated": "2026-11-07 08:17",
  "products": [
   {
    "id": "UQ_487408",
@@ -821,6 +821,45 @@
    ]
   },
   {
+   "id": "UQ_487598",
+   "brand": "UQ",
+   "brandLabel": "UNIQLO",
+   "name": "ファーリーフリースフルジップジャケット/ユニクロ 京都・オンライン限定色",
+   "kind": "top",
+   "category": "Tシャツ・スウェット",
+   "price": 1990,
+   "url": "https://www.uniqlo.com/jp/ja/products/E487598-000/00",
+   "meas": null,
+   "modelCm": 173.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "19",
+     "img": "img/UQ_487598_19.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487598/chip/goods_19_487598_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "51",
+     "img": "img/UQ_487598_51.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487598/chip/goods_51_487598_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "69",
+     "img": "img/UQ_487598_69.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487598/chip/goods_69_487598_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "70",
+     "img": "img/UQ_487598_70.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487598/chip/goods_70_487598_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
    "id": "UQ_488723",
    "brand": "UQ",
    "brandLabel": "UNIQLO",
@@ -903,150 +942,6 @@
      "code": "09",
      "img": "img/UQ_488302_09.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488302/chip/goods_09_488302_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
-   "id": "UQ_487594",
-   "brand": "UQ",
-   "brandLabel": "UNIQLO",
-   "name": "ボアフリースコンビネーションジャケット",
-   "kind": "top",
-   "category": "Tシャツ・スウェット",
-   "price": 2990,
-   "url": "https://www.uniqlo.com/jp/ja/products/E487594-000/00",
-   "meas": {
-    "topFrac": 0.1456,
-    "hemFrac": 0.469
-   },
-   "modelCm": 176.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "18",
-     "img": "img/UQ_487594_18.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487594/chip/goods_18_487594_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "69",
-     "img": "img/UQ_487594_69.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487594/chip/goods_69_487594_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "01",
-     "img": "img/UQ_487594_01.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487594/chip/goods_01_487594_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "09",
-     "img": "img/UQ_487594_09.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487594/chip/goods_09_487594_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
-   "id": "UQ_485310",
-   "brand": "UQ",
-   "brandLabel": "UNIQLO",
-   "name": "スフレヤーンクルーネックセーター",
-   "kind": "top",
-   "category": "ニット",
-   "price": 3990,
-   "url": "https://www.uniqlo.com/jp/ja/products/E485310-000/00",
-   "meas": null,
-   "modelCm": 170.0,
-   "modelSize": "L",
-   "colors": [
-    {
-     "code": "10",
-     "img": "img/UQ_485310_10.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485310/chip/goods_10_485310_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "19",
-     "img": "img/UQ_485310_19.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485310/chip/goods_19_485310_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "34",
-     "img": "img/UQ_485310_34.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485310/chip/goods_34_485310_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "41",
-     "img": "img/UQ_485310_41.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485310/chip/goods_41_485310_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "54",
-     "img": "img/UQ_485310_54.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485310/chip/goods_54_485310_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "60",
-     "img": "img/UQ_485310_60.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485310/chip/goods_60_485310_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
-   "id": "UQ_485340",
-   "brand": "UQ",
-   "brandLabel": "UNIQLO",
-   "name": "スフレヤーンリラックスカーディガン",
-   "kind": "top",
-   "category": "ニット",
-   "price": 3990,
-   "url": "https://www.uniqlo.com/jp/ja/products/E485340-000/00",
-   "meas": null,
-   "modelCm": 173.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "11",
-     "img": "img/UQ_485340_11.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485340/chip/goods_11_485340_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "19",
-     "img": "img/UQ_485340_19.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485340/chip/goods_19_485340_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "32",
-     "img": "img/UQ_485340_32.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485340/chip/goods_32_485340_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "34",
-     "img": "img/UQ_485340_34.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485340/chip/goods_34_485340_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "50",
-     "img": "img/UQ_485340_50.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485340/chip/goods_50_485340_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "67",
-     "img": "img/UQ_485340_67.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485340/chip/goods_67_485340_chip.jpg",
      "src": "flat"
     }
    ]
@@ -1235,6 +1130,72 @@
    ]
   },
   {
+   "id": "UQ_489100",
+   "brand": "UQ",
+   "brandLabel": "UNIQLO",
+   "name": "メリノペプラムカーディガン",
+   "kind": "top",
+   "category": "ニット",
+   "price": 12900,
+   "url": "https://www.uniqlo.com/jp/ja/products/E489100-000/00",
+   "meas": {
+    "topFrac": 0.1528,
+    "hemFrac": 0.452
+   },
+   "modelCm": 175.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "69",
+     "img": "img/UQ_489100_69.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/489100/chip/goods_69_489100_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "08",
+     "img": "img/UQ_489100_08.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/489100/chip/goods_08_489100_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
+   "id": "UQ_488528",
+   "brand": "UQ",
+   "brandLabel": "UNIQLO",
+   "name": "メリノシルククルーネックカーディガン",
+   "kind": "top",
+   "category": "ニット",
+   "price": 4990,
+   "url": "https://www.uniqlo.com/jp/ja/products/E488528-000/00",
+   "meas": {
+    "topFrac": 0.1721,
+    "hemFrac": 0.4203
+   },
+   "modelCm": 172.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "41",
+     "img": "img/UQ_488528_41.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488528/chip/goods_41_488528_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "64",
+     "img": "img/UQ_488528_64.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488528/chip/goods_64_488528_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "06",
+     "img": "img/UQ_488528_06.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488528/chip/goods_06_488528_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
    "id": "UQ_485307",
    "brand": "UQ",
    "brandLabel": "UNIQLO",
@@ -1262,31 +1223,46 @@
    ]
   },
   {
-   "id": "UQ_489100",
+   "id": "UQ_485321",
    "brand": "UQ",
    "brandLabel": "UNIQLO",
-   "name": "メリノペプラムカーディガン",
+   "name": "3Dメリノブレンドリブポロセーター",
    "kind": "top",
    "category": "ニット",
-   "price": 12900,
-   "url": "https://www.uniqlo.com/jp/ja/products/E489100-000/00",
-   "meas": {
-    "topFrac": 0.1528,
-    "hemFrac": 0.452
-   },
-   "modelCm": 175.0,
+   "price": 3990,
+   "url": "https://www.uniqlo.com/jp/ja/products/E485321-000/00",
+   "meas": null,
+   "modelCm": 174.0,
    "modelSize": "M",
    "colors": [
     {
-     "code": "69",
-     "img": "img/UQ_489100_69.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/489100/chip/goods_69_489100_chip.jpg",
+     "code": "14",
+     "img": "img/UQ_485321_14.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485321/chip/goods_14_485321_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "35",
+     "img": "img/UQ_485321_35.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485321/chip/goods_35_485321_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "01",
+     "img": "img/UQ_485321_01.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485321/chip/goods_01_485321_chip.jpg",
      "src": "flat"
     },
     {
      "code": "08",
-     "img": "img/UQ_489100_08.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/489100/chip/goods_08_489100_chip.jpg",
+     "img": "img/UQ_485321_08.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485321/chip/goods_08_485321_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "09",
+     "img": "img/UQ_485321_09.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485321/chip/goods_09_485321_chip.jpg",
      "src": "flat"
     }
    ]
@@ -1724,30 +1700,6 @@
    ]
   },
   {
-   "id": "UQ_484820",
-   "brand": "UQ",
-   "brandLabel": "UNIQLO",
-   "name": "ティアードマキシスカート/丈短め",
-   "kind": "bottom",
-   "category": "スカート・ワンピース",
-   "price": 1990,
-   "url": "https://www.uniqlo.com/jp/ja/products/E484820-000/00",
-   "meas": {
-    "topFrac": 0.3931,
-    "hemFrac": 0.9128
-   },
-   "modelCm": 160.0,
-   "modelSize": "S",
-   "colors": [
-    {
-     "code": "00",
-     "img": "img/UQ_484820_00.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/484820/chip/goods_00_484820_chip.jpg",
-     "src": "model"
-    }
-   ]
-  },
-  {
    "id": "UQ_488934",
    "brand": "UQ",
    "brandLabel": "UNIQLO",
@@ -1794,6 +1746,30 @@
      "code": "69",
      "img": "img/UQ_489000_69.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/489000/chip/goods_69_489000_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
+   "id": "UQ_489360",
+   "brand": "UQ",
+   "brandLabel": "UNIQLO",
+   "name": "レーヨンプリントロングスカート",
+   "kind": "bottom",
+   "category": "スカート・ワンピース",
+   "price": 5990,
+   "url": "https://www.uniqlo.com/jp/ja/products/E489360-000/00",
+   "meas": {
+    "topFrac": 0.4021,
+    "hemFrac": 0.8976
+   },
+   "modelCm": 175.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "09",
+     "img": "img/UQ_489360_09.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/489360/chip/goods_09_489360_chip.jpg",
      "src": "flat"
     }
    ]
@@ -1923,12 +1899,6 @@
      "code": "69",
      "img": "img/GU_357674_69.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/357674/chip/goods_69_357674_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "09",
-     "img": "img/GU_357674_09.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/357674/chip/goods_09_357674_chip.jpg",
      "src": "flat"
     }
    ]
@@ -2069,6 +2039,192 @@
    ]
   },
   {
+   "id": "GU_361375",
+   "brand": "GU",
+   "brandLabel": "GU",
+   "name": "ファインゲージニットリブセーター",
+   "kind": "top",
+   "category": "ニット",
+   "price": 1490,
+   "url": "https://www.gu-global.com/jp/ja/products/E361375-000/00",
+   "meas": null,
+   "modelCm": 172.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "18",
+     "img": "img/GU_361375_18.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361375/chip/goods_18_361375_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "30",
+     "img": "img/GU_361375_30.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361375/chip/goods_30_361375_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "69",
+     "img": "img/GU_361375_69.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361375/chip/goods_69_361375_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "06",
+     "img": "img/GU_361375_06.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361375/chip/goods_06_361375_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "09",
+     "img": "img/GU_361375_09.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361375/chip/goods_09_361375_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
+   "id": "GU_361376",
+   "brand": "GU",
+   "brandLabel": "GU",
+   "name": "ファインゲージニットカーディガン",
+   "kind": "top",
+   "category": "ニット",
+   "price": 1990,
+   "url": "https://www.gu-global.com/jp/ja/products/E361376-000/00",
+   "meas": null,
+   "modelCm": 169.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "18",
+     "img": "img/GU_361376_18.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361376/chip/goods_18_361376_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "36",
+     "img": "img/GU_361376_36.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361376/chip/goods_36_361376_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "01",
+     "img": "img/GU_361376_01.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361376/chip/goods_01_361376_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "06",
+     "img": "img/GU_361376_06.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361376/chip/goods_06_361376_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "09",
+     "img": "img/GU_361376_09.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361376/chip/goods_09_361376_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
+   "id": "GU_360408",
+   "brand": "GU",
+   "brandLabel": "GU",
+   "name": "ファインゲージニットVネックカーディガン",
+   "kind": "top",
+   "category": "ニット",
+   "price": 1990,
+   "url": "https://www.gu-global.com/jp/ja/products/E360408-000/00",
+   "meas": {
+    "topFrac": 0.1574,
+    "hemFrac": 0.4758
+   },
+   "modelCm": 187.0,
+   "modelSize": "L",
+   "colors": [
+    {
+     "code": "36",
+     "img": "img/GU_360408_36.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360408/chip/goods_36_360408_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "69",
+     "img": "img/GU_360408_69.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360408/chip/goods_69_360408_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "06",
+     "img": "img/GU_360408_06.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360408/chip/goods_06_360408_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "09",
+     "img": "img/GU_360408_09.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360408/chip/goods_09_360408_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
+   "id": "GU_361671",
+   "brand": "GU",
+   "brandLabel": "GU",
+   "name": "ファインゲージニットリボンカーディガン",
+   "kind": "top",
+   "category": "ニット",
+   "price": 1990,
+   "url": "https://www.gu-global.com/jp/ja/products/E361671-000/00",
+   "meas": {
+    "topFrac": 0.1681,
+    "hemFrac": 0.488
+   },
+   "modelCm": 170.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "39",
+     "img": "img/GU_361671_39.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361671/chip/goods_39_361671_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "08",
+     "img": "img/GU_361671_08.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361671/chip/goods_08_361671_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
+   "id": "GU_360832",
+   "brand": "GU",
+   "brandLabel": "GU",
+   "name": "ファインゲージニットポロシャツ(半袖)",
+   "kind": "top",
+   "category": "ニット",
+   "price": 790,
+   "url": "https://www.gu-global.com/jp/ja/products/E360832-000/00",
+   "meas": {
+    "topFrac": 0.157,
+    "hemFrac": 0.3825
+   },
+   "modelCm": 173.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "09",
+     "img": "img/GU_360832_09.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360832/chip/goods_09_360832_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
    "id": "GU_360805",
    "brand": "GU",
    "brandLabel": "GU",
@@ -2184,186 +2340,6 @@
      "code": "03",
      "img": "img/GU_361379_03.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361379/chip/goods_03_361379_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
-   "id": "GU_360837",
-   "brand": "GU",
-   "brandLabel": "GU",
-   "name": "パフィータッチニットボーダークルーネックカーディガン",
-   "kind": "top",
-   "category": "ニット",
-   "price": 2990,
-   "url": "https://www.gu-global.com/jp/ja/products/E360837-000/00",
-   "meas": {
-    "topFrac": 0.0654,
-    "hemFrac": 0.4027
-   },
-   "modelCm": 172.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "48",
-     "img": "img/GU_360837_48.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360837/chip/goods_48_360837_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "69",
-     "img": "img/GU_360837_69.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360837/chip/goods_69_360837_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
-   "id": "GU_361317",
-   "brand": "GU",
-   "brandLabel": "GU",
-   "name": "パフィータッチニットカラーコンビネーションセーター by rokh",
-   "kind": "top",
-   "category": "ニット",
-   "price": 2990,
-   "url": "https://www.gu-global.com/jp/ja/products/E361317-000/00",
-   "meas": null,
-   "modelCm": 175.0,
-   "modelSize": "L",
-   "colors": [
-    {
-     "code": "38",
-     "img": "img/GU_361317_38.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361317/chip/goods_38_361317_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "41",
-     "img": "img/GU_361317_41.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361317/chip/goods_41_361317_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "69",
-     "img": "img/GU_361317_69.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361317/chip/goods_69_361317_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "06",
-     "img": "img/GU_361317_06.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361317/chip/goods_06_361317_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
-   "id": "GU_360547",
-   "brand": "GU",
-   "brandLabel": "GU",
-   "name": "パフィータッチニットオーバーサイズハイネックセーター",
-   "kind": "top",
-   "category": "ニット",
-   "price": 1990,
-   "url": "https://www.gu-global.com/jp/ja/products/E360547-000/00",
-   "meas": null,
-   "modelCm": 175.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "31",
-     "img": "img/GU_360547_31.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360547/chip/goods_31_360547_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "53",
-     "img": "img/GU_360547_53.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360547/chip/goods_53_360547_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "75",
-     "img": "img/GU_360547_75.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360547/chip/goods_75_360547_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "06",
-     "img": "img/GU_360547_06.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360547/chip/goods_06_360547_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "08",
-     "img": "img/GU_360547_08.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360547/chip/goods_08_360547_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
-   "id": "GU_360799",
-   "brand": "GU",
-   "brandLabel": "GU",
-   "name": "フェザーヤーンボートネックセーター",
-   "kind": "top",
-   "category": "ニット",
-   "price": 2990,
-   "url": "https://www.gu-global.com/jp/ja/products/E360799-000/00",
-   "meas": {
-    "topFrac": 0.1465,
-    "hemFrac": 0.4751
-   },
-   "modelCm": 175.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "30",
-     "img": "img/GU_360799_30.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360799/chip/goods_30_360799_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "62",
-     "img": "img/GU_360799_62.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360799/chip/goods_62_360799_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "08",
-     "img": "img/GU_360799_08.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360799/chip/goods_08_360799_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
-   "id": "GU_361673",
-   "brand": "GU",
-   "brandLabel": "GU",
-   "name": "フェザーヤーンボーダーセーター",
-   "kind": "top",
-   "category": "ニット",
-   "price": 2990,
-   "url": "https://www.gu-global.com/jp/ja/products/E361673-000/00",
-   "meas": {
-    "topFrac": 0.1358,
-    "hemFrac": 0.4767
-   },
-   "modelCm": 169.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "48",
-     "img": "img/GU_361673_48.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361673/chip/goods_48_361673_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "69",
-     "img": "img/GU_361673_69.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361673/chip/goods_69_361673_chip.jpg",
      "src": "flat"
     }
    ]
@@ -3320,114 +3296,6 @@
    ]
   },
   {
-   "id": "GU_356423",
-   "brand": "GU",
-   "brandLabel": "GU",
-   "name": "スリムフレアジーンズ",
-   "kind": "bottom",
-   "category": "パンツ",
-   "price": 2990,
-   "url": "https://www.gu-global.com/jp/ja/products/E356423-000/00",
-   "meas": {
-    "topFrac": 0.414,
-    "hemFrac": 0.9752
-   },
-   "modelCm": 170.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "64",
-     "img": "img/GU_356423_64.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/356423/chip/goods_64_356423_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "68",
-     "img": "img/GU_356423_68.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/356423/chip/goods_68_356423_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "09",
-     "img": "img/GU_356423_09.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/356423/chip/goods_09_356423_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
-   "id": "GU_356952",
-   "brand": "GU",
-   "brandLabel": "GU",
-   "name": "スリムフレアジーンズ(丈短め)",
-   "kind": "bottom",
-   "category": "パンツ",
-   "price": 2990,
-   "url": "https://www.gu-global.com/jp/ja/products/E356952-000/00",
-   "meas": {
-    "topFrac": 0.3802,
-    "hemFrac": 0.9046
-   },
-   "modelCm": 160.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "64",
-     "img": "img/GU_356952_64.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/356952/chip/goods_64_356952_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "68",
-     "img": "img/GU_356952_68.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/356952/chip/goods_68_356952_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "09",
-     "img": "img/GU_356952_09.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/356952/chip/goods_09_356952_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
-   "id": "GU_356895",
-   "brand": "GU",
-   "brandLabel": "GU",
-   "name": "スリムフレアジーンズ(丈長め)",
-   "kind": "bottom",
-   "category": "パンツ",
-   "price": 2990,
-   "url": "https://www.gu-global.com/jp/ja/products/E356895-000/00",
-   "meas": {
-    "topFrac": 0.4308,
-    "hemFrac": 0.9707
-   },
-   "modelCm": 172.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "64",
-     "img": "img/GU_356895_64.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/356895/chip/goods_64_356895_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "68",
-     "img": "img/GU_356895_68.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/356895/chip/goods_68_356895_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "09",
-     "img": "img/GU_356895_09.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/356895/chip/goods_09_356895_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
    "id": "GU_360647",
    "brand": "GU",
    "brandLabel": "GU",
@@ -3633,6 +3501,114 @@
      "code": "08",
      "img": "img/GU_361414_08.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361414/chip/goods_08_361414_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
+   "id": "GU_361846",
+   "brand": "GU",
+   "brandLabel": "GU",
+   "name": "バギージーンズ(丈短め)",
+   "kind": "bottom",
+   "category": "パンツ",
+   "price": 1990,
+   "url": "https://www.gu-global.com/jp/ja/products/E361846-000/00",
+   "meas": {
+    "topFrac": 0.2324,
+    "hemFrac": 0.9793
+   },
+   "modelCm": 160.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "68",
+     "img": "img/GU_361846_68.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361846/chip/goods_68_361846_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "69",
+     "img": "img/GU_361846_69.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361846/chip/goods_69_361846_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "08",
+     "img": "img/GU_361846_08.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361846/chip/goods_08_361846_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
+   "id": "GU_361824",
+   "brand": "GU",
+   "brandLabel": "GU",
+   "name": "バギージーンズ(丈長め)",
+   "kind": "bottom",
+   "category": "パンツ",
+   "price": 1990,
+   "url": "https://www.gu-global.com/jp/ja/products/E361824-000/00",
+   "meas": {
+    "topFrac": 0.3994,
+    "hemFrac": 0.9695
+   },
+   "modelCm": 174.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "68",
+     "img": "img/GU_361824_68.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361824/chip/goods_68_361824_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "69",
+     "img": "img/GU_361824_69.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361824/chip/goods_69_361824_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "08",
+     "img": "img/GU_361824_08.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361824/chip/goods_08_361824_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
+   "id": "GU_356423",
+   "brand": "GU",
+   "brandLabel": "GU",
+   "name": "スリムフレアジーンズ",
+   "kind": "bottom",
+   "category": "パンツ",
+   "price": 2990,
+   "url": "https://www.gu-global.com/jp/ja/products/E356423-000/00",
+   "meas": {
+    "topFrac": 0.414,
+    "hemFrac": 0.9752
+   },
+   "modelCm": 170.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "64",
+     "img": "img/GU_356423_64.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/356423/chip/goods_64_356423_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "68",
+     "img": "img/GU_356423_68.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/356423/chip/goods_68_356423_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "09",
+     "img": "img/GU_356423_09.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/356423/chip/goods_09_356423_chip.jpg",
      "src": "flat"
     }
    ]
