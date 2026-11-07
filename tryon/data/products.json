@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07 08:17",
+ "updated": "2026-11-08 06:55",
  "products": [
   {
    "id": "UQ_487408",
@@ -3977,30 +3977,6 @@
    ]
   },
   {
-   "id": "GU_361205",
-   "brand": "GU",
-   "brandLabel": "GU",
-   "name": "ユーティリティシャツワンピース",
-   "kind": "dress",
-   "category": "ワンピース",
-   "price": 990,
-   "url": "https://www.gu-global.com/jp/ja/products/E361205-000/00",
-   "meas": {
-    "topFrac": 0.1503,
-    "hemFrac": 0.7382
-   },
-   "modelCm": 173.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "56",
-     "img": "img/GU_361205_56.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361205/chip/goods_56_361205_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
    "id": "GU_360859",
    "brand": "GU",
    "brandLabel": "GU",
@@ -4020,6 +3996,30 @@
      "code": "09",
      "img": "img/GU_360859_09.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360859/chip/goods_09_360859_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
+   "id": "GU_361205",
+   "brand": "GU",
+   "brandLabel": "GU",
+   "name": "ユーティリティシャツワンピース",
+   "kind": "dress",
+   "category": "ワンピース",
+   "price": 990,
+   "url": "https://www.gu-global.com/jp/ja/products/E361205-000/00",
+   "meas": {
+    "topFrac": 0.1503,
+    "hemFrac": 0.7382
+   },
+   "modelCm": 173.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "56",
+     "img": "img/GU_361205_56.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361205/chip/goods_56_361205_chip.jpg",
      "src": "flat"
     }
    ]
