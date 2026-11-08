@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08 06:55",
+ "updated": "2026-11-09 07:12",
  "products": [
   {
    "id": "UQ_487408",
@@ -833,18 +833,6 @@
    "modelCm": 173.0,
    "modelSize": "M",
    "colors": [
-    {
-     "code": "19",
-     "img": "img/UQ_487598_19.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487598/chip/goods_19_487598_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "51",
-     "img": "img/UQ_487598_51.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487598/chip/goods_51_487598_chip.jpg",
-     "src": "flat"
-    },
     {
      "code": "69",
      "img": "img/UQ_487598_69.webp",
@@ -2003,37 +1991,31 @@
    ]
   },
   {
-   "id": "GU_361513",
+   "id": "GU_360908",
    "brand": "GU",
    "brandLabel": "GU",
-   "name": "スーパーオーバーサイズニットガウン",
+   "name": "ベルテッドAラインロングコート(9分袖)",
    "kind": "top",
    "category": "アウター",
-   "price": 3990,
-   "url": "https://www.gu-global.com/jp/ja/products/E361513-000/00",
+   "price": 9990,
+   "url": "https://www.gu-global.com/jp/ja/products/E360908-000/00",
    "meas": {
-    "topFrac": 0.1694,
-    "hemFrac": 0.6356
+    "topFrac": 0.1171,
+    "hemFrac": 0.7139
    },
-   "modelCm": 173.0,
-   "modelSize": "S/M",
+   "modelCm": 169.0,
+   "modelSize": "M",
    "colors": [
     {
+     "code": "38",
+     "img": "img/GU_360908_38.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360908/chip/goods_38_360908_chip.jpg",
+     "src": "flat"
+    },
+    {
      "code": "69",
-     "img": "img/GU_361513_69.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361513/chip/goods_69_361513_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "06",
-     "img": "img/GU_361513_06.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361513/chip/goods_06_361513_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "09",
-     "img": "img/GU_361513_09.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361513/chip/goods_09_361513_chip.jpg",
+     "img": "img/GU_360908_69.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360908/chip/goods_69_360908_chip.jpg",
      "src": "flat"
     }
    ]
@@ -2345,51 +2327,6 @@
    ]
   },
   {
-   "id": "GU_362048",
-   "brand": "GU",
-   "brandLabel": "GU",
-   "name": "リブスリムフィットT(長袖)",
-   "kind": "top",
-   "category": "Tシャツ",
-   "price": 1290,
-   "url": "https://www.gu-global.com/jp/ja/products/E362048-000/00",
-   "meas": null,
-   "modelCm": 174.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "15",
-     "img": "img/GU_362048_15.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362048/chip/goods_15_362048_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "61",
-     "img": "img/GU_362048_61.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362048/chip/goods_61_362048_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "01",
-     "img": "img/GU_362048_01.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362048/chip/goods_01_362048_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "03",
-     "img": "img/GU_362048_03.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362048/chip/goods_03_362048_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "09",
-     "img": "img/GU_362048_09.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362048/chip/goods_09_362048_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
    "id": "GU_358176",
    "brand": "GU",
    "brandLabel": "GU",
@@ -2466,6 +2403,51 @@
      "code": "01",
      "img": "img/GU_361609_01.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361609/chip/goods_01_361609_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
+   "id": "GU_362048",
+   "brand": "GU",
+   "brandLabel": "GU",
+   "name": "リブスリムフィットT(長袖)",
+   "kind": "top",
+   "category": "Tシャツ",
+   "price": 1290,
+   "url": "https://www.gu-global.com/jp/ja/products/E362048-000/00",
+   "meas": null,
+   "modelCm": 174.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "15",
+     "img": "img/GU_362048_15.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362048/chip/goods_15_362048_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "61",
+     "img": "img/GU_362048_61.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362048/chip/goods_61_362048_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "01",
+     "img": "img/GU_362048_01.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362048/chip/goods_01_362048_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "03",
+     "img": "img/GU_362048_03.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362048/chip/goods_03_362048_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "09",
+     "img": "img/GU_362048_09.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362048/chip/goods_09_362048_chip.jpg",
      "src": "flat"
     }
    ]

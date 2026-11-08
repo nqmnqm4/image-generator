@@ -2263,5 +2263,18 @@
   },
   "modelCm": 174.0,
   "modelSize": "M"
+ },
+ "GU_360908": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.1171,
+   "hemFrac": 0.7139
+  },
+  "src": {
+   "38": "flat",
+   "69": "flat"
+  },
+  "modelCm": 169.0,
+  "modelSize": "M"
  }
 }
