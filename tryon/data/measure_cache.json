@@ -791,7 +791,9 @@
    "30": "flat",
    "66": "flat",
    "04": "flat",
-   "09": "flat"
+   "09": "flat",
+   "55": "flat",
+   "62": "flat"
   },
   "modelCm": 174.0,
   "modelSize": "M"
@@ -2457,6 +2459,20 @@
    "09": "flat"
   },
   "modelCm": 158.0,
+  "modelSize": "M"
+ },
+ "GU_360800": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.178,
+   "hemFrac": 0.578
+  },
+  "src": {
+   "12": "flat",
+   "37": "flat",
+   "08": "flat"
+  },
+  "modelCm": 172.0,
   "modelSize": "M"
  }
 }
