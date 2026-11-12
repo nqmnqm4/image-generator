@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11 08:27",
+ "updated": "2026-11-12 09:52",
  "products": [
   {
    "id": "UQ_487408",
@@ -1250,277 +1250,325 @@
    ]
   },
   {
-   "id": "UQ_487957",
+   "id": "UQ_487183",
    "brand": "UQ",
    "brandLabel": "UNIQLO",
-   "name": "スマートワイドストレートパンツ",
+   "name": "ウォームストレッチパンツ/丈長め",
    "kind": "bottom",
    "category": "パンツ",
-   "price": 3990,
-   "url": "https://www.uniqlo.com/jp/ja/products/E487957-000/00",
+   "price": 4990,
+   "url": "https://www.uniqlo.com/jp/ja/products/E487183-000/00",
    "meas": {
-    "topFrac": 0.4691,
-    "hemFrac": 0.9514
-   },
-   "modelCm": 170.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "58",
-     "img": "img/UQ_487957_58.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487957/chip/goods_58_487957_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "69",
-     "img": "img/UQ_487957_69.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487957/chip/goods_69_487957_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "01",
-     "img": "img/UQ_487957_01.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487957/chip/goods_01_487957_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "04",
-     "img": "img/UQ_487957_04.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487957/chip/goods_04_487957_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "08",
-     "img": "img/UQ_487957_08.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487957/chip/goods_08_487957_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "09",
-     "img": "img/UQ_487957_09.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487957/chip/goods_09_487957_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
-   "id": "UQ_489415",
-   "brand": "UQ",
-   "brandLabel": "UNIQLO",
-   "name": "スマートワイドストレートパンツ/チェック",
-   "kind": "bottom",
-   "category": "パンツ",
-   "price": 3990,
-   "url": "https://www.uniqlo.com/jp/ja/products/E489415-000/00",
-   "meas": {
-    "topFrac": 0.4219,
-    "hemFrac": 0.9575
-   },
-   "modelCm": 172.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "37",
-     "img": "img/UQ_489415_37.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/489415/chip/goods_37_489415_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
-   "id": "UQ_488850",
-   "brand": "UQ",
-   "brandLabel": "UNIQLO",
-   "name": "スマートワイドストレートパンツ/丈長め",
-   "kind": "bottom",
-   "category": "パンツ",
-   "price": 3990,
-   "url": "https://www.uniqlo.com/jp/ja/products/E488850-000/00",
-   "meas": {
-    "topFrac": 0.4786,
-    "hemFrac": 0.9562
+    "topFrac": 0.4244,
+    "hemFrac": 0.9271
    },
    "modelCm": 175.0,
    "modelSize": "M",
    "colors": [
     {
-     "code": "58",
-     "img": "img/UQ_488850_58.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488850/chip/goods_58_488850_chip.jpg",
+     "code": "30",
+     "img": "img/UQ_487183_30.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487183/chip/goods_30_487183_chip.jpg",
      "src": "flat"
     },
     {
      "code": "69",
-     "img": "img/UQ_488850_69.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488850/chip/goods_69_488850_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "01",
-     "img": "img/UQ_488850_01.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488850/chip/goods_01_488850_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "04",
-     "img": "img/UQ_488850_04.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488850/chip/goods_04_488850_chip.jpg",
+     "img": "img/UQ_487183_69.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487183/chip/goods_69_487183_chip.jpg",
      "src": "flat"
     },
     {
      "code": "08",
-     "img": "img/UQ_488850_08.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488850/chip/goods_08_488850_chip.jpg",
+     "img": "img/UQ_487183_08.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487183/chip/goods_08_487183_chip.jpg",
      "src": "flat"
     },
     {
      "code": "09",
-     "img": "img/UQ_488850_09.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488850/chip/goods_09_488850_chip.jpg",
+     "img": "img/UQ_487183_09.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487183/chip/goods_09_487183_chip.jpg",
      "src": "flat"
     }
    ]
   },
   {
-   "id": "UQ_489416",
+   "id": "UQ_487182",
    "brand": "UQ",
    "brandLabel": "UNIQLO",
-   "name": "スマートワイドストレートパンツ/チェック/丈長め",
+   "name": "ウォームストレッチパンツ",
    "kind": "bottom",
    "category": "パンツ",
-   "price": 3990,
-   "url": "https://www.uniqlo.com/jp/ja/products/E489416-000/00",
+   "price": 4990,
+   "url": "https://www.uniqlo.com/jp/ja/products/E487182-000/00",
    "meas": {
-    "topFrac": 0.3922,
-    "hemFrac": 0.9429
+    "topFrac": 0.4521,
+    "hemFrac": 0.9269
    },
-   "modelCm": 175.0,
+   "modelCm": 166.0,
    "modelSize": "M",
    "colors": [
     {
-     "code": "37",
-     "img": "img/UQ_489416_37.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/489416/chip/goods_37_489416_chip.jpg",
+     "code": "30",
+     "img": "img/UQ_487182_30.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487182/chip/goods_30_487182_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "69",
+     "img": "img/UQ_487182_69.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487182/chip/goods_69_487182_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "08",
+     "img": "img/UQ_487182_08.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487182/chip/goods_08_487182_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "09",
+     "img": "img/UQ_487182_09.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487182/chip/goods_09_487182_chip.jpg",
      "src": "flat"
     }
    ]
   },
   {
-   "id": "UQ_488849",
+   "id": "UQ_487187",
    "brand": "UQ",
    "brandLabel": "UNIQLO",
-   "name": "スマートイージーパンツ/丈長め",
+   "name": "ウォームイージーパンツ/丈短め",
+   "kind": "bottom",
+   "category": "パンツ",
+   "price": 4990,
+   "url": "https://www.uniqlo.com/jp/ja/products/E487187-000/00",
+   "meas": {
+    "topFrac": 0.4359,
+    "hemFrac": 0.9571
+   },
+   "modelCm": 160.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "30",
+     "img": "img/UQ_487187_30.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487187/chip/goods_30_487187_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "39",
+     "img": "img/UQ_487187_39.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487187/chip/goods_39_487187_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "56",
+     "img": "img/UQ_487187_56.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487187/chip/goods_56_487187_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "09",
+     "img": "img/UQ_487187_09.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487187/chip/goods_09_487187_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
+   "id": "UQ_487186",
+   "brand": "UQ",
+   "brandLabel": "UNIQLO",
+   "name": "ウォームイージーパンツ/丈長め",
+   "kind": "bottom",
+   "category": "パンツ",
+   "price": 4990,
+   "url": "https://www.uniqlo.com/jp/ja/products/E487186-000/00",
+   "meas": {
+    "topFrac": 0.2665,
+    "hemFrac": 0.9392
+   },
+   "modelCm": 176.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "30",
+     "img": "img/UQ_487186_30.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487186/chip/goods_30_487186_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "39",
+     "img": "img/UQ_487186_39.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487186/chip/goods_39_487186_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "56",
+     "img": "img/UQ_487186_56.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487186/chip/goods_56_487186_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "09",
+     "img": "img/UQ_487186_09.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487186/chip/goods_09_487186_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
+   "id": "UQ_487185",
+   "brand": "UQ",
+   "brandLabel": "UNIQLO",
+   "name": "ウォームイージーパンツ",
+   "kind": "bottom",
+   "category": "パンツ",
+   "price": 4990,
+   "url": "https://www.uniqlo.com/jp/ja/products/E487185-000/00",
+   "meas": {
+    "topFrac": 0.4458,
+    "hemFrac": 0.9542
+   },
+   "modelCm": 173.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "30",
+     "img": "img/UQ_487185_30.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487185/chip/goods_30_487185_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "39",
+     "img": "img/UQ_487185_39.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487185/chip/goods_39_487185_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "56",
+     "img": "img/UQ_487185_56.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487185/chip/goods_56_487185_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "09",
+     "img": "img/UQ_487185_09.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487185/chip/goods_09_487185_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
+   "id": "UQ_487961",
+   "brand": "UQ",
+   "brandLabel": "UNIQLO",
+   "name": "ウォームスマートパンツ",
+   "kind": "bottom",
+   "category": "パンツ",
+   "price": 4990,
+   "url": "https://www.uniqlo.com/jp/ja/products/E487961-000/00",
+   "meas": {
+    "topFrac": 0.3991,
+    "hemFrac": 0.9329
+   },
+   "modelCm": 173.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "69",
+     "img": "img/UQ_487961_69.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487961/chip/goods_69_487961_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "09",
+     "img": "img/UQ_487961_09.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487961/chip/goods_09_487961_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
+   "id": "UQ_487608",
+   "brand": "UQ",
+   "brandLabel": "UNIQLO",
+   "name": "ウォームボアスウェットワイドパンツ",
    "kind": "bottom",
    "category": "パンツ",
    "price": 3990,
-   "url": "https://www.uniqlo.com/jp/ja/products/E488849-000/00",
+   "url": "https://www.uniqlo.com/jp/ja/products/E487608-000/00",
    "meas": {
-    "topFrac": 0.4375,
-    "hemFrac": 0.9724
+    "topFrac": 0.4378,
+    "hemFrac": 0.9537
    },
    "modelCm": 172.0,
    "modelSize": "M",
    "colors": [
     {
      "code": "39",
-     "img": "img/UQ_488849_39.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488849/chip/goods_39_488849_chip.jpg",
+     "img": "img/UQ_487608_39.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487608/chip/goods_39_487608_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "69",
+     "img": "img/UQ_487608_69.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487608/chip/goods_69_487608_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "03",
+     "img": "img/UQ_487608_03.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487608/chip/goods_03_487608_chip.jpg",
      "src": "flat"
     },
     {
      "code": "09",
-     "img": "img/UQ_488849_09.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488849/chip/goods_09_488849_chip.jpg",
+     "img": "img/UQ_487608_09.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487608/chip/goods_09_487608_chip.jpg",
      "src": "flat"
     }
    ]
   },
   {
-   "id": "UQ_488867",
+   "id": "UQ_489382",
    "brand": "UQ",
    "brandLabel": "UNIQLO",
-   "name": "スマートイージーパンツ/ストライプ/丈長め",
+   "name": "ウォームボアスウェットワイドパンツ/丈短め",
    "kind": "bottom",
    "category": "パンツ",
    "price": 3990,
-   "url": "https://www.uniqlo.com/jp/ja/products/E488867-000/00",
+   "url": "https://www.uniqlo.com/jp/ja/products/E489382-000/00",
    "meas": {
-    "topFrac": 0.4498,
-    "hemFrac": 0.9664
+    "topFrac": 0.3969,
+    "hemFrac": 0.9607
    },
-   "modelCm": 175.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "69",
-     "img": "img/UQ_488867_69.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488867/chip/goods_69_488867_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "07",
-     "img": "img/UQ_488867_07.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488867/chip/goods_07_488867_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
-   "id": "UQ_487959",
-   "brand": "UQ",
-   "brandLabel": "UNIQLO",
-   "name": "スマートイージーパンツ",
-   "kind": "bottom",
-   "category": "パンツ",
-   "price": 3990,
-   "url": "https://www.uniqlo.com/jp/ja/products/E487959-000/00",
-   "meas": {
-    "topFrac": 0.4501,
-    "hemFrac": 0.9474
-   },
-   "modelCm": 170.0,
+   "modelCm": 158.0,
    "modelSize": "M",
    "colors": [
     {
      "code": "39",
-     "img": "img/UQ_487959_39.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487959/chip/goods_39_487959_chip.jpg",
+     "img": "img/UQ_489382_39.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/489382/chip/goods_39_489382_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "69",
+     "img": "img/UQ_489382_69.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/489382/chip/goods_69_489382_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "03",
+     "img": "img/UQ_489382_03.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/489382/chip/goods_03_489382_chip.jpg",
      "src": "flat"
     },
     {
      "code": "09",
-     "img": "img/UQ_487959_09.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487959/chip/goods_09_487959_chip.jpg",
-     "src": "model"
-    }
-   ]
-  },
-  {
-   "id": "UQ_488866",
-   "brand": "UQ",
-   "brandLabel": "UNIQLO",
-   "name": "スマートイージーパンツ/ストライプ",
-   "kind": "bottom",
-   "category": "パンツ",
-   "price": 3990,
-   "url": "https://www.uniqlo.com/jp/ja/products/E488866-000/00",
-   "meas": {
-    "topFrac": 0.4307,
-    "hemFrac": 0.9745
-   },
-   "modelCm": 164.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "69",
-     "img": "img/UQ_488866_69.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488866/chip/goods_69_488866_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "07",
-     "img": "img/UQ_488866_07.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488866/chip/goods_07_488866_chip.jpg",
+     "img": "img/UQ_489382_09.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/489382/chip/goods_09_489382_chip.jpg",
      "src": "flat"
     }
    ]
@@ -3465,12 +3513,6 @@
      "code": "68",
      "img": "img/GU_361846_68.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361846/chip/goods_68_361846_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "69",
-     "img": "img/GU_361846_69.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361846/chip/goods_69_361846_chip.jpg",
      "src": "flat"
     },
     {

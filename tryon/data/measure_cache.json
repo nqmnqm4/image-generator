@@ -2340,5 +2340,123 @@
   },
   "modelCm": 174.0,
   "modelSize": "M"
+ },
+ "UQ_487183": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.4244,
+   "hemFrac": 0.9271
+  },
+  "src": {
+   "30": "flat",
+   "69": "flat",
+   "08": "flat",
+   "09": "flat"
+  },
+  "modelCm": 175.0,
+  "modelSize": "M"
+ },
+ "UQ_487182": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.4521,
+   "hemFrac": 0.9269
+  },
+  "src": {
+   "30": "flat",
+   "69": "flat",
+   "08": "flat",
+   "09": "flat"
+  },
+  "modelCm": 166.0,
+  "modelSize": "M"
+ },
+ "UQ_487187": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.4359,
+   "hemFrac": 0.9571
+  },
+  "src": {
+   "30": "flat",
+   "39": "flat",
+   "56": "flat",
+   "09": "flat"
+  },
+  "modelCm": 160.0,
+  "modelSize": "M"
+ },
+ "UQ_487186": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.2665,
+   "hemFrac": 0.9392
+  },
+  "src": {
+   "30": "flat",
+   "39": "flat",
+   "56": "flat",
+   "09": "flat"
+  },
+  "modelCm": 176.0,
+  "modelSize": "M"
+ },
+ "UQ_487185": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.4458,
+   "hemFrac": 0.9542
+  },
+  "src": {
+   "30": "flat",
+   "39": "flat",
+   "56": "flat",
+   "09": "flat"
+  },
+  "modelCm": 173.0,
+  "modelSize": "M"
+ },
+ "UQ_487961": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.3991,
+   "hemFrac": 0.9329
+  },
+  "src": {
+   "69": "flat",
+   "09": "flat"
+  },
+  "modelCm": 173.0,
+  "modelSize": "M"
+ },
+ "UQ_487608": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.4378,
+   "hemFrac": 0.9537
+  },
+  "src": {
+   "39": "flat",
+   "69": "flat",
+   "03": "flat",
+   "09": "flat"
+  },
+  "modelCm": 172.0,
+  "modelSize": "M"
+ },
+ "UQ_489382": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.3969,
+   "hemFrac": 0.9607
+  },
+  "src": {
+   "39": "flat",
+   "69": "flat",
+   "03": "flat",
+   "09": "flat"
+  },
+  "modelCm": 158.0,
+  "modelSize": "M"
  }
 }
