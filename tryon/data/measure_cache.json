@@ -2474,5 +2474,146 @@
   },
   "modelCm": 172.0,
   "modelSize": "M"
+ },
+ "GU_360954": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.1653,
+   "hemFrac": 0.504
+  },
+  "src": {
+   "31": "flat",
+   "56": "flat",
+   "09": "flat"
+  },
+  "modelCm": 175.0,
+  "modelSize": "M"
+ },
+ "GU_362897": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.1396,
+   "hemFrac": 0.4888
+  },
+  "src": {
+   "38": "flat",
+   "09": "flat"
+  },
+  "modelCm": 172.0,
+  "modelSize": "M"
+ },
+ "GU_357497": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.1841,
+   "hemFrac": 0.4939
+  },
+  "src": {
+   "09": "flat"
+  },
+  "modelCm": 173.0,
+  "modelSize": "M"
+ },
+ "GU_360434": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.1219,
+   "hemFrac": 0.9899
+  },
+  "src": {
+   "30": "flat",
+   "38": "flat",
+   "44": "flat",
+   "09": "flat"
+  },
+  "modelCm": 175.0,
+  "modelSize": "M"
+ },
+ "GU_357378": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.1273,
+   "hemFrac": 0.4949
+  },
+  "src": {
+   "58": "flat",
+   "04": "flat",
+   "09": "flat"
+  },
+  "modelCm": 184.0,
+  "modelSize": "L"
+ },
+ "GU_360533": {
+  "v": 2,
+  "meas": null,
+  "src": {
+   "30": "model",
+   "38": "flat",
+   "57": "flat",
+   "09": "flat"
+  },
+  "modelCm": 175.0,
+  "modelSize": "M"
+ },
+ "GU_360654": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.4549,
+   "hemFrac": 0.976
+  },
+  "src": {
+   "18": "flat",
+   "32": "flat",
+   "08": "flat",
+   "09": "flat"
+  },
+  "modelCm": 170.0,
+  "modelSize": "M"
+ },
+ "GU_360655": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.4239,
+   "hemFrac": 0.9851
+  },
+  "src": {
+   "18": "flat",
+   "32": "flat",
+   "08": "flat",
+   "09": "flat"
+  },
+  "modelCm": 175.0,
+  "modelSize": "M"
+ },
+ "GU_362188": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.4047,
+   "hemFrac": 0.9405
+  },
+  "src": {
+   "18": "flat",
+   "32": "flat",
+   "08": "flat",
+   "09": "flat"
+  },
+  "modelCm": 160.0,
+  "modelSize": "M"
+ },
+ "GU_361019": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.4842,
+   "hemFrac": 0.9466
+  },
+  "src": {
+   "30": "flat",
+   "56": "flat",
+   "67": "flat",
+   "03": "flat",
+   "09": "flat"
+  },
+  "modelCm": 170.0,
+  "modelSize": "M"
  }
 }
