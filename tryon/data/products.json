@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14 08:44",
+ "updated": "2026-11-15 07:31",
  "products": [
   {
    "id": "UQ_487408",
@@ -1730,27 +1730,6 @@
    ]
   },
   {
-   "id": "UQ_488934",
-   "brand": "UQ",
-   "brandLabel": "UNIQLO",
-   "name": "フレアロングスカート",
-   "kind": "bottom",
-   "category": "スカート・ワンピース",
-   "price": 790,
-   "url": "https://www.uniqlo.com/jp/ja/products/E488934-000/00",
-   "meas": null,
-   "modelCm": 175.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "12",
-     "img": "img/UQ_488934_12.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488934/chip/goods_12_488934_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
    "id": "UQ_489000",
    "brand": "UQ",
    "brandLabel": "UNIQLO",
@@ -1800,6 +1779,33 @@
      "code": "09",
      "img": "img/UQ_489360_09.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/489360/chip/goods_09_489360_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
+   "id": "UQ_487352",
+   "brand": "UQ",
+   "brandLabel": "UNIQLO",
+   "name": "コットンロングスカート",
+   "kind": "bottom",
+   "category": "スカート・ワンピース",
+   "price": 3990,
+   "url": "https://www.uniqlo.com/jp/ja/products/E487352-000/00",
+   "meas": null,
+   "modelCm": null,
+   "modelSize": null,
+   "colors": [
+    {
+     "code": "40",
+     "img": "img/UQ_487352_40.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487352/chip/goods_40_487352_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "68",
+     "img": "img/UQ_487352_68.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487352/chip/goods_68_487352_chip.jpg",
      "src": "flat"
     }
    ]
@@ -3215,42 +3221,6 @@
    ]
   },
   {
-   "id": "GU_358738",
-   "brand": "GU",
-   "brandLabel": "GU",
-   "name": "オックスフォードショートシャツ",
-   "kind": "top",
-   "category": "シャツ・ブラウス",
-   "price": 1990,
-   "url": "https://www.gu-global.com/jp/ja/products/E358738-000/00",
-   "meas": {
-    "topFrac": 0.2012,
-    "hemFrac": 0.4427
-   },
-   "modelCm": 170.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "10",
-     "img": "img/GU_358738_10.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/358738/chip/goods_10_358738_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "63",
-     "img": "img/GU_358738_63.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/358738/chip/goods_63_358738_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "01",
-     "img": "img/GU_358738_01.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/358738/chip/goods_01_358738_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
    "id": "GU_361711",
    "brand": "GU",
    "brandLabel": "GU",
@@ -3282,6 +3252,42 @@
      "code": "08",
      "img": "img/GU_361711_08.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361711/chip/goods_08_361711_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
+   "id": "GU_358738",
+   "brand": "GU",
+   "brandLabel": "GU",
+   "name": "オックスフォードショートシャツ",
+   "kind": "top",
+   "category": "シャツ・ブラウス",
+   "price": 1990,
+   "url": "https://www.gu-global.com/jp/ja/products/E358738-000/00",
+   "meas": {
+    "topFrac": 0.2012,
+    "hemFrac": 0.4427
+   },
+   "modelCm": 170.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "10",
+     "img": "img/GU_358738_10.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/358738/chip/goods_10_358738_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "63",
+     "img": "img/GU_358738_63.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/358738/chip/goods_63_358738_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "01",
+     "img": "img/GU_358738_01.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/358738/chip/goods_01_358738_chip.jpg",
      "src": "flat"
     }
    ]
@@ -3977,30 +3983,6 @@
    ]
   },
   {
-   "id": "GU_361204",
-   "brand": "GU",
-   "brandLabel": "GU",
-   "name": "ジャンパーミニワンピース(ノースリーブ)",
-   "kind": "dress",
-   "category": "ワンピース",
-   "price": 990,
-   "url": "https://www.gu-global.com/jp/ja/products/E361204-000/00",
-   "meas": {
-    "topFrac": 0.158,
-    "hemFrac": 0.598
-   },
-   "modelCm": 175.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "69",
-     "img": "img/GU_361204_69.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361204/chip/goods_69_361204_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
    "id": "GU_362134",
    "brand": "GU",
    "brandLabel": "GU",
@@ -4173,6 +4155,48 @@
      "code": "08",
      "img": "img/GU_360800_08.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360800/chip/goods_08_360800_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
+   "id": "GU_361267",
+   "brand": "GU",
+   "brandLabel": "GU",
+   "name": "スウェットオーバーサイズチュニック",
+   "kind": "dress",
+   "category": "ワンピース",
+   "price": 2990,
+   "url": "https://www.gu-global.com/jp/ja/products/E361267-000/00",
+   "meas": {
+    "topFrac": 0.1775,
+    "hemFrac": 0.5294
+   },
+   "modelCm": 170.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "56",
+     "img": "img/GU_361267_56.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361267/chip/goods_56_361267_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "67",
+     "img": "img/GU_361267_67.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361267/chip/goods_67_361267_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "03",
+     "img": "img/GU_361267_03.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361267/chip/goods_03_361267_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "09",
+     "img": "img/GU_361267_09.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361267/chip/goods_09_361267_chip.jpg",
      "src": "flat"
     }
    ]

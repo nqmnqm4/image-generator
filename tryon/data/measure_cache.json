@@ -2615,5 +2615,15 @@
   },
   "modelCm": 170.0,
   "modelSize": "M"
+ },
+ "UQ_487352": {
+  "v": 2,
+  "meas": null,
+  "src": {
+   "40": "flat",
+   "68": "flat"
+  },
+  "modelCm": null,
+  "modelSize": null
  }
 }
