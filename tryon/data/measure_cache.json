@@ -1006,7 +1006,8 @@
    "56": "flat",
    "67": "flat",
    "03": "flat",
-   "09": "flat"
+   "09": "flat",
+   "50": "flat"
   },
   "modelCm": 168.0,
   "modelSize": "M"
@@ -1229,7 +1230,9 @@
    "37": "flat",
    "64": "flat",
    "68": "flat",
-   "08": "flat"
+   "08": "flat",
+   "69": "flat",
+   "01": "flat"
   },
   "modelCm": 162.0,
   "modelSize": "M"
@@ -1244,7 +1247,9 @@
    "37": "flat",
    "64": "flat",
    "68": "flat",
-   "08": "flat"
+   "08": "flat",
+   "69": "flat",
+   "01": "flat"
   },
   "modelCm": 172.0,
   "modelSize": "M"
@@ -2565,7 +2570,9 @@
    "18": "flat",
    "32": "flat",
    "08": "flat",
-   "09": "flat"
+   "09": "flat",
+   "01": "flat",
+   "02": "flat"
   },
   "modelCm": 170.0,
   "modelSize": "M"
@@ -2580,7 +2587,9 @@
    "18": "flat",
    "32": "flat",
    "08": "flat",
-   "09": "flat"
+   "09": "flat",
+   "01": "flat",
+   "02": "flat"
   },
   "modelCm": 175.0,
   "modelSize": "M"
@@ -2595,7 +2604,9 @@
    "18": "flat",
    "32": "flat",
    "08": "flat",
-   "09": "flat"
+   "09": "flat",
+   "01": "flat",
+   "02": "flat"
   },
   "modelCm": 160.0,
   "modelSize": "M"
@@ -2611,7 +2622,8 @@
    "56": "flat",
    "67": "flat",
    "03": "flat",
-   "09": "flat"
+   "09": "flat",
+   "50": "flat"
   },
   "modelCm": 170.0,
   "modelSize": "M"
@@ -2625,5 +2637,18 @@
   },
   "modelCm": null,
   "modelSize": null
+ },
+ "GU_360835": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.1638,
+   "hemFrac": 0.9935
+  },
+  "src": {
+   "36": "flat",
+   "69": "flat"
+  },
+  "modelCm": 174.0,
+  "modelSize": "M"
  }
 }
