@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18 09:59",
+ "updated": "2026-11-19 09:27",
  "products": [
   {
    "id": "UQ_469871",
@@ -1831,12 +1831,6 @@
      "img": "img/GU_357678_30.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/357678/chip/goods_30_357678_chip.jpg",
      "src": "model"
-    },
-    {
-     "code": "09",
-     "img": "img/GU_357678_09.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/357678/chip/goods_09_357678_chip.jpg",
-     "src": "flat"
     }
    ]
   },
