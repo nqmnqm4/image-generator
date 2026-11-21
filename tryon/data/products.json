@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20 09:51",
+ "updated": "2026-11-21 09:02",
  "products": [
   {
    "id": "UQ_469871",
@@ -858,12 +858,6 @@
    "modelSize": "M",
    "colors": [
     {
-     "code": "30",
-     "img": "img/UQ_488723_30.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488723/chip/goods_30_488723_chip.jpg",
-     "src": "flat"
-    },
-    {
      "code": "37",
      "img": "img/UQ_488723_37.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488723/chip/goods_37_488723_chip.jpg",
@@ -1276,12 +1270,6 @@
      "img": "img/UQ_488691_37.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488691/chip/goods_37_488691_chip.jpg",
      "src": "model"
-    },
-    {
-     "code": "08",
-     "img": "img/UQ_488691_08.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488691/chip/goods_08_488691_chip.jpg",
-     "src": "flat"
     },
     {
      "code": "09",
@@ -2700,6 +2688,12 @@
      "src": "flat"
     },
     {
+     "code": "01",
+     "img": "img/GU_360882_01.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360882/chip/goods_01_360882_chip.jpg",
+     "src": "flat"
+    },
+    {
      "code": "08",
      "img": "img/GU_360882_08.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360882/chip/goods_08_360882_chip.jpg",
@@ -4055,30 +4049,6 @@
    ]
   },
   {
-   "id": "GU_361205",
-   "brand": "GU",
-   "brandLabel": "GU",
-   "name": "ユーティリティシャツワンピース",
-   "kind": "dress",
-   "category": "ワンピース",
-   "price": 990,
-   "url": "https://www.gu-global.com/jp/ja/products/E361205-000/00",
-   "meas": {
-    "topFrac": 0.1503,
-    "hemFrac": 0.7382
-   },
-   "modelCm": 173.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "56",
-     "img": "img/GU_361205_56.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361205/chip/goods_56_361205_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
    "id": "GU_361511",
    "brand": "GU",
    "brandLabel": "GU",
@@ -4176,6 +4146,42 @@
      "code": "69",
      "img": "img/GU_360835_69.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360835/chip/goods_69_360835_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
+   "id": "GU_360800",
+   "brand": "GU",
+   "brandLabel": "GU",
+   "name": "ボーダーオーバーサイズニットチュニック",
+   "kind": "dress",
+   "category": "ワンピース",
+   "price": 1990,
+   "url": "https://www.gu-global.com/jp/ja/products/E360800-000/00",
+   "meas": {
+    "topFrac": 0.178,
+    "hemFrac": 0.578
+   },
+   "modelCm": 172.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "12",
+     "img": "img/GU_360800_12.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360800/chip/goods_12_360800_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "37",
+     "img": "img/GU_360800_37.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360800/chip/goods_37_360800_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "08",
+     "img": "img/GU_360800_08.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360800/chip/goods_08_360800_chip.jpg",
      "src": "flat"
     }
    ]
