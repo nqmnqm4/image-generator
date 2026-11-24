@@ -2932,5 +2932,54 @@
   },
   "modelCm": 169.0,
   "modelSize": "M"
+ },
+ "UQ_488536": {
+  "v": 2,
+  "meas": null,
+  "src": {
+   "30": "flat",
+   "35": "flat",
+   "42": "flat",
+   "55": "flat",
+   "05": "flat"
+  },
+  "modelCm": 175.0,
+  "modelSize": "M"
+ },
+ "GU_364062": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.1458,
+   "hemFrac": 0.4375
+  },
+  "src": {
+   "30": "flat",
+   "07": "flat"
+  },
+  "modelCm": 175.0,
+  "modelSize": "M"
+ },
+ "GU_362070": {
+  "v": 2,
+  "meas": null,
+  "src": {
+   "06": "flat",
+   "09": "flat"
+  },
+  "modelCm": 170.0,
+  "modelSize": "M"
+ },
+ "GU_362204": {
+  "v": 2,
+  "meas": {
+   "topFrac": 0.2102,
+   "hemFrac": 0.9513
+  },
+  "src": {
+   "01": "model",
+   "09": "flat"
+  },
+  "modelCm": 169.0,
+  "modelSize": "M"
  }
 }

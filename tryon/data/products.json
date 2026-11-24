@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23 08:40",
+ "updated": "2026-11-24 13:02",
  "products": [
   {
    "id": "UQ_469871",
@@ -1197,12 +1197,6 @@
      "src": "flat"
     },
     {
-     "code": "69",
-     "img": "img/UQ_487514_69.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487514/chip/goods_69_487514_chip.jpg",
-     "src": "flat"
-    },
-    {
      "code": "03",
      "img": "img/UQ_487514_03.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487514/chip/goods_03_487514_chip.jpg",
@@ -1262,31 +1256,46 @@
    ]
   },
   {
-   "id": "UQ_488691",
+   "id": "UQ_488536",
    "brand": "UQ",
    "brandLabel": "UNIQLO",
-   "name": "フラッフィカシミヤベスト",
+   "name": "カシミヤポインテールカーディガン",
    "kind": "top",
    "category": "ニット",
-   "price": 7990,
-   "url": "https://www.uniqlo.com/jp/ja/products/E488691-000/00",
-   "meas": {
-    "topFrac": 0.1437,
-    "hemFrac": 0.4978
-   },
-   "modelCm": 173.0,
-   "modelSize": "L",
+   "price": 17900,
+   "url": "https://www.uniqlo.com/jp/ja/products/E488536-000/00",
+   "meas": null,
+   "modelCm": 175.0,
+   "modelSize": "M",
    "colors": [
     {
-     "code": "37",
-     "img": "img/UQ_488691_37.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488691/chip/goods_37_488691_chip.jpg",
-     "src": "model"
+     "code": "30",
+     "img": "img/UQ_488536_30.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488536/chip/goods_30_488536_chip.jpg",
+     "src": "flat"
     },
     {
-     "code": "09",
-     "img": "img/UQ_488691_09.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488691/chip/goods_09_488691_chip.jpg",
+     "code": "35",
+     "img": "img/UQ_488536_35.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488536/chip/goods_35_488536_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "42",
+     "img": "img/UQ_488536_42.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488536/chip/goods_42_488536_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "55",
+     "img": "img/UQ_488536_55.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488536/chip/goods_55_488536_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "05",
+     "img": "img/UQ_488536_05.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488536/chip/goods_05_488536_chip.jpg",
      "src": "flat"
     }
    ]
@@ -1742,6 +1751,27 @@
    ]
   },
   {
+   "id": "UQ_488934",
+   "brand": "UQ",
+   "brandLabel": "UNIQLO",
+   "name": "フレアロングスカート",
+   "kind": "bottom",
+   "category": "スカート・ワンピース",
+   "price": 790,
+   "url": "https://www.uniqlo.com/jp/ja/products/E488934-000/00",
+   "meas": null,
+   "modelCm": 175.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "12",
+     "img": "img/UQ_488934_12.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488934/chip/goods_12_488934_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
    "id": "UQ_489000",
    "brand": "UQ",
    "brandLabel": "UNIQLO",
@@ -1818,42 +1848,6 @@
      "code": "68",
      "img": "img/UQ_487352_68.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487352/chip/goods_68_487352_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
-   "id": "UQ_492483",
-   "brand": "UQ",
-   "brandLabel": "UNIQLO",
-   "name": "フリーススカート",
-   "kind": "bottom",
-   "category": "スカート・ワンピース",
-   "price": 3990,
-   "url": "https://www.uniqlo.com/jp/ja/products/E492483-000/00",
-   "meas": {
-    "topFrac": 0.4416,
-    "hemFrac": 0.7564
-   },
-   "modelCm": 169.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "69",
-     "img": "img/UQ_492483_69.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/492483/chip/goods_69_492483_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "07",
-     "img": "img/UQ_492483_07.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/492483/chip/goods_07_492483_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "09",
-     "img": "img/UQ_492483_09.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/492483/chip/goods_09_492483_chip.jpg",
      "src": "flat"
     }
    ]
@@ -2042,7 +2036,7 @@
    "name": "パデッドショートブルゾン",
    "kind": "top",
    "category": "アウター",
-   "price": 4990,
+   "price": 2990,
    "url": "https://www.gu-global.com/jp/ja/products/E360953-000/00",
    "meas": {
     "topFrac": 0.1343,
@@ -2345,7 +2339,7 @@
    "name": "フェザーヤーンボートネックセーター",
    "kind": "top",
    "category": "ニット",
-   "price": 1990,
+   "price": 1290,
    "url": "https://www.gu-global.com/jp/ja/products/E360799-000/00",
    "meas": {
     "topFrac": 0.1465,
@@ -2381,7 +2375,7 @@
    "name": "フェザーヤーンボーダーセーター",
    "kind": "top",
    "category": "ニット",
-   "price": 1990,
+   "price": 1290,
    "url": "https://www.gu-global.com/jp/ja/products/E361673-000/00",
    "meas": {
     "topFrac": 0.1358,
@@ -2400,6 +2394,63 @@
      "code": "69",
      "img": "img/GU_361673_69.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361673/chip/goods_69_361673_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
+   "id": "GU_364062",
+   "brand": "GU",
+   "brandLabel": "GU",
+   "name": "シアードットT(長袖)",
+   "kind": "top",
+   "category": "Tシャツ",
+   "price": 1290,
+   "url": "https://www.gu-global.com/jp/ja/products/E364062-000/00",
+   "meas": {
+    "topFrac": 0.1458,
+    "hemFrac": 0.4375
+   },
+   "modelCm": 175.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "30",
+     "img": "img/GU_364062_30.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/364062/chip/goods_30_364062_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "07",
+     "img": "img/GU_364062_07.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/364062/chip/goods_07_364062_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
+   "id": "GU_362070",
+   "brand": "GU",
+   "brandLabel": "GU",
+   "name": "ソフトシアーカーディガン",
+   "kind": "top",
+   "category": "Tシャツ",
+   "price": 1290,
+   "url": "https://www.gu-global.com/jp/ja/products/E362070-000/00",
+   "meas": null,
+   "modelCm": 170.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "06",
+     "img": "img/GU_362070_06.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362070/chip/goods_06_362070_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "09",
+     "img": "img/GU_362070_09.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362070/chip/goods_09_362070_chip.jpg",
      "src": "flat"
     }
    ]
@@ -2459,6 +2510,42 @@
    ]
   },
   {
+   "id": "GU_362229",
+   "brand": "GU",
+   "brandLabel": "GU",
+   "name": "ウォームシアーレースヘムT(長袖)",
+   "kind": "top",
+   "category": "Tシャツ",
+   "price": 1290,
+   "url": "https://www.gu-global.com/jp/ja/products/E362229-000/00",
+   "meas": {
+    "topFrac": 0.1612,
+    "hemFrac": 0.527
+   },
+   "modelCm": 174.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "30",
+     "img": "img/GU_362229_30.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362229/chip/goods_30_362229_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "08",
+     "img": "img/GU_362229_08.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362229/chip/goods_08_362229_chip.jpg",
+     "src": "flat"
+    },
+    {
+     "code": "09",
+     "img": "img/GU_362229_09.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362229/chip/goods_09_362229_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
    "id": "GU_361840",
    "brand": "GU",
    "brandLabel": "GU",
@@ -2502,42 +2589,6 @@
      "code": "09",
      "img": "img/GU_361840_09.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361840/chip/goods_09_361840_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
-   "id": "GU_362229",
-   "brand": "GU",
-   "brandLabel": "GU",
-   "name": "ウォームシアーレースヘムT(長袖)",
-   "kind": "top",
-   "category": "Tシャツ",
-   "price": 1290,
-   "url": "https://www.gu-global.com/jp/ja/products/E362229-000/00",
-   "meas": {
-    "topFrac": 0.1612,
-    "hemFrac": 0.527
-   },
-   "modelCm": 174.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "30",
-     "img": "img/GU_362229_30.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362229/chip/goods_30_362229_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "08",
-     "img": "img/GU_362229_08.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362229/chip/goods_08_362229_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "09",
-     "img": "img/GU_362229_09.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362229/chip/goods_09_362229_chip.jpg",
      "src": "flat"
     }
    ]
@@ -2670,84 +2721,6 @@
      "code": "09",
      "img": "img/GU_360578_09.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360578/chip/goods_09_360578_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
-   "id": "GU_360882",
-   "brand": "GU",
-   "brandLabel": "GU",
-   "name": "ウォームリブシャーリングスリーブT(12分袖)",
-   "kind": "top",
-   "category": "Tシャツ",
-   "price": 1290,
-   "url": "https://www.gu-global.com/jp/ja/products/E360882-000/00",
-   "meas": {
-    "topFrac": 0.168,
-    "hemFrac": 0.4282
-   },
-   "modelCm": 162.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "61",
-     "img": "img/GU_360882_61.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360882/chip/goods_61_360882_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "01",
-     "img": "img/GU_360882_01.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360882/chip/goods_01_360882_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "08",
-     "img": "img/GU_360882_08.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360882/chip/goods_08_360882_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "09",
-     "img": "img/GU_360882_09.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360882/chip/goods_09_360882_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
-   "id": "GU_360883",
-   "brand": "GU",
-   "brandLabel": "GU",
-   "name": "ウォームポインテールクルーネックT(12分袖)",
-   "kind": "top",
-   "category": "Tシャツ",
-   "price": 990,
-   "url": "https://www.gu-global.com/jp/ja/products/E360883-000/00",
-   "meas": {
-    "topFrac": 0.1531,
-    "hemFrac": 0.4322
-   },
-   "modelCm": 173.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "01",
-     "img": "img/GU_360883_01.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360883/chip/goods_01_360883_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "08",
-     "img": "img/GU_360883_08.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360883/chip/goods_08_360883_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "09",
-     "img": "img/GU_360883_09.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360883/chip/goods_09_360883_chip.jpg",
      "src": "flat"
     }
    ]
@@ -2906,7 +2879,7 @@
    "name": "ヘビーウェイトスウェットショートパーカ",
    "kind": "top",
    "category": "スウェット",
-   "price": 1990,
+   "price": 1290,
    "url": "https://www.gu-global.com/jp/ja/products/E358273-000/00",
    "meas": null,
    "modelCm": 170.0,
@@ -3077,7 +3050,7 @@
    "id": "GU_359080",
    "brand": "GU",
    "brandLabel": "GU",
-   "name": "ドルマンスリーブシャツ",
+   "name": "ドルマンスリーブシャツ(2026年度秋商品)",
    "kind": "top",
    "category": "シャツ・ブラウス",
    "price": 2990,
@@ -3817,12 +3790,6 @@
      "img": "img/GU_362043_63.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362043/chip/goods_63_362043_chip.jpg",
      "src": "flat"
-    },
-    {
-     "code": "08",
-     "img": "img/GU_362043_08.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362043/chip/goods_08_362043_chip.jpg",
-     "src": "flat"
     }
    ]
   },
@@ -4040,37 +4007,13 @@
    ]
   },
   {
-   "id": "GU_360859",
-   "brand": "GU",
-   "brandLabel": "GU",
-   "name": "スキッパーシャツワンピース",
-   "kind": "dress",
-   "category": "ワンピース",
-   "price": 990,
-   "url": "https://www.gu-global.com/jp/ja/products/E360859-000/00",
-   "meas": {
-    "topFrac": 0.1556,
-    "hemFrac": 0.7964
-   },
-   "modelCm": 170.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "09",
-     "img": "img/GU_360859_09.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360859/chip/goods_09_360859_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
    "id": "GU_361511",
    "brand": "GU",
    "brandLabel": "GU",
    "name": "バイカラーミニワンピース",
    "kind": "dress",
    "category": "ワンピース",
-   "price": 1490,
+   "price": 990,
    "url": "https://www.gu-global.com/jp/ja/products/E361511-000/00",
    "meas": {
     "topFrac": 0.1474,
@@ -4142,7 +4085,7 @@
    "name": "フラワージャカードオーバーサイズニットチュニック",
    "kind": "dress",
    "category": "ワンピース",
-   "price": 2990,
+   "price": 1990,
    "url": "https://www.gu-global.com/jp/ja/products/E360835-000/00",
    "meas": {
     "topFrac": 0.1638,
@@ -4172,7 +4115,7 @@
    "name": "ボーダーオーバーサイズニットチュニック",
    "kind": "dress",
    "category": "ワンピース",
-   "price": 1990,
+   "price": 1290,
    "url": "https://www.gu-global.com/jp/ja/products/E360800-000/00",
    "meas": {
     "topFrac": 0.178,
@@ -4197,6 +4140,36 @@
      "code": "08",
      "img": "img/GU_360800_08.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360800/chip/goods_08_360800_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
+   "id": "GU_362204",
+   "brand": "GU",
+   "brandLabel": "GU",
+   "name": "レースアシンメトリーヘムチュニック",
+   "kind": "dress",
+   "category": "ワンピース",
+   "price": 1990,
+   "url": "https://www.gu-global.com/jp/ja/products/E362204-000/00",
+   "meas": {
+    "topFrac": 0.2102,
+    "hemFrac": 0.9513
+   },
+   "modelCm": 169.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "01",
+     "img": "img/GU_362204_01.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362204/chip/goods_01_362204_chip.jpg",
+     "src": "model"
+    },
+    {
+     "code": "09",
+     "img": "img/GU_362204_09.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362204/chip/goods_09_362204_chip.jpg",
      "src": "flat"
     }
    ]
