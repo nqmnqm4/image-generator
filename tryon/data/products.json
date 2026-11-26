@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25 11:34",
+ "updated": "2026-11-26 10:48",
  "products": [
   {
    "id": "UQ_469871",
@@ -180,12 +180,6 @@
      "code": "04",
      "img": "img/UQ_479751_04.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/479751/chip/goods_04_479751_chip.jpg",
-     "src": "model"
-    },
-    {
-     "code": "09",
-     "img": "img/UQ_479751_09.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/479751/chip/goods_09_479751_chip.jpg",
      "src": "model"
     }
    ]
@@ -860,7 +854,7 @@
    "name": "ファーライクフーディージャケット",
    "kind": "top",
    "category": "Tシャツ・スウェット",
-   "price": 4990,
+   "price": 3990,
    "url": "https://www.uniqlo.com/jp/ja/products/E488723-000/00",
    "meas": {
     "topFrac": 0.1272,
@@ -1195,12 +1189,6 @@
      "img": "img/UQ_487514_57.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487514/chip/goods_57_487514_chip.jpg",
      "src": "flat"
-    },
-    {
-     "code": "03",
-     "img": "img/UQ_487514_03.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487514/chip/goods_03_487514_chip.jpg",
-     "src": "flat"
     }
    ]
   },
@@ -1268,12 +1256,6 @@
    "modelCm": 175.0,
    "modelSize": "M",
    "colors": [
-    {
-     "code": "30",
-     "img": "img/UQ_488536_30.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488536/chip/goods_30_488536_chip.jpg",
-     "src": "flat"
-    },
     {
      "code": "35",
      "img": "img/UQ_488536_35.webp",
@@ -1901,6 +1883,30 @@
    ]
   },
   {
+   "id": "GU_357497",
+   "brand": "GU",
+   "brandLabel": "GU",
+   "name": "ウォームパデッドブルゾン(2025年度冬商品)",
+   "kind": "top",
+   "category": "アウター",
+   "price": 3990,
+   "url": "https://www.gu-global.com/jp/ja/products/E357497-000/00",
+   "meas": {
+    "topFrac": 0.1841,
+    "hemFrac": 0.4939
+   },
+   "modelCm": 173.0,
+   "modelSize": "M",
+   "colors": [
+    {
+     "code": "09",
+     "img": "img/GU_357497_09.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/357497/chip/goods_09_357497_chip.jpg",
+     "src": "flat"
+    }
+   ]
+  },
+  {
    "id": "GU_360956",
    "brand": "GU",
    "brandLabel": "GU",
@@ -2001,30 +2007,6 @@
      "code": "09",
      "img": "img/GU_360434_09.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/360434/chip/goods_09_360434_chip.jpg",
-     "src": "flat"
-    }
-   ]
-  },
-  {
-   "id": "GU_357497",
-   "brand": "GU",
-   "brandLabel": "GU",
-   "name": "ウォームパデッドブルゾン(2025年度冬商品)",
-   "kind": "top",
-   "category": "アウター",
-   "price": 3990,
-   "url": "https://www.gu-global.com/jp/ja/products/E357497-000/00",
-   "meas": {
-    "topFrac": 0.1841,
-    "hemFrac": 0.4939
-   },
-   "modelCm": 173.0,
-   "modelSize": "M",
-   "colors": [
-    {
-     "code": "09",
-     "img": "img/GU_357497_09.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/357497/chip/goods_09_357497_chip.jpg",
      "src": "flat"
     }
    ]
@@ -2513,12 +2495,6 @@
    "modelCm": 174.0,
    "modelSize": "M",
    "colors": [
-    {
-     "code": "30",
-     "img": "img/GU_362229_30.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362229/chip/goods_30_362229_chip.jpg",
-     "src": "flat"
-    },
     {
      "code": "08",
      "img": "img/GU_362229_08.webp",
@@ -3285,12 +3261,6 @@
      "src": "model"
     },
     {
-     "code": "56",
-     "img": "img/GU_359811_56.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/359811/chip/goods_56_359811_chip.jpg",
-     "src": "model"
-    },
-    {
      "code": "68",
      "img": "img/GU_359811_68.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/359811/chip/goods_68_359811_chip.jpg",
@@ -3515,12 +3485,6 @@
    "modelCm": 175.0,
    "modelSize": "L",
    "colors": [
-    {
-     "code": "38",
-     "img": "img/GU_361797_38.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/361797/chip/goods_38_361797_chip.jpg",
-     "src": "flat"
-    },
     {
      "code": "65",
      "img": "img/GU_361797_65.webp",
@@ -3789,12 +3753,6 @@
      "code": "32",
      "img": "img/GU_362884_32.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362884/chip/goods_32_362884_chip.jpg",
-     "src": "model"
-    },
-    {
-     "code": "06",
-     "img": "img/GU_362884_06.webp",
-     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362884/chip/goods_06_362884_chip.jpg",
      "src": "model"
     }
    ]
