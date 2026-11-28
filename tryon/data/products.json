@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27 10:58",
+ "updated": "2026-11-28 10:30",
  "products": [
   {
    "id": "UQ_469871",
@@ -533,37 +533,31 @@
    ]
   },
   {
-   "id": "UQ_481224",
+   "id": "UQ_488794",
    "brand": "UQ",
    "brandLabel": "UNIQLO",
-   "name": "フランネルシャツ/オンブレチェック",
+   "name": "フランネルシャツ",
    "kind": "top",
    "category": "シャツ・ブラウス",
    "price": 3990,
-   "url": "https://www.uniqlo.com/jp/ja/products/E481224-000/00",
+   "url": "https://www.uniqlo.com/jp/ja/products/E488794-000/00",
    "meas": {
-    "topFrac": 0.1362,
-    "hemFrac": 0.4212
+    "topFrac": 0.1633,
+    "hemFrac": 0.4635
    },
-   "modelCm": 175.0,
+   "modelCm": 176.0,
    "modelSize": "M",
    "colors": [
     {
-     "code": "34",
-     "img": "img/UQ_481224_34.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/481224/chip/goods_34_481224_chip.jpg",
+     "code": "38",
+     "img": "img/UQ_488794_38.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488794/chip/goods_38_488794_chip.jpg",
      "src": "flat"
     },
     {
-     "code": "64",
-     "img": "img/UQ_481224_64.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/481224/chip/goods_64_481224_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "01",
-     "img": "img/UQ_481224_01.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/481224/chip/goods_01_481224_chip.jpg",
+     "code": "69",
+     "img": "img/UQ_488794_69.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/488794/chip/goods_69_488794_chip.jpg",
      "src": "flat"
     }
    ]
@@ -1204,6 +1198,12 @@
      "img": "img/UQ_485307_01.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485307/chip/goods_01_485307_chip.jpg",
      "src": "flat"
+    },
+    {
+     "code": "05",
+     "img": "img/UQ_485307_05.webp",
+     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/485307/chip/goods_05_485307_chip.jpg",
+     "src": "flat"
     }
    ]
   },
@@ -1470,12 +1470,6 @@
      "code": "69",
      "img": "img/UQ_487961_69.webp",
      "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487961/chip/goods_69_487961_chip.jpg",
-     "src": "flat"
-    },
-    {
-     "code": "09",
-     "img": "img/UQ_487961_09.webp",
-     "chip": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/487961/chip/goods_09_487961_chip.jpg",
      "src": "flat"
     }
    ]
@@ -2534,6 +2528,12 @@
    "modelCm": 174.0,
    "modelSize": "M",
    "colors": [
+    {
+     "code": "30",
+     "img": "img/GU_362229_30.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362229/chip/goods_30_362229_chip.jpg",
+     "src": "flat"
+    },
     {
      "code": "08",
      "img": "img/GU_362229_08.webp",
@@ -3759,6 +3759,18 @@
      "code": "32",
      "img": "img/GU_362884_32.webp",
      "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362884/chip/goods_32_362884_chip.jpg",
+     "src": "model"
+    },
+    {
+     "code": "06",
+     "img": "img/GU_362884_06.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362884/chip/goods_06_362884_chip.jpg",
+     "src": "model"
+    },
+    {
+     "code": "08",
+     "img": "img/GU_362884_08.webp",
+     "chip": "https://image.uniqlo.com/GU/ST3/AsianCommon/imagesgoods/362884/chip/goods_08_362884_chip.jpg",
      "src": "model"
     }
    ]
